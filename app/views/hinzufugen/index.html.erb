@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>FleeMa // Fahrzeuge // Bearbeiten</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <%= stylesheet_link_tag "bootstrap.min.css", media: "screen" %>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,600;0,800;1,200;1,400&display=swap"
+    rel="stylesheet">
+  <%= stylesheet_link_tag "style", media: "screen" %>
+  <%= stylesheet_link_tag "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" %>
+</head>
+
+<body id="">
+<!--<div id="header"></div>-->
+<div class="container">
+  <div class="row ">
+    <div class="col-md-12 col-sm-12">
+      <div class="content p-3">
+        <div class="d-block d-md-flex justify-content-between">
+          <div class="w-50">
+            <h1 class="m-0">kunde hinzufugen</h1>
+            </p>
+          </div>
+          <!-- <div class="text-end d-flex ms-5 mt-3 me-5">
+              <a href="#" class="link-reset mx-3">
+                  <p class="m-0 fs-3"><i class="fa fa-signal" aria-hidden="true"></i>
+                  </p>
+              </a>
+              <a href="#" class="link-reset mx-3">
+                  <p class="m-0 fs-3"> <i class="fa fa-print" aria-hidden="true"></i>
+                  </p>
+              </a>
+          </div> -->
+        </div>
+        <div class="row">
+          <div class="col-lg-9 col-md-12 col-sm-12">
+            <div class="tabs-view">
+              <!-- Lined tabs-->
+              <ul id="myTab2" role="tablist"
+                  class="nav nav-tabs nav-pills with-arrow lined flex-column flex-sm-row text-center">
+                <li class="nav-item flex-sm-fill">
+                  <a id="home2-tab" data-toggle="tab" href="#home2" role="tab"
+                     aria-controls="home2" aria-selected="true"
+                     class="nav-link text-uppercase font-weight-bold mr-sm-3 rounded-0 active">DETAILS</a>
+                </li>
+                <li class="nav-item flex-sm-fill">
+                  <a id="profile2-tab" data-toggle="tab" href="#profile2" role="tab"
+                     aria-controls="profile2" aria-selected="false"
+                     class="nav-link text-uppercase font-weight-bold mr-sm-3 rounded-0">FAHRZEUGE</a>
+                </li>
+                <li class="nav-item flex-sm-fill">
+                  <a id="contact2-tab" data-toggle="tab" href="#contact2" role="tab"
+                     aria-controls="contact2" aria-selected="false"
+                     class="nav-link text-uppercase font-weight-bold rounded-0">BEMERKUNGEN</a>
+                </li>
+                <li class="nav-item flex-sm-fill">
+                  <a id="contact2-tab" data-toggle="tab" href="#tab4" role="tab"
+                     aria-controls="contact2" aria-selected="false"
+                     class="nav-link text-uppercase font-weight-bold rounded-0">DOKUMENTE</a>
+                </li>
+              </ul>
+              <div id="myTab2Content" class="tab-content">
+                <div id="home2" role="tabpanel" aria-labelledby="home-tab"
+                     class="tab-pane fade px-4 py-5 show active">
+                  <h6 class="color-primary mb-3"> KUNDEN-STATUS AUSWAHLEN
+                  </h6>
+                  <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-12 my-4">
+
+                      <a href="#" class="d-inline-block text-decoration-none px-2">
+                        <i class="fa fa-user-circle icon-bg" aria-hidden="true"></i>
+                        <p class="color-primary  m-0">Interessent</p>
+                      </a>
+                      <a href="#"
+                         class="d-inline-block text-decoration-none px-2 pe-lg-3 border-end border-1 border-warning">
+                        <i class="fa fa-user-circle-o icon-bg" aria-hidden="true"></i>
+                        <p class="color-primary m-0">Vorhanden</p>
+                      </a>
+                      <a href="#" class="d-inline-block text-decoration-none px-2">
+                        <i class="fa fa-user-circle icon-bg" aria-hidden="true"></i>
+                        <p class="color-primary m-0">Privat</p>
+                      </a>
+                      <a href="#" class="d-inline-block text-decoration-none px-2">
+                        <i class="fa fa-user-circle-o icon-bg" aria-hidden="true"></i>
+                        <p class="color-primary m-0">Gewerblich</p>
+                      </a>
+
+                    </div>
+
+
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+
+                      <div class="d-flex">
+                        <div class="w-100 me-3">
+                          <label class="my-2 mb-3 d-block">
+                            Geändert am
+
+                          </label>
+                          <input type="text"
+                                 class="bg-light p-1 w-100 border-0 border-bottom border-2 border-secondary"
+                                 value="" placeholder="13.04.2021">
+                        </div>
+                        <div class="w-100">
+                          <label class="my-2 mb-3 d-block">
+                            Eingerichtet am
+
+                          </label>
+                          <input type="text"
+                                 class="bg-light p-1 w-100 border-0 border-bottom border-2 border-secondary"
+                                 value="" placeholder="13.04.2021">
+                        </div>
+                      </div>
+
+
+
+
+
+
+                    </div>
+
+                  </div>
+                  <h6 class="color-primary my-3">KUNDENINEFORMATIONEN BEARBEITEN
+                  </h6>
+                  <div class="row">
+                    <div class="col-lg-6 col-md-12 col-sm-12">
+                      <div class="" id="">
+                        <div class="">
+
+                          <div class="d-flex">
+                            <div class=" mx-2">
+                              <div class="w-100">
+                                <label class="my-2 d-block">
+                                  Anrede
+                                </label>
+                                <select class="form-select"
+                                        aria-label="Default select example">
+                                  <option value="" selected="selected"> Bitte auswählen
+                                  </option>
+                                  <option value="soleOwner">Inhaber</option>
+                                  <option value="managingDirector">Geschäftsführer
+                                  </option>
+                                </select>
+                              </div>
+                            </div>
+                            <div class="mx-2 me-0">
+                              <div class="w-100">
+                                <label class="my-2 d-block">
+                                  Titel
+
+                                </label>
+                                <input type="text"
+                                       class="bg-light p-1 w-100 border border-secondary"
+                                       value="" placeholder="Titel">
+                              </div>
+                            </div>
+                          </div>
+
+
+                          <div class="d-flex">
+                            <div class="mx-2 me-0">
+                              <div class="w-100">
+                                <label class="my-2 d-block">
+                                  Vorname
+                                </label>
+                                <input type="text"
+                                       class="bg-light p-1 w-100 border border-secondary"
+                                       value="" placeholder="Vorname">
+                              </div>
+                            </div>
+                            <div class="mx-2">
+                              <div class="w-100">
+                                <label class="my-2 d-block">
+                                  Nachname
+                                </label>
+                                <input type="text"
+                                       class="bg-light p-1 w-100 border border-secondary"
+                                       value="" placeholder="Nachname">
+                              </div>
+                            </div>
+                          </div>
+
+
+                          <div class="mx-2 me-0">
+                            <div class="w-100">
+                              <label class="my-2 d-block">
+                                Firmenname *
+                              </label>
+                              <input type="text"
+                                     class="bg-light p-1 w-100 border border-secondary"
+                                     value="" placeholder="Firmenname">
+                            </div>
+                          </div>
+
+
+                          <div class="d-flex">
+                            <div class="w-75 mx-2 me-0">
+                              <div class="w-100">
+                                <label class="my-2 d-block">
+                                  Straße
+                                </label>
+                                <input type="text"
+                                       class="bg-light p-1 w-100 border border-secondary"
+                                       value="" placeholder="Straße">
+                              </div>
+                            </div>
+                            <div class="w-25 mx-2">
+                              <div class="w-100">
+                                <label class="my-2 d-block">
+                                  Nr
+                                </label>
+                                <input type="text"
+                                       class="bg-light p-1 w-100 border border-secondary"
+                                       value="" placeholder="Nr">
+                              </div>
+                            </div>
+                          </div>
+
+
+
+
+
+                          <div class="d-flex">
+                            <div class="w-25 mx-2">
+                              <div class="w-100">
+                                <label class="my-2 d-block">
+                                  Plz
+                                </label>
+                                <input type="text"
+                                       class="bg-light p-1 w-100 border border-secondary"
+                                       value="" placeholder="PLZ">
+                              </div>
+                            </div>
+                            <div class="w-75 mx-2 me-0">
+                              <div class="w-100">
+                                <label class="my-2 d-block">
+                                  Ort
+                                </label>
+                                <input type="text"
+                                       class="bg-light p-1 w-100 border border-secondary"
+                                       value="" placeholder="Hamburg">
+                              </div>
+                            </div>
+                          </div>
+                          <div class="mx-2 w-100">
+                            <div class="w-100">
+                              <label class="my-2 d-block">
+                                Land
+                              </label>
+                              <select class="form-select"
+                                      aria-label="Default select example">
+                                <option value="">- Bitte wählen -</option>
+                                <option value="deu" selected="selected">Deutschland
+                                </option>
+                                <option value="tur">Türkei</option>
+                                <option value="ukr">Ukraine</option>
+                                <option value="hun">Ungarn</option>
+                                <option value="usa">USA</option>
+                                <option value="blr">Weißrussland</option>
+                              </select>
+                            </div>
+                          </div>
+
+
+
+
+
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-6 col-md-12 col-sm-12">
+                      <div class="" id="">
+                        <div class="">
+
+
+                          <div class="mx-2 w-100">
+                            <label class="my-2 d-block">
+                              E-Mail-Adresse
+                            </label>
+                            <input type="text"
+                                   class="bg-light p-1 w-100 border border-secondary"
+                                   value="" placeholder="E-Mail-Adresse">
+                          </div>
+
+
+
+
+
+
+
+                          <div class="mt-3"> <label class="mx-2 d-block">
+                            1. Telefon-Nr.
+
+                          </label>
+                            <div class="d-flex">
+                              <div class="w-25 mx-2">
+                                <input type="text"
+                                       class="bg-light p-1 w-100 border border-secondary"
+                                       value="" placeholder="+49">
+                              </div>
+                              <div class="w-25 mx-2">
+                                <input type="text"
+                                       class="bg-light p-1 w-100 border border-secondary"
+                                       value="" placeholder="">
+                              </div>
+                              <div class="w-50 mx-2 me-0">
+                                <input type="text"
+                                       class="bg-light p-1 w-100 border border-secondary"
+                                       value="" placeholder="">
+                              </div>
+                            </div>
+                          </div>
+                          <div class="mt-3">
+                            <label class="mx-2 d-block">
+                              2. Telefon-Nr.
+
+                            </label>
+                            <div class="d-flex">
+                              <div class="w-25 mx-2">
+                                <input type="text"
+                                       class="bg-light p-1 w-100 border border-secondary"
+                                       value="" placeholder="+49">
+                              </div>
+                              <div class="w-25 mx-2">
+                                <input type="text"
+                                       class="bg-light p-1 w-100 border border-secondary"
+                                       value="" placeholder="">
+                              </div>
+                              <div class="w-50 mx-2 me-0">
+                                <input type="text"
+                                       class="bg-light p-1 w-100 border border-secondary"
+                                       value="" placeholder="">
+                              </div>
+                            </div>
+                          </div>
+                          <div class="mt-3"> <label class="mx-2 d-block">
+                            Fax-Nr.
+
+                          </label>
+                            <div class="d-flex">
+                              <div class="w-25 mx-2">
+                                <input type="text"
+                                       class="bg-light p-1 w-100 border border-secondary"
+                                       value="" placeholder="+49">
+                              </div>
+                              <div class="w-25 mx-2">
+                                <input type="text"
+                                       class="bg-light p-1 w-100 border border-secondary"
+                                       value="" placeholder="">
+                              </div>
+                              <div class="w-50 mx-2 me-0">
+                                <input type="text"
+                                       class="bg-light p-1 w-100 border border-secondary"
+                                       value="" placeholder="">
+                              </div>
+                            </div>
+                          </div>
+
+
+                          <div class="d-flex">
+                            <div class="mx-2 me-0">
+                              <div class="w-100">
+                                <label class="my-2 d-block">
+                                  Steuernummer
+                                </label>
+                                <input type="text"
+                                       class="bg-light p-1 w-100 border border-secondary"
+                                       value="" placeholder="Steuernummer">
+                              </div>
+                            </div>
+                            <div class="mx-2">
+                              <div class="w-100">
+                                <label class="my-2 d-block">
+                                  Umsatzsteuernr.
+                                </label>
+                                <input type="text"
+                                       class="bg-light p-1 w-100 border border-secondary"
+                                       value="" placeholder="Umsatzsteuernr.">
+                              </div>
+                            </div>
+                          </div>
+                          <div class="mx-2 w-100">
+                            <label class="my-2 d-block">
+                              Geburtsdatum
+                            </label>
+                            <input type="date"
+                                   class="bg-light p-1 w-100 border border-secondary"
+                                   value="" placeholder="">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div id="profile2" role="tabpanel" aria-labelledby="profile-tab"
+                     class="tab-pane fade px-4 py-5">
+                  <h6 class="color-primary mb-3">FAHRZEUGE DIESES KUNDEN ANSEHEN ODER HINZUFÜGEN
+                  </h6>
+                  <div class="table-responsive">
+                    <table class="table my_table w-100">
+                      <thead>
+                      <tr>
+                        <th>Beschrelbung</th>
+                        <th>Amtl.Kennzelchen </th>
+                        <th>Angebotsprels</th>
+                        <th>Angebotsdatum</th>
+                        <th>Aktion</th>
+                      </tr>
+                      </thead>
+                      <CAPTION>For diesen Kunden sind keine Fahrzeuge angelegt</CAPTION>
+                      <tbody>
+                      <tr>
+                        <td align="center" valign="top"> &nbsp;</td>
+                        <td align="center" valign="top"> &nbsp;</td>
+                        <td align="center" valign="top"> &nbsp;</td>
+                        <td align="center" valign="top"> &nbsp;</td>
+                        <td align="center" valign="top"> &nbsp;</td>
+                      </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div>
+                                            <span class="pe-2 color-primary font-size-18"><i class="fa fa-car"
+                                                                                             aria-hidden="true"></i>
+                                            </span> Fügen Sie ein weiteres Fahrzeug for diesen Kunden hinzu
+                  </div>
+                </div>
+                <div id="contact2" role="tabpanel" aria-labelledby="contact-tab"
+                     class="tab-pane fade px-4 py-5">
+                  <h6 class="color-primary mb-3"> NEUE NOTIZ ERSTELLEN
+                  </h6>
+                  <div class="w-100 mb-3">
+                    <div class="form-floating">
+                                                <textarea class="bg-light  form-control border border-secondary"
+                                                          placeholder="" id="floatingTextarea2"
+                                                          style="height: 150px"></textarea>
+                      <label for="floatingTextarea2">Kommentar</label>
+                    </div>
+                  </div>
+                  <div class="buttons text-end">
+                    <button type="button" class="orange-btn my-3 text-capitalize">
+                      <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                      Notiz speichern</button>
+                    <button type="button" class="orange-btn my-3 text-capitalize">
+                      <i class="fa fa-times" aria-hidden="true"></i>
+                      Zurücksetzen</button>
+                  </div>
+                  <div class="table-responsive">
+                    <table class="table my_table w-100 mt-2">
+                      <thead>
+                      <tr>
+                        <th class="w-75">Datum</th>
+                        <th class="w-25">Notiz</th>
+                      </tr>
+                      </thead>
+                      <tbody>
+                      <tr>
+                        <td align="center" valign="top">Keine Notizen vorhanden</td>
+                        <td align="center" valign="top"> &nbsp;</td>
+                      </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <div id="tab4" role="tabpanel" aria-labelledby="contact-tab"
+                     class="tab-pane fade px-4 py-5">
+                  <h6 class="color-primary mb-3"> KUNDEN-DOKUMENTE
+                  </h6>
+                  <div class="table-responsive">
+                    <table class="table my_table w-100 mt-2">
+                      <thead>
+                      <tr>
+                        <th>Notizt</th>
+                        <th>Datum</th>
+                        <th>Fahrzeug</th>
+                        <th>Probefahrt</th>
+                        <th>Angebot</th>
+                        <th>Kaufvertrag</th>
+                        <th>Rechnung</th>
+                        <th>Lieferschein</th>
+                        <th>Abse hluss</th>
+                      </tr>
+                      </thead>
+                      <CAPTION>Dieser Kunde hat bisher keine Historie</CAPTION>
+                      <tbody>
+                      <tr>
+                        <td align="center" valign="top"> &nbsp;</td>
+                        <td align="center" valign="top"> &nbsp;</td>
+                        <td align="center" valign="top"> &nbsp;</td>
+                        <td align="center" valign="top"> &nbsp;</td>
+                        <td align="center" valign="top"> &nbsp;</td>
+                        <td align="center" valign="top"> &nbsp;</td>
+                        <td align="center" valign="top"> &nbsp;</td>
+                        <td align="center" valign="top"> &nbsp;</td>
+                        <td align="center" valign="top"> &nbsp;</td>
+                      </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <!-- End lined tabs -->
+            </div>
+            <div class="buttons text-end">
+              <button type="button" class="orange-btn my-3">
+                <i class="fa fa-trash" aria-hidden="true"></i>
+                Löschen</button>
+              <button type="button" class="orange-btn my-3">
+                <i class="fa fa-folder-open" aria-hidden="true"></i>
+                SPEICHERN</button>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-12 col-sm-12">
+            <div class="accordion auswahlen-accordion">
+              <div class="accordion-box">
+                <button class="headding" data-toggle="collapse" data-target="#collapse"
+                        aria-expanded="true" aria-controls="collapse">
+                  <span class="icon"></span> SCHNELLZUGRIFF
+                </button>
+                <div class="card-text collapse show" id="collapse">
+
+                  <p>Spelchern Sle die Kundendetails. um den Schnellzugriff zu aktlvieren</p>
+                  <a href="#" class="d-inline-block text-decoration-none px-2 mb-4">
+                    <i class="fa fa-user-circle icon-bg" aria-hidden="true"></i>
+                    <h6 class="color-primary d-inline  ms-1">DOKUMENT</h6>
+                  </a>
+
+                </div>
+              </div>
+              <div class="accordion-box">
+                <button class="headding" data-toggle="collapse" data-target="#collapse-two"
+                        aria-expanded="false" aria-controls="collapse">
+                  <div class="d-flex"> <span class="icon"></span>
+                    <span> KURZLICH HINZUGEFUGTE
+                                                KUNDEN</span>
+                  </div>
+                </button>
+                <div class="card-text collapse" id="collapse-two">
+                  <p>Patrick Bartels</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--<div id="footer"></div>-->
+
+<a href="#top" id="scrollUp" class="orange-color">
+  <i class="fa fa-angle-up"></i>
+</a>
+<div id="carmodelpopup"></div>
+<div id="carmodelpopup_two"></div>
+
+<%= javascript_include_tag "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js",
+                           integrity: "", crossorigin: "anonymous" %>
+<%= javascript_include_tag "popper.min.js", integrity: "", crossorigin: "anonymous" %>
+<%= javascript_include_tag "bootstrap.min.js", integrity: "", crossorigin: "anonymous" %>
+<%= javascript_include_tag "bootstrap.bundle.min.js", integrity: "", crossorigin: "anonymous" %>
+<%= javascript_include_tag "js.js"%>
+</body>
+
+</html>

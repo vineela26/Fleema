@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>FleeMa // Fahrzeuge // Bearbeiten</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <!-- <link rel='stylesheet' type='text/css' media='screen' href='assets/css/bootstrap.min.css'> -->
+  <%= stylesheet_link_tag "https://getbootstrap.com/docs/5.0/dist/css/bootstrap.min.css", media: "screen" %>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,600;0,800;1,200;1,400&display=swap"
+    rel="stylesheet">
+  <%= stylesheet_link_tag "style", media: "screen" %>
+  <%= stylesheet_link_tag "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" %>
+</head>
+
+<body id="">
+<!--<div id="header"></div>-->
+
+<div class="container">
+  <div class="row ">
+    <div class="col-md-12 col-sm-12">
+      <div class="content p-3">
+        <h1>Willkommen bei FleeMa!</h1>
+        <div class="accordion">
+          <button type="button" class="btn btn-primary expand-collasp">Alle ein-/ausklappen</button>
+          <div class="">
+            <div class="">
+              <div class="accordion-box">
+                <button class="headding ach" data-toggle="collapse" data-target="#collapse"
+                        aria-expanded="true" aria-controls="collapse">
+                  <span class="icon"></span>Überblick
+                </button>
+                <div class="card-text collapse show" id="collapse">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <p>Sie haben aktuell 0 Fahrzeuge im Bestand, 0 davon sind online inseriert.</p>
+                      <p>0 Fahrzeuge wurden in den letzten 30 Tagen verkauft</p>
+                      <p>Ihr Lagervolumen beträgt aktuell 0 €</p>
+                      <p>Sie haben bereits 0 Dokumente mit Hilfe von FleeMa erstellt.</p>
+                      <p>0 Kunden sind hinterlegt.</p>
+                    </div>
+                    <div class="col-md-6">
+                      <%= image_tag "informatione.jpg", class: "img-fluid", alt: "" %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-box">
+                <button class="headding" data-toggle="collapse" data-target="#collapse1"
+                        aria-expanded="false" aria-controls="collapse">
+                  <span class="icon"></span>Informationen
+                </button>
+                <div class="card-text collapse" id="collapse1">
+                  <p>FleeMa ist Ihr Partner bei Verkauf, Ankauf und Kunden-Akquise. Verwalten Sie Ihre Fahrzeuge und Kunden und inserieren Sie per Mausklick Ihren Bestand bei mehr als 20 Fahrzeugbörsen. FleeMa ist in den Händler-Paketen Komfort und Premium enthalten.
+                  </p>
+                  <p>Ihr Verkaufs-Manager: Kunden verwalten, Bestand pflegen und Fahrzeuge zu mehr als 20 Börsen exportierenn.
+                  </p>
+                  <p>Unabhängigkeit für Händler: Nutzen Sie FleeMa über das Internet an jedem beliebigen Computer.
+                  </p>
+                  <p>Markt-Überblick: Alle mobile.de Inserate inklusive Standtage der Wettbewerber.
+                  </p>
+                </div>
+              </div>
+              <div class="accordion-box">
+                <button class="headding" data-toggle="collapse" data-target="#collapse2"
+                        aria-expanded="false" aria-controls="collapse">
+                  <span class="icon"></span>Neuigkeiten
+                </button>
+                <div class="card-text collapse" id="collapse2">
+                  <p class="">Hier stehen Neuigkeiten, Aktualisierungen und Ankündigungen.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--<div id="footer"></div>-->
+
+<a href="#top" id="scrollUp" class="orange-color">
+  <i class="fa fa-angle-up"></i>
+</a>
+<div id="carmodelpopup" class="modal hide fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"></div>
+<!--<div id="carmodelpopup"></div>-->
+<div id="carmodelpopup_two"></div>
+
+<%= javascript_include_tag "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js",
+                           integrity: "", crossorigin: "anonymous" %>
+<%= javascript_include_tag "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js",
+                           integrity: "", crossorigin: "anonymous" %>
+<%= javascript_include_tag "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js",
+                           integrity: "", crossorigin: "anonymous" %>
+<%= javascript_include_tag "https://getbootstrap.com/docs/5.0/dist/js/bootstrap.bundle.min.js",
+                           integrity: "", crossorigin: "anonymous" %>
+<%= javascript_include_tag "js.js" %>
+
+</body>
+
+</html>

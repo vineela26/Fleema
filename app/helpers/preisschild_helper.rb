@@ -1,0 +1,2 @@
+module PreisschildHelper
+end

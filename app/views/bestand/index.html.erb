@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>FleeMa // Fahrzeuge // Bearbeiten</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <%= stylesheet_link_tag "bootstrap.min.css", media: "screen" %>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,600;0,800;1,200;1,400&display=swap"
+    rel="stylesheet">
+  <%= stylesheet_link_tag "style", media: "screen" %>
+  <%= stylesheet_link_tag href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" %>
+</head>
+
+<body id="">
+<!--<div id="header"></div>-->
+<div class="container">
+  <div class="row ">
+    <div class="col-md-12 col-sm-12">
+      <div class="content p-3">
+        <h1 class="mb-0"> BESTAND</h1>
+        <p class="color-primary" id="cars-counter">(0 - 0 VON 0 FAHRZEUGEN)
+        </p>
+        <div class="row">
+          <div class="col-lg-9 col-md-12 col-sm-12">
+            <div class="mb-3">
+              <div class="table-responsive">
+                <table class="table my_table w-100">
+                  <tr>
+                    <th>&nbsp;</th>
+                    <th>Marke, Modell, Modellvariante</th>
+                    <th>Preis</th>
+                    <th>Datum</th>
+                  </tr>
+                  <tr id="show_car_1" style="display: none">
+                    <td align="left" valign="top" class="w-auto">
+                      <%= image_tag "car-img.png", alt: "", class: "shadow-sm",
+                          style: "width:100px;" %>
+                    </td>
+                    <td align="left" valign="top">
+                      <a href="bearbeiten"> <b>A8 4.2 quattro Langversion 4 Türen</b> </a><br />
+                      Pkw- Limousine - Gebraucht<br />
+                      EZ: 16.03.06, Benzin
+                    </td>
+                    <td align="left" valign="top">
+                      <i class="fa fa-pencil" aria-hidden="true"></i>
+                    </td>
+                    <td align="left" valign="top">
+                      13.04.21</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+            <div class="bg-light text-dark p-3">
+              <h6 class="border-bottom">* MwSt. ausweisbar</h6>
+              <div class="p-5 pt-0 text-end">
+                <div> <button type="button" class="orange-btn my-3">
+                  <i class="fa fa-trash" aria-hidden="true"></i>
+                  Löschen</button></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-12 col-sm-12">
+            <div class="accordion auswahlen-accordion">
+              <div class="accordion-box">
+                <button class="headding" data-toggle="collapse" data-target="#collapse"
+                        aria-expanded="true" aria-controls="collapse">
+                  <span class="icon"></span> SUCHEN
+                </button>
+                <div class="card-text collapse show" id="collapse">
+                  <div class="row">
+                    <div class="col-md-12 col-sm-12">
+                      <div class="w-100">
+                        <label class="my-2 d-block">
+                          Name
+                        </label>
+                        <input type="text"
+                               class="bg-light p-1 w-100 border border-secondary" value=""
+                               placeholder="Name" />
+                      </div>
+                      <div class="d-block d-lg-flex mt-2">
+                        <div class="mb-1 w-50">
+                          <label>Erstzulassung</label>
+                          <select class="form-select w-100"
+                                  aria-label="Default select example">
+                            <option value="1609455600000">2021</option>
+                            <option value="1577833200000">2020</option>
+                            <option value="1546297200000">2019</option>
+                            <option value="1514761200000">2018</option>
+                            <option value="1483225200000">2017</option>
+                            <option value="1451602800000">2016</option>
+                            <option value="1420066800000">2015</option>
+                            <option value="1388530800000">2014</option>
+                            <option value="1356994800000">2013</option>
+                            <option value="1325372400000">2012</option>
+                            <option value="1293836400000">2011</option>
+                            <option value="1262300400000">2010</option>
+                            <option value="1230764400000">2009</option>
+                            <option value="1199142000000">2008</option>
+                            <option value="1167606000000">2007</option>
+                            <option value="1136070000000">2006</option>
+                            <option value="1104534000000">2005</option>
+                            <option value="1072911600000">2004</option>
+                            <option value="1041375600000">2003</option>
+                            <option value="1009839600000">2002</option>
+                            <option value="978303600000">2001</option>
+                            <option value="946681200000">2000</option>
+                            <option value="915145200000">1999</option>
+                            <option value="883609200000">1998</option>
+                            <option value="852073200000">1997</option>
+                            <option value="820450800000">1996</option>
+                            <option value="788914800000">1995</option>
+                            <option value="757378800000">1994</option>
+                            <option value="725842800000">1993</option>
+                            <option value="694220400000">1992</option>
+                            <option value="662684400000">1991</option>
+                            <option value="631148400000">1990</option>
+                            <option value="599612400000">1989</option>
+                            <option value="567990000000">1988</option>
+                            <option value="536454000000">1987</option>
+                            <option value="504918000000">1986</option>
+                            <option value="473382000000">1985</option>
+                            <option value="441759600000">1984</option>
+                            <option value="410223600000">1983</option>
+                            <option value="378687600000">1982</option>
+                            <option value="347151600000">1981</option>
+                            <option value="315529200000">1980</option>
+                            <option value="" selected="selected">Vor 1980</option>
+                          </select>
+                        </div>
+                        <div class="mb-1 w-50 ms-2">
+                          <label>&nbsp;</label>
+                          <select class="form-select" aria-label="Default select example">
+                            <option value="" selected="selected">Beliebig</option>
+                            <option value="1640991599999">2021</option>
+                            <option value="1609455599999">2020</option>
+                            <option value="1577833199999">2019</option>
+                            <option value="1546297199999">2018</option>
+                            <option value="1514761199999">2017</option>
+                            <option value="1483225199999">2016</option>
+                            <option value="1451602799999">2015</option>
+                            <option value="1420066799999">2014</option>
+                            <option value="1388530799999">2013</option>
+                            <option value="1356994799999">2012</option>
+                            <option value="1325372399999">2011</option>
+                            <option value="1293836399999">2010</option>
+                            <option value="1262300399999">2009</option>
+                            <option value="1230764399999">2008</option>
+                            <option value="1199141999999">2007</option>
+                            <option value="1167605999999">2006</option>
+                            <option value="1136069999999">2005</option>
+                            <option value="1104533999999">2004</option>
+                            <option value="1072911599999">2003</option>
+                            <option value="1041375599999">2002</option>
+                            <option value="1009839599999">2001</option>
+                            <option value="978303599999">2000</option>
+                            <option value="946681199999">1999</option>
+                            <option value="915145199999">1998</option>
+                            <option value="883609199999">1997</option>
+                            <option value="852073199999">1996</option>
+                            <option value="820450799999">1995</option>
+                            <option value="788914799999">1994</option>
+                            <option value="757378799999">1993</option>
+                            <option value="725842799999">1992</option>
+                            <option value="694220399999">1991</option>
+                            <option value="662684399999">1990</option>
+                            <option value="631148399999">1989</option>
+                            <option value="599612399999">1988</option>
+                            <option value="567989999999">1987</option>
+                            <option value="536453999999">1986</option>
+                            <option value="504917999999">1985</option>
+                            <option value="473381999999">1984</option>
+                            <option value="441759599999">1983</option>
+                            <option value="410223599999">1982</option>
+                            <option value="378687599999">1981</option>
+                            <option value="347151599999">1980</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="d-block d-lg-flex mt-2">
+                        <div class="mb-2 w-50">
+                          <label>Kilometerstand</label>
+                          <select class="form-select w-100"
+                                  aria-label="Default select example">
+                            <option value="" selected="selected">0</option>
+                            <option value="5000">5.000</option>
+                            <option value="10000">10.000</option>
+                            <option value="20000">20.000</option>
+                            <option value="30000">30.000</option>
+                            <option value="40000">40.000</option>
+                            <option value="50000">50.000</option>
+                            <option value="60000">60.000</option>
+                            <option value="70000">70.000</option>
+                            <option value="80000">80.000</option>
+                            <option value="90000">90.000</option>
+                            <option value="100000">100.000</option>
+                            <option value="125000">125.000</option>
+                            <option value="150000">150.000</option>
+                          </select>
+                        </div>
+                        <div class="mb-2 w-50 ms-2">
+                          <label>&nbsp;</label>
+                          <select class="form-select" aria-label="Default select example">
+                            <option value="" selected="selected">Beliebig</option>
+                            <option value="5000">5.000</option>
+                            <option value="10000">10.000</option>
+                            <option value="20000">20.000</option>
+                            <option value="30000">30.000</option>
+                            <option value="40000">40.000</option>
+                            <option value="50000">50.000</option>
+                            <option value="60000">60.000</option>
+                            <option value="70000">70.000</option>
+                            <option value="80000">80.000</option>
+                            <option value="90000">90.000</option>
+                            <option value="100000">100.000</option>
+                            <option value="125000">125.000</option>
+                            <option value="150000">150.000</option>
+                            <option value="200000">200.000</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="d-block d-lg-flex mt-2">
+                        <div class="mb-2 w-50">
+                          <label>Preis</label>
+                          <select class="form-select w-100"
+                                  aria-label="Default select example">
+                            <option value="" selected="selected">0</option>
+                            <option value="5000">5.000</option>
+                            <option value="10000">10.000</option>
+                            <option value="20000">20.000</option>
+                            <option value="30000">30.000</option>
+                            <option value="40000">40.000</option>
+                            <option value="50000">50.000</option>
+                            <option value="60000">60.000</option>
+                            <option value="70000">70.000</option>
+                            <option value="80000">80.000</option>
+                            <option value="90000">90.000</option>
+                            <option value="100000">100.000</option>
+                            <option value="125000">125.000</option>
+                            <option value="150000">150.000</option>
+                          </select>
+                        </div>
+                        <div class="mb-2 w-50 ms-2">
+                          <label>&nbsp;</label>
+                          <select class="form-select" aria-label="Default select example">
+                            <option value="" selected="selected">Beliebig</option>
+                            <option value="501">501</option>
+                            <option value="1001">1.001</option>
+                            <option value="2001">2.001</option>
+                            <option value="3001">3.001</option>
+                            <option value="4001">4.001</option>
+                            <option value="5001">5.001</option>
+                            <option value="6001">6.001</option>
+                            <option value="7001">7.001</option>
+                            <option value="8001">8.001</option>
+                            <option value="9001">9.001</option>
+                            <option value="10001">10.001</option>
+                            <option value="11001">11.001</option>
+                            <option value="12001">12.001</option>
+                            <option value="13001">13.001</option>
+                            <option value="14001">14.001</option>
+                            <option value="15001">15.001</option>
+                            <option value="17501">17.501</option>
+                            <option value="20001">20.001</option>
+                            <option value="22501">22.501</option>
+                            <option value="25001">25.001</option>
+                            <option value="27501">27.501</option>
+                            <option value="30001">30.001</option>
+                            <option value="35001">35.001</option>
+                            <option value="40001">40.001</option>
+                            <option value="45001">45.001</option>
+                            <option value="50001">50.001</option>
+                            <option value="55001">55.001</option>
+                            <option value="60001">60.001</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="mb-3">
+                        <label>Kraftstoffart</label>
+                        <select class="form-select w-100"
+                                aria-label="Default select example">
+                          <option value="" selected="selected"></option>
+                          <option value="Lpg">Autogas (LPG)</option>
+                          <option value="Petrol">Benzin</option>
+                          <option value="Diesel">Diesel</option>
+                          <option value="Electric">Elektro</option>
+                          <option value="Ethanol">Ethanol (FFV, E85 etc.)</option>
+                          <option value="Cng">Erdgas (CNG)</option>
+                          <option value="Hybrid">Hybrid (Benzin/Elektro)</option>
+                          <option value="Hybrid_Diesel">Hybrid (Diesel/Elektro)</option>
+                          <option value="Hydrogen">Wasserstoff</option>
+                          <option value="Other">Andere</option>
+                        </select>
+                      </div>
+                      <div class="mb-3">
+                        <label>Getriebe</label>
+                        <select class="form-select w-100"
+                                aria-label="Default select example">
+                          <option value="" selected="selected"></option>
+                          <option value="MANUAL">Schaltgetriebe</option>
+                          <option value="AUTOMATIC">Automatik</option>
+                          <option value="SEMIAUTOMATIC">Halbautomatik</option>
+                        </select>
+                      </div>
+                      <a href="#" class="d-block text-decoration-none px-3">
+                        <i class="fa fa-search pe-1" aria-hidden="true"></i>
+                        Suchen</a>
+                      <a href="#" class="d-block text-decoration-none px-3 mb-4 mt-2"><i
+                        class="fa fa-times-circle-o pe-1" aria-hidden="true"></i>
+                        Suche zurücksetzen</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-box">
+                <button class="headding" data-toggle="collapse" data-target="#collapse-two"
+                        aria-expanded="false" aria-controls="collapse">
+                  <span class="icon"></span> FILTER
+                </button>
+                <div class="card-text collapse" id="collapse-two">
+                  <div class="row">
+                    <div class="col-md-12 col-sm-12">
+                      <div class="mb-1 mt-3">
+                        <input class="form-check-input" type="checkbox" value="" id="Mehr">
+                        <label class="form-check-label" for="Mehr">
+                          Mehr als 90 Tage im Bestand</label>
+                      </div>
+                      <div class="mb-1">
+                        <input class="form-check-input" type="checkbox" value="" id="Keine">
+                        <label class="form-check-label" for="Keine">
+                          Keine Bilder</label>
+                      </div>
+                      <div class="mb-1">
+                        <input class="form-check-input" type="checkbox" value=""
+                               id="Unvollständig">
+                        <label class="form-check-label" for="Unvollständig">
+                          Unvollständig</label>
+                      </div>
+                      <hr />
+                      <div class="mb-1">
+                        <input class="form-check-input" type="checkbox" value=""
+                               id="Verkauft">
+                        <label class="form-check-label" for="Verkauft">
+                          Verkauft</label>
+                      </div>
+                      <div class="mb-1">
+                        <input class="form-check-input" type="checkbox" value=""
+                               id="Reserviert">
+                        <label class="form-check-label" for="Reserviert">
+                          Reserviert</label>
+                      </div>
+                      <div class="mb-1">
+                        <input class="form-check-input" type="checkbox" value=""
+                               id="reserviert">
+                        <label class="form-check-label" for="reserviert">
+                          Nicht reserviert</label>
+                      </div>
+                      <hr />
+                      <div class="mb-1">
+                        <input class="form-check-input" type="checkbox" value=""
+                               id="inseriert">
+                        <label class="form-check-label" for="inseriert">
+                          Nicht inseriert</label>
+                      </div>
+                      <div class="mb-1">
+                        <input class="form-check-input" type="checkbox" value=""
+                               id="Inseriert">
+                        <label class="form-check-label" for="Inseriert">
+                          Inseriert</label>
+                      </div>
+                      <hr />
+                      <div class="mb-1">
+                        <input class="form-check-input" type="checkbox" value=""
+                               id="Neufahrzeuge">
+                        <label class="form-check-label" for="Neufahrzeuge">
+                          Neufahrzeuge</label>
+                      </div>
+                      <div class="mb-1">
+                        <input class="form-check-input" type="checkbox" value=""
+                               id="Gebrauchtfahrzeuge">
+                        <label class="form-check-label" for="Gebrauchtfahrzeuge">
+                          Gebrauchtfahrzeuge</label>
+                      </div>
+                      <hr />
+                      <div class="mb-1">
+                        <input class="form-check-input" type="checkbox" value=""
+                               id="Vorführfahreuge">
+                        <label class="form-check-label" for="Vorführfahreuge">
+                          Vorführfahreuge</label>
+                      </div>
+                      <div class="mb-1">
+                        <input class="form-check-input" type="checkbox" value=""
+                               id="Tageszulassungen">
+                        <label class="form-check-label" for="Tageszulassungen">
+                          Tageszulassungen</label>
+                      </div>
+                      <hr />
+                      <div class="mb-1">
+                        <input class="form-check-input" type="checkbox" value="" id="Pkw">
+                        <label class="form-check-label" for="Pkw">
+                          Pkw</label>
+                      </div>
+                      <div class="mb-1">
+                        <input class="form-check-input" type="checkbox" value="" id="Lkw">
+                        <label class="form-check-label" for="Lkw">
+                          Lkw bis 7,5t</label>
+                      </div>
+                      <div class="mb-1">
+                        <input class="form-check-input" type="checkbox" value="" id="WoMo">
+                        <label class="form-check-label" for="WoMo">
+                          WoMo</label>
+                      </div>
+                      <div class="mb-1">
+                        <input class="form-check-input" type="checkbox" value="" id="Krad">
+                        <label class="form-check-label" for="Krad">
+                          Krad</label>
+                      </div>
+                      <div class="mb-1">
+                        <input class="form-check-input" type="checkbox" value="" id="über">
+                        <label class="form-check-label" for="über">
+                          Lkw über 7,5t</label>
+                      </div>
+                      <div class="mb-1">
+                        <input class="form-check-input" type="checkbox" value=""
+                               id="Anhänger">
+                        <label class="form-check-label" for="Anhänger">
+                          Anhänger</label>
+                      </div>
+                      <div class="mb-1">
+                        <input class="form-check-input" type="checkbox" value="" id="SZM">
+                        <label class="form-check-label" for="SZM">
+                          SZM</label>
+                      </div>
+                      <div class="mb-1">
+                        <input class="form-check-input" type="checkbox" value=""
+                               id="Auflieger">
+                        <label class="form-check-label" for="Auflieger">
+                          Auflieger</label>
+                      </div>
+                      <div class="mb-1">
+                        <input class="form-check-input" type="checkbox" value="" id="Bauma">
+                        <label class="form-check-label" for="Bauma">
+                          Bauma</label>
+                      </div>
+                      <div class="mb-1">
+                        <input class="form-check-input" type="checkbox" value="" id="Agrar">
+                        <label class="form-check-label" for="Agrar">
+                          Agrar</label>
+                      </div>
+                      <div class="mb-1">
+                        <input class="form-check-input" type="checkbox" value=""
+                               id="Stapler">
+                        <label class="form-check-label" for="Stapler">
+                          Stapler</label>
+                      </div>
+                      <div class="mb-1">
+                        <input class="form-check-input" type="checkbox" value="" id="Busse">
+                        <label class="form-check-label" for="Busse">
+                          Busse</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--<div id="footer"></div>-->
+
+<a href="#top" id="scrollUp" class="orange-color">
+  <i class="fa fa-angle-up"></i>
+</a>
+<div id="carmodelpopup"></div>
+<div id="carmodelpopup_two"></div>
+
+<%= javascript_include_tag "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js",
+                           integrity: "", crossorigin: "anonymous" %>
+<%= javascript_include_tag "popper.min.js", integrity: "", crossorigin: "anonymous" %>
+<%= javascript_include_tag "bootstrap.min.js", integrity: "", crossorigin: "anonymous" %>
+<%= javascript_include_tag "bootstrap.bundle.min.js", integrity: "", crossorigin: "anonymous" %>
+<%= javascript_include_tag "js.js"%>
+
+<script type="text/javascript">
+    // deleteCookie('show_cars');
+    // setCookie('show_cars', 0, 99);
+    // alert(getCookie('show_cars'));
+    var show_cars = parseInt(getCookie('show_cars'));
+    if (show_cars >= 1) {
+        $('#show_car_1').show();
+        $('#cars-counter').text('(1 - 1 VON 1 FAHRZEUGEN)');
+    } else {
+        // nothing...
+    };
+</script>
+</body>
+
+</html>

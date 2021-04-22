@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>FleeMa // Fahrzeuge // Bearbeiten</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <!-- <link rel='stylesheet' type='text/css' media='screen' href='assets/css/bootstrap.min.css'> -->
+  <%= stylesheet_link_tag "https://getbootstrap.com/docs/5.0/dist/css/bootstrap.min.css", media: "screen" %>
+  <%= stylesheet_link_tag "style", media: "screen" %>
+  <%= stylesheet_link_tag href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" %>
+</head>
+
+<body>
+<!--<div id="header"></div>-->
+<div class="container">
+  <div class="row ">
+    <div class="col-md-12 col-sm-12">
+      <div class="content p-3">
+        <div class="d-block d-md-flex justify-content-between">
+          <div class="w-50">
+            <h1 class="m-0">MARKTÜBERBLICK</h1>
+            <p class="font-size-14 color-primary mt-0">(1-50 VON 1422107 FAHRZEUGEN)</p>
+          </div>
+          <div class="text-end d-flex ms-5 mt-3 me-5">
+            <a href="#" class="link-reset mx-3">
+              <%= link_to carmodel_popup_path, {:remote => true, class: "color-primary"} do %>
+              <p class="m-0 fs-3"> <i class="fa fa-print" data-bs-toggle="modal"
+                                      ></i>
+              </p>
+                <%  end %>
+            </a>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-9 col-md-6 col-sm-12">
+            <div class="">
+              <div class="table-responsive">
+                <table class="table my_table w-100 zuga-table">
+                  <tr>
+                    <th>&nbsp;</th>
+                    <th>&nbsp;</th>
+                    <th>Standtage</th>
+                    <th>Fahrzeugbeschrelbung</th>
+                    <th>EZ</th>
+                    <th>Kilometer</th>
+                    <th>Preis</th>
+                  </tr>
+                  <tr>
+                    <td colspan="7">Fehler beim Laden des Markt-Überblicks. Bitte stellen Sie <a href="zugangsdaten">hier</a> sicher, dass mobile.de verbunden ist.</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+            <nav aria-label="Page navigation example">
+              <ul class="pagination justify-content-end">
+                <li class="page-item disabled">
+                  <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Vorherige </a>
+                </li>
+                <li class="page-item"><a class="page-link" href="markt_uberblick">1</a></li>
+                <li class="page-item disabled">
+                  <a class="page-link" href="#"  aria-disabled="true">Nächste</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <div class="col-lg-3 col-md-12 col-sm-12">
+            <div class="accordion auswahlen-accordion">
+              <div class="accordion-box">
+                <button class="headding" data-toggle="collapse" data-target="#collapsesideone"
+                        aria-expanded="true" aria-controls="collapse">
+                  <span class="icon"></span> SCHNELLZUGRIFF
+                </button>
+                <div class="card-text collapse show" id="collapsesideone">
+                  <div class="p-2">
+                    <%= image_tag "inserats-ticker.png", alt: "", class: "img-fluid" %>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-box">
+                <button class="headding" data-toggle="collapse" data-target="#collapsesidetwo"
+                        aria-expanded="false" aria-controls="collapse">
+                  <span class="icon"></span> SCHNELLZUGRIFF
+                </button>
+                <div class="card-text collapse px-2" id="collapsesidetwo">
+                  <h6 class=" mt-3 mb-2">Treffer</h6>
+                  <a href="#" class="d-block text-decoration-none">
+                    <i class="fa fa-search pe-1 fs-4" aria-hidden="true"></i>
+                    Suchen</a>
+                  <div class="row">
+                    <div class="col-md-12 col-sm-12">
+                      <div class="mt-2 mb-1">
+                        <label>Market</label>
+                        <select class="form-select" aria-label="Default select example">
+                          <option value="" selected="selected">-Bitte wahlen-</option>
+                          <option value="">-Bitte wahlen-</option>
+                          <option value="">-Bitte wahlen-</option>
+                        </select>
+                      </div>
+                      <div class="mt-2 mb-1">
+                        <label>Modell </label>
+                        <select class="form-select" aria-label="Default select example">
+                          <option value="" selected="selected">-Bitte wahlen-</option>
+                          <option value="">-Bitte wahlen-</option>
+                          <option value="">-Bitte wahlen-</option>
+                        </select>
+                      </div>
+                      <div class="w-100">
+                        <label class="my-2 d-block">
+                          Modellvariante
+                        </label>
+                        <input type="text"
+                               class="bg-light p-1 w-100 border border-secondary" value=""
+                               placeholder="" />
+                      </div>
+                      <div class="mt-2 mb-1">
+                        <label>Getriebe </label>
+                        <select class="form-select" aria-label="Default select example">
+                          <option value="" selected="selected">Getriebe auswahlen</option>
+                          <option value="">Getriebe auswahlen</option>
+                          <option value="">Getriebe auswahlen</option>
+                        </select>
+                      </div>
+                      <div class="mt-2 mb-1">
+                        <label>Kraftstoffart </label>
+                        <select class="form-select" aria-label="Default select example">
+                          <option value="" selected="selected">Kraftstoffart auswahlen
+                          </option>
+                          <option value="">Kraftstoffart auswahlen</option>
+                          <option value="">Kraftstoffart auswahlen</option>
+                        </select>
+                      </div>
+                      <div class="mt-2 mb-1">
+                        <label>Fahrzeugzustand </label>
+                        <select class="form-select" aria-label="Default select example">
+                          <option value="" selected="selected">Neu und Gebraucht
+                          </option>
+                          <option value="">Neu und Gebraucht</option>
+                          <option value="">Neu und Gebraucht</option>
+                        </select>
+                      </div>
+                      <div class="d-block d-lg-flex mt-2">
+                        <div class="mb-2 w-50">
+                          <label>Erstzulassung</label>
+                          <select class="form-select w-100"
+                                  aria-label="Default select example">
+                            <option value="" selected="selected">Von</option>
+                            <option value="Von">Von</option>
+                            <option value="Von">Von</option>
+                          </select>
+                        </div>
+                        <div class="mb-2 w-50 ms-2">
+                          <label>&nbsp;</label>
+                          <select class="form-select" aria-label="Default select example">
+                            <option value="" selected="selected">Bis</option>
+                            <option value="Bis">Bis</option>
+                            <option value="Bis">Bis</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="d-block d-lg-flex mt-2">
+                        <div class="mb-2 w-50">
+                          <label>Preis</label>
+                          <select class="form-select w-100"
+                                  aria-label="Default select example">
+                            <option value="" selected="selected">Von</option>
+                            <option value="Von">Von</option>
+                            <option value="Von">Von</option>
+                          </select>
+                        </div>
+                        <div class="mb-2 w-50 ms-2">
+                          <label>&nbsp;</label>
+                          <select class="form-select" aria-label="Default select example">
+                            <option value="" selected="selected">Bis</option>
+                            <option value="Bis">Bis</option>
+                            <option value="Bis">Bis</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="d-block d-lg-flex mt-2">
+                        <div class="mb-2 w-50">
+                          <label>Kilometerstand</label>
+                          <select class="form-select w-100"
+                                  aria-label="Default select example">
+                            <option value="" selected="selected">Von</option>
+                            <option value="Von">Von</option>
+                            <option value="Von">Von</option>
+                          </select>
+                        </div>
+                        <div class="mb-2 w-50 ms-2">
+                          <label>&nbsp;</label>
+                          <select class="form-select" aria-label="Default select example">
+                            <option value="" selected="selected">Bis</option>
+                            <option value="Bis">Bis</option>
+                            <option value="Bis">Bis</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="mb-3">
+                        <label>Beschadlgte Fahrzeuge</label>
+                        <select class="form-select w-100"
+                                aria-label="Default select example">
+                          <option value="" selected="selected">Nicht anzelgen</option>
+                          <option value="Nicht anzelgen">Nicht anzelgen</option>
+                          <option value="Nicht anzelgen">Nicht anzelgen</option>
+                        </select>
+                      </div>
+                      <div class="mb-3">
+                        <label>Fahrzeuge von privat</label>
+                        <select class="form-select w-100"
+                                aria-label="Default select example">
+                          <option value="" selected="selected">Auch anzelgen</option>
+                          <option value="Auch anzelgen">Auch anzelgen</option>
+                          <option value="Auch anzelgen">Auch anzelgen</option>
+                          <option value="Auch anzelgen">Auch anzelgen</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--<div id="footer"></div>-->
+
+
+<div id="carmodelpopup"></div>
+<div id="carmodelpopup_two"></div>
+
+<%= javascript_include_tag "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js",
+                           integrity: "", crossorigin: "anonymous" %>
+<%= javascript_include_tag "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js",
+                           integrity: "", crossorigin: "anonymous" %>
+<%= javascript_include_tag "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js",
+                           integrity: "", crossorigin: "anonymous" %>
+<%= javascript_include_tag "https://getbootstrap.com/docs/5.0/dist/js/bootstrap.bundle.min.js",
+                           integrity: "", crossorigin: "anonymous" %>
+<%= javascript_include_tag "js.js" %>
+</body>
+
+</html>

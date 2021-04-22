@@ -1,0 +1,2 @@
+class BearbeitenController < ApplicationController
+end

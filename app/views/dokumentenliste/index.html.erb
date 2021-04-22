@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>FleeMa // Fahrzeuge // Bearbeiten</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <%= stylesheet_link_tag "bootstrap.min.css", media: "screen" %>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,600;0,800;1,200;1,400&display=swap"
+    rel="stylesheet">
+  <%= stylesheet_link_tag "style", media: "screen" %>
+  <%= stylesheet_link_tag href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" %>
+</head>
+
+<body id="">
+
+<!--<div id="header"></div>-->
+
+
+<div class="container">
+  <div class="row ">
+    <div class="col-md-12 col-sm-12">
+      <div class="content p-3">
+        <h1 class="mb-0"> DOKUMENTENLISTE</h1>
+        <p class="color-primary">(0 - 0 VON 0 DOKUMENTEN)</p>
+        <div class="row">
+          <div class="col-lg-9 col-md-12 col-sm-12">
+            <div class="mb-3">
+              <div class="table-responsive">
+                <table class="table my_table w-100">
+                  <tr>
+                    <th>Dokument</th>
+                    <th>Kunden</th>
+                    <th>Fahrzeug</th>
+                    <th>Rechnungsnummer</th>
+                    <th>Datum</th>
+                    <th>Dateltyp</th>
+                  </tr>
+                  <tr>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                  </tr>
+                  <CAPTION> Laden der Liste fehlgeschlagen ...
+
+                  </CAPTION>
+                </table>
+              </div>
+            </div>
+
+          </div>
+          <div class="col-lg-3 col-md-12 col-sm-12">
+            <div class="accordion auswahlen-accordion">
+              <div class="accordion-box">
+                <button class="headding" data-toggle="collapse" data-target="#collapse"
+                        aria-expanded="true" aria-controls="collapse">
+                  <span class="icon"></span> SUCHEN
+                </button>
+                <div class="card-text collapse show" id="collapse">
+                  <div class="row">
+                    <div class="col-md-12 col-sm-12">
+
+
+
+                      <div class="w-100 mb-3 mt-3">
+                        <label class="d-block">
+                          Von
+                        </label>
+                        <input type="date"
+                               class="bg-light p-1 w-100 border border-secondary" value=""
+                               placeholder="" />
+                      </div>
+                      <div class="w-100 mb-3 mt-1">
+                        <label class="d-block">
+                          Bis
+                        </label>
+                        <input type="date"
+                               class="bg-light p-1 w-100 border border-secondary" value=""
+                               placeholder="" />
+                      </div>
+
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-box">
+                <button class="headding" data-toggle="collapse" data-target="#collapse-two"
+                        aria-expanded="false" aria-controls="collapse">
+                  <span class="icon"></span> FILTER
+                </button>
+                <div class="card-text collapse" id="collapse-two">
+                  <div class="row">
+                    <div class="col-md-12 col-sm-12">
+                      <div class="mb-1 mt-3">
+                        <input class="form-check-input" type="radio" value="" id="Alle">
+                        <label class="form-check-label" for="Alle">
+                          Alle</label>
+                      </div>
+                      <div class="mb-1">
+                        <input class="form-check-input" type="radio" value=""
+                               id="Kundenliste">
+                        <label class="form-check-label" for="Kundenliste">
+                          Kundenliste</label>
+                      </div>
+                      <div class="mb-1">
+                        <input class="form-check-input" type="radio" value=""
+                               id="Bestandsliste">
+                        <label class="form-check-label" for="Bestandsliste">
+                          Bestandsliste</label>
+                      </div>
+                      <hr />
+                      <div class="mb-1">
+                        <input class="form-check-input" type="radio" value=""
+                               id="Probefahrt">
+                        <label class="form-check-label" for="Probefahrt">
+                          Probefahrt</label>
+                      </div>
+                      <div class="mb-1">
+                        <input class="form-check-input" type="radio" value="" id="Angebot">
+                        <label class="form-check-label" for="Angebot">
+                          Angebot</label>
+                      </div>
+                      <div class="mb-1">
+                        <input class="form-check-input" type="radio" value=""
+                               id="Kaufvertrag">
+                        <label class="form-check-label" for="Kaufvertrag">
+                          Kaufvertrag</label>
+                      </div>
+
+                      <div class="mb-1">
+                        <input class="form-check-input" type="radio" value="" id="Rechnung">
+                        <label class="form-check-label" for="Rechnung">
+                          Rechnung</label>
+                      </div>
+                      <div class="mb-1">
+                        <input class="form-check-input" type="radio" value=""
+                               id="Lieferschein">
+                        <label class="form-check-label" for="Lieferschein">
+                          Lieferschein</label>
+                      </div>
+
+
+
+                      <div class="mb-1">
+                        <input class="form-check-input" type="radio" value=""
+                               id="Preisschild">
+                        <label class="form-check-label" for="Preisschild">
+                          Preisschild</label>
+                      </div>
+                      <div class="mb-1">
+                        <input class="form-check-input" type="radio" value=""
+                               id="Handzettel">
+                        <label class="form-check-label" for="Handzettel">
+                          Handzettel</label>
+                      </div>
+
+                      <hr />
+
+
+                      <div class="mb-1">
+                        <input class="form-check-input" type="radio" value=""
+                               id="Upload-Dokument">
+                        <label class="form-check-label" for="Upload-Dokument">
+                          Upload-Dokument</label>
+                      </div>
+                      <hr />
+
+
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--<div id="footer"></div>-->
+
+<a href="#top" id="scrollUp" class="orange-color">
+  <i class="fa fa-angle-up"></i>
+</a>
+<div id="carmodelpopup"></div>
+<div id="carmodelpopup_two"></div>
+
+<%= javascript_include_tag "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js",
+                           integrity: "", crossorigin: "anonymous" %>
+<%= javascript_include_tag "popper.min.js", integrity: "", crossorigin: "anonymous" %>
+<%= javascript_include_tag "bootstrap.min.js", integrity: "", crossorigin: "anonymous" %>
+<%= javascript_include_tag "bootstrap.bundle.min.js", integrity: "", crossorigin: "anonymous" %>
+<%= javascript_include_tag "js.js"%>
+</body>
+
+</html>

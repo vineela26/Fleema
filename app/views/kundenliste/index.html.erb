@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>FleeMa // Fahrzeuge // Bearbeiten</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <%= stylesheet_link_tag "bootstrap.min.css", media: "screen" %>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,600;0,800;1,200;1,400&display=swap"
+    rel="stylesheet">
+  <%= stylesheet_link_tag "style", media: "screen" %>
+  <%= stylesheet_link_tag href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" %>
+</head>
+
+<body id="">
+<!--<div id="header"></div>-->
+<div class="container">
+  <div class="row ">
+    <div class="col-md-12 col-sm-12">
+      <div class="content p-3">
+        <h1 class="m-0">KUNDENLISTE</h1>
+        <p class="color-primary font-size-14"> (1 - 1 VON 1 KUNDEN)
+        </p>
+        <div class="row">
+          <div class="col-lg-9 col-md-6 col-sm-12">
+            <div class="table-responsive">
+              <table class="table my_table w-100">
+                <thead>
+                <tr>
+                  <th>&nbsp; </th>
+                  <th>Persönliche Daten </th>
+                  <th>Telefon-Nr.</th>
+                  <th>Fahrzeug</th>
+                  <th>Einstelldatum</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                  <td align="center" valign="top"><i
+                    class="fa fa-user color-primary font-size-14"
+                    aria-hidden="true"></i>
+                  </td>
+                  <td align="left" valign="top" class="position-relative">
+                    <span class="d-block"><b>Bartels, Patrick</b></span>
+                    <span> 23, 21079 Hamurg</span>
+                    <i class="fa fa-envelope color-primary font-size-14 position-absolute top-0 end-0 me-3 mt-3"
+                       aria-hidden="true"></i>
+                  </td>
+                  <td align="left" valign="top">+4918831117.</td>
+                  <td align="left" valign="top">&nbsp; </td>
+                  <td align="left" valign="top">24.10.13</td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-12 col-sm-12">
+            <div class="accordion auswahlen-accordion">
+              <div class="accordion-box">
+                <button class="headding" data-toggle="collapse" data-target="#collapse"
+                        aria-expanded="true" aria-controls="collapse">
+                  <span class="icon"></span> SUCHEN
+                </button>
+                <div class="card-text collapse show" id="collapse">
+                  <div class="row">
+                    <div class="col-md-12 col-sm-12">
+                      <div class="w-100">
+                        <label class="my-2 d-block">
+                          Kunden
+                        </label>
+                        <input type="text"
+                               class="bg-light p-1 w-100 border border-secondary" value=""
+                               placeholder="Kunden" />
+                      </div>
+                      <div class="w-100">
+                        <label class="my-2 d-block">
+                          Fahrzeug des Kunden
+                        </label>
+                        <input type="text"
+                               class="bg-light p-1 w-100 border border-secondary" value=""
+                               placeholder="Fahrzeug des Kunden
+                                                        " />
+                      </div>
+                      <a href="#" class="d-block text-decoration-none px-3 mt-3">
+                        <i class="fa fa-search pe-1" aria-hidden="true"></i>
+                        Suchen </a>
+                      <a href="#" class="d-block text-decoration-none px-3 mb-4 mt-2"><i
+                        class="fa fa-times-circle-o pe-1" aria-hidden="true"></i>
+                        Suche zurücksetzen</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-box">
+                <button class="headding" data-toggle="collapse" data-target="#collapse-two"
+                        aria-expanded="false" aria-controls="collapse">
+                  <span class="icon"></span> FILTER
+                </button>
+                <div class="card-text collapse" id="collapse-two">
+                  <div class="row">
+                    <div class="col-md-12 col-sm-12">
+                      <div class="mb-1 mt-3">
+                        <input class="form-check-input" type="checkbox" value=""
+                               id="Gewerblich">
+                        <label class="form-check-label" for="Gewerblich">
+                          Gewerblich</label>
+                      </div>
+                      <div class="mb-1">
+                        <input class="form-check-input" type="checkbox" value=""
+                               id="Privat">
+                        <label class="form-check-label" for="Privat">
+                          Privat</label>
+                      </div>
+                      <hr />
+                      <div class="mb-1">
+                        <input class="form-check-input" type="Vorhanden" value=""
+                               id="Verkauft">
+                        <label class="form-check-label" for="Vorhanden">
+                          Vorhanden</label>
+                      </div>
+                      <div class="mb-1">
+                        <input class="form-check-input" type="Interessent" value=""
+                               id="Reserviert">
+                        <label class="form-check-label" for="Interessent">
+                          Interessent</label>
+                      </div>
+                      <hr />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--<div id="footer"></div>-->
+
+<a href="#top" id="scrollUp" class="orange-color">
+  <i class="fa fa-angle-up"></i>
+</a>
+<div id="carmodelpopup"></div>
+<div id="carmodelpopup_two"></div>
+
+<%= javascript_include_tag "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js",
+                           integrity: "", crossorigin: "anonymous" %>
+<%= javascript_include_tag "popper.min.js", integrity: "", crossorigin: "anonymous" %>
+<%= javascript_include_tag "bootstrap.min.js", integrity: "", crossorigin: "anonymous" %>
+<%= javascript_include_tag "bootstrap.bundle.min.js", integrity: "", crossorigin: "anonymous" %>
+<%= javascript_include_tag "js.js"%>
+
+</body>
+
+</html>

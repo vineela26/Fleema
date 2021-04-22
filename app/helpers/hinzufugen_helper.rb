@@ -1,0 +1,2 @@
+module HinzufugenHelper
+end

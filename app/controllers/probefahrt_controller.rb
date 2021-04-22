@@ -1,0 +1,2 @@
+class ProbefahrtController < ApplicationController
+end

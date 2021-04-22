@@ -1,0 +1,2 @@
+class HandzettelController < ApplicationController
+end

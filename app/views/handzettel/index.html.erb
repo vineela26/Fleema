@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>FleeMa // Fahrzeuge // Bearbeiten</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <!-- <link rel='stylesheet' type='text/css' media='screen' href='assets/css/bootstrap.min.css'> -->
+  <%= stylesheet_link_tag "https://getbootstrap.com/docs/5.0/dist/css/bootstrap.min.css", media: "screen" %>
+  <%= stylesheet_link_tag "style", media: "screen" %>
+  <%= stylesheet_link_tag "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" %>
+</head>
+
+<body>
+<!--<div id="header"></div>-->
+
+<div class="container">
+  <div class="row ">
+
+    <div class="col-md-12 col-sm-12">
+      <div class="col-md-12 col-sm-12">
+        <div class="content p-3">
+          <h1>HANDZETTEL</h1>
+          <div class="">
+            <div class="tabs-view">
+              <!-- Lined tabs-->
+              <ul id="myTab2" role="tablist"
+                  class="nav nav-tabs nav-pills with-arrow lined flex-column flex-sm-row text-center">
+                <li class="nav-item flex-sm-fill">
+                  <a id="home2-tab" data-toggle="tab" href="#tab1"
+                     class="nav-link active">Fahrzeug</a>
+                </li>
+                <li class="nav-item flex-sm-fill">
+                  <a id="profile2-tab" data-toggle="tab" href="#tab2"
+                     class="nav-link">Vorschau</a>
+                </li>
+
+
+              </ul>
+              <div id="myTab2Content" class="tab-content">
+                <div id="tab1" role="tabpanel" aria-labelledby="home-tab"
+                     class="tab-pane fade px-4 py-5 show active">
+                  <div class="d-block d-md-flex justify-content-between">
+                    <div class="w-50">
+                      <h5 class="my-2 d-block color-primary">
+                        FAHRZEUG AUSWÄHLEN
+
+
+
+                      </h5>
+                      <input type="text"
+                             class="bg-light p-1 w-100 mt-3 border border-secondary" value=""
+                             placeholder=" Nach Kunden Suchen " />
+                    </div>
+                    <div class="text-end d-flex ms-5 mt-5">
+                      <div class="mx-3 text-center">
+                        <a href="#" class="link-reset">
+                          <p class="m-0 fs-3"> <i class="fa fa-search pe-1"
+                                                  aria-hidden="true"></i>
+                          </p>
+                          <p class="m-0">Suchen</p>
+                        </a>
+                      </div>
+                      <div class="mx-3 text-center">
+                        <a href="#" class="link-reset">
+                          <p class="m-0 fs-3"> <i class="fa fa-times-circle-o pe-1"
+                                                  aria-hidden="true"></i>
+                          </p>
+                          <p class="m-0">Suche zurücksetzen</p>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="my-3">
+                    <div class="table-responsive">
+
+                      <table class="table my_table w-100">
+
+                        <tr>
+                          <th>Marke, Modell, Modellvariante</th>
+                          <th>EZ</th>
+                          <th>Preis</th>
+                          <th>km</th>
+                          <th>Datum</th>
+                        </tr>
+                        <tr>
+                          <td>A8 4.2 quattro Langversion 4 Türen (334 PS/246 kW)</td>
+                          <td>03.2006</td>
+                          <td>0 €</td>
+                          <td></td>
+                          <td>13.04.2021</td>
+                        </tr>
+
+                      </table>
+                    </div>
+                  </div>
+
+
+
+
+
+
+
+
+                </div>
+                <div id="tab2" role="tabpanel" aria-labelledby="profile-tab"
+                     class="tab-pane fade px-4 py-5">
+                  <div class="row">
+                    <div class="col-md-6 col-sm-12">
+                      <div class="h-100">
+                        <iframe src=" <%= asset_path 'handzettel.pdf' %>#toolbar=0" frameborder="0"
+                                class="w-100 h-100"></iframe>
+                      </div>
+
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                      <div class="w-100 mb-3 mt-5 mt-md-0">
+                        <label class="d-block">
+                          Modellvariante
+                        </label>
+                        <input type="text"
+                               class="bg-light p-1 w-100 border border-secondary" value=""
+                               placeholder="" />
+                      </div>
+                      <div class="w-100 mb-3">
+                        <label class="d-block">
+                          Schriftgröße
+                        </label>
+                        <select class="form-select w-50"
+                                aria-label="Default select example">
+
+                          <option value="60">60 %</option>
+                          <option value="80">80 %</option>
+                          <option value="90">90 %</option>
+                          <option value="100" selected="selected">100 %</option>
+                          <option value="110">110 %</option>
+                          <option value="120">120 %</option>
+                          <option value="130">130 %</option>
+                          <option value="140">140 %</option>
+                          <option value="160">160 %</option>
+                          <option value="180">180 %</option>
+                          <option value="200">200 %</option>
+                        </select>
+                      </div>
+                      <div class="mb-3">
+                        <input class="form-check-input" type="checkbox" value=""
+                               id="flexCheckDefault">
+                        <label class="form-check-label" for="">
+                          Ausstattung anzeigen</label>
+                        <textarea class="bg-light mt-2 w-100 border border-secondary"
+                                  placeholder="" id="floatingTextarea2"
+                                  style="height: 100px"></textarea>
+
+                      </div>
+                      <div class="mb-3">
+                        <input class="form-check-input" type="checkbox" value=""
+                               id="flexCheckDefault">
+                        <label class="form-check-label" for="">
+                          Beschreibungsstext anzeigen</label>
+                        <textarea class="bg-light mt-2 w-100 border border-secondary"
+                                  placeholder="" id="floatingTextarea2"
+                                  style="height: 100px"></textarea>
+
+                      </div>
+                      <div class="w-50">
+                        <label class="my-2 d-block">
+                          Platzpreis (EUR)</label>
+                        <input type="text"
+                               class="bg-light p-1 w-100 border border-secondary" value=""
+                               placeholder="Platzpreis (EUR)" />
+                      </div>
+                      <p class="text-end">
+                        <a href="#" class="link-reset">Vorschau aktualisieren</a>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+
+              </div>
+              <!-- End lined tabs -->
+            </div>
+          </div>
+
+          <div class="p-2 text-end">
+            <div id="navigationBtns">
+              <a href="#" class="link-reset">Abbrechen</a>
+              <input type="button" id="" value="Zurück" title="" class="orange-btn btnPrevious">
+              <input type="button" id="" value="Nächste" title="Nächste" class="orange-btn btnNext">
+              <input type="button" id="" value="Speichern" title="Speichern" class="orange-btn">
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--<div id="footer"></div>-->
+
+<div id="carmodelpopup"></div>
+<div id="carmodelpopup_two"></div>
+
+<%= javascript_include_tag "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js",
+                           integrity: "", crossorigin: "anonymous" %>
+<%= javascript_include_tag "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js",
+                           integrity: "", crossorigin: "anonymous" %>
+<%= javascript_include_tag "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js",
+                           integrity: "", crossorigin: "anonymous" %>
+<%= javascript_include_tag "https://getbootstrap.com/docs/5.0/dist/js/bootstrap.bundle.min.js",
+                           integrity: "", crossorigin: "anonymous" %>
+<%= javascript_include_tag "js.js" %>
+</body>
+
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>FleeMa // Fahrzeuge // Bearbeiten</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <!-- <link rel='stylesheet' type='text/css' media='screen' href='assets/css/bootstrap.min.css'> -->
+  <%= stylesheet_link_tag "https://getbootstrap.com/docs/5.0/dist/css/bootstrap.min.css", media: "screen" %>
+  <%= stylesheet_link_tag "style", media: "screen" %>
+  <%= stylesheet_link_tag href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" %>
+</head>
+
+<body>
+<!--<div id="header"></div>-->
+<div class="container">
+  <div class="row ">
+    <div class="col-md-12 col-sm-12">
+      <div class="col-md-12 col-sm-12">
+        <div class="content p-3">
+          <h1>ZUGANGSDATEN: FAHRZEUGBÖRSEN
+          </h1>
+          <div class="mt-4">
+            <div class="table-responsive">
+              <table class="table my_table w-100 zuga-table">
+                <tr>
+                  <th>Verbunden</th>
+                  <th>Anbieter</th>
+                  <th>Letzter Export</th>
+                  <th>Nutzername</th>
+                  <th>Passwort</th>
+                  <th>Kundennummer</th>
+                </tr>
+                <tr>
+                  <td valign="middle" align="center">
+                    <i class="fa fa-times zuga-close-icon" aria-hidden="true"></i>
+                  </td>
+                  <td valign="middle" align="left"><%= image_tag "c-logo-4.png", alt: "" %>
+                  </td>
+                  <td>
+                    <span class="zuga-span-text"></span>
+                    <span class="zuga-span-text"></span>
+                    <span class="zuga-span-text"></span>
+                  </td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td> <span class="zuga-span-text">mobile.de</span>
+                    <span class="zuga-span-text">Kundennummer:</span>
+                    <span class="zuga-span-text"><b>Eingeben</b></span>
+                  </td>
+                </tr>
+                <tr>
+                  <td valign="middle" align="center">
+                    <i class="fa fa-times zuga-close-icon" aria-hidden="true"></i>
+                  </td>
+                  <td valign="middle" align="left"><%= image_tag "c-logo-3.png", alt: "" %>
+                  </td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td> <span class="zuga-span-text">Auto/MotoScout24-</span>
+                    <span class="zuga-span-text">Kundennummer:</span>
+                    <span class="zuga-span-text"><b>Eingeben</b></span>
+                  </td>
+                </tr>
+                <tr>
+                  <td valign="middle" align="center">
+                    <i class="fa fa-times zuga-close-icon" aria-hidden="true"></i>
+                  </td>
+                  <td valign="middle" align="left"> <%= image_tag "c-logo-2.png", alt: "" %>
+                  </td>
+                  <td>&nbsp;</td>
+                  <td> <span class="zuga-span-text">AutoScout24 Trucks-</span>
+                    <span class="zuga-span-text">Nutzername:</span>
+                    <span class="zuga-span-text"><b>Eingeben</b></span>
+                  </td>
+                  <td>
+                    <span class="zuga-span-text">AutoScout24 Trucks-</span>
+                    <span class="zuga-span-text">Passwort:</span>
+                    <span class="zuga-span-text"><b>Eingeben</b></span>
+                  </td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td valign="middle" align="center">
+                    <i class="fa fa-times zuga-close-icon" aria-hidden="true"></i>
+                  </td>
+                  <td valign="middle" align="left"> <%= image_tag "c-logo-1.png", alt: "" %>
+                  </td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+
+                  <td>
+                    <span class="zuga-span-text">Pkw.de-</span>
+                    <span class="zuga-span-text">Kundennummer:</span>
+                    <span class="zuga-span-text"><b>Eingeben</b></span>
+                  </td>
+                </tr>
+                <tr>
+                  <td valign="middle" align="center">
+                    <i class="fa fa-times zuga-close-icon" aria-hidden="true"></i>
+                  </td>
+                  <td valign="middle" align="left"> <%= image_tag "c-logo-5.png", alt: "" %>
+                  </td>
+                  <td>&nbsp;</td>
+                  <td> <span class="zuga-span-text">webmobil24-</span>
+                    <span class="zuga-span-text">Kundennummer:</span>
+                    <span class="zuga-span-text"><b>Eingeben</b></span>
+                  </td>
+                  <td>
+                    <span class="zuga-span-text">webmobil24-</span>
+                    <span class="zuga-span-text">Passwort:</span>
+                    <span class="zuga-span-text"><b>Eingeben</b></span>
+                  </td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td valign="middle" align="center">
+                    <i class="fa fa-times zuga-close-icon" aria-hidden="true"></i>
+                  </td>
+                  <td valign="middle" align="left"> <%= image_tag "c-logo-6.png", alt: "" %>
+                  </td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td> <span class="zuga-span-text">auto24-</span>
+                    <span class="zuga-span-text">Kundennummer:</span>
+                    <span class="zuga-span-text"><b>Eingeben</b></span>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="6">Weitere Anbieter folgen in Kürze!</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--<div id="footer"></div>-->
+
+<div id="carmodelpopup"></div>
+<div id="carmodelpopup_two"></div>
+
+<%= javascript_include_tag "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js",
+                           integrity: "", crossorigin: "anonymous" %>
+<%= javascript_include_tag "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js",
+                           integrity: "", crossorigin: "anonymous" %>
+<%= javascript_include_tag "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js",
+                           integrity: "", crossorigin: "anonymous" %>
+<%= javascript_include_tag "https://getbootstrap.com/docs/5.0/dist/js/bootstrap.bundle.min.js",
+                           integrity: "", crossorigin: "anonymous" %>
+<%= javascript_include_tag "js.js" %>
+</body>
+
+</html>

@@ -1,0 +1,2 @@
+class KundenlisteController < ApplicationController
+end

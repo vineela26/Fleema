@@ -1,0 +1,2 @@
+class BestandController < ApplicationController
+end

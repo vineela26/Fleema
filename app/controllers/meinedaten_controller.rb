@@ -1,0 +1,2 @@
+class MeinedatenController < ApplicationController
+end

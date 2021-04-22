@@ -1,0 +1,2 @@
+class HinzufugenController < ApplicationController
+end

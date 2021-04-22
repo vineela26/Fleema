@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>FleeMa // Fahrzeuge // Bearbeiten</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <!-- <link rel='stylesheet' type='text/css' media='screen' href='assets/css/bootstrap.min.css'> -->
+  <%= stylesheet_link_tag "https://getbootstrap.com/docs/5.0/dist/css/bootstrap.min.css", media: "screen" %>
+  <%= stylesheet_link_tag "style", media: "screen" %>
+  <%= stylesheet_link_tag "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" %>
+</head>
+
+<body id="">
+<!--<div id="header"></div>-->
+<div class="container">
+  <div class="row ">
+    <div class="col-md-12 col-sm-12">
+      <div class="content p-3">
+        <h1>MEINE DATEN</h1>
+        <div class="row">
+          <div class="col-lg-9 col-md-6 col-sm-12">
+            <div class="row">
+              <div class="col-lg-6 col-md-12 col-sm-12">
+                <div class="" id="">
+                  <div class="">
+                    <div class="mx-2 me-0">
+                      <div class="w-100">
+                        <label class="my-2 d-block">
+                          Firmenname (lt. HGB / Gewerbeeintrag) *
+                        </label>
+                        <input type="text"
+                               class="bg-light p-1 w-100 border border-secondary" value="Autohandel Popal"
+                               placeholder="" />
+                      </div>
+                    </div>
+                    <div class="d-flex">
+                      <div class="w-25 mx-2">
+                        <div class="w-100">
+                          <label class="my-2 d-block">
+                            Inhaber/GF
+                          </label>
+                          <select class="form-select" aria-label="Default select example">
+                            <option value="" selected="selected">Bitte wählen
+                            </option>
+                            <option value="soleOwner">Inhaber</option>
+                            <option value="managingDirector">Geschäftsführer</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="w-75 mx-2 me-0">
+                        <div class="w-100">
+                          <label class="my-2 d-block">
+                            Name
+                          </label>
+                          <input type="text"
+                                 class="bg-light p-1 w-100 border border-secondary" value=""
+                                 placeholder="Name" />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="d-flex">
+                      <div class="w-75 mx-2 me-0">
+                        <div class="w-100">
+                          <label class="my-2 d-block">
+                            Straße
+                          </label>
+                          <input type="text"
+                                 class="bg-light p-1 w-100 border border-secondary" value="Grossmannstrasse"
+                                 placeholder="" />
+                        </div>
+                      </div>
+                      <div class="w-25 mx-2">
+                        <div class="w-100">
+                          <label class="my-2 d-block">
+                            Nr
+                          </label>
+                          <input type="text"
+                                 class="bg-light p-1 w-100 border border-secondary" value="129"
+                                 placeholder="" />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="d-flex">
+                      <div class="w-25 mx-2">
+                        <div class="w-100">
+                          <label class="my-2 d-block">
+                            PLZ
+                          </label>
+                          <input type="text"
+                                 class="bg-light p-1 w-100 border border-secondary" value="20539"
+                                 placeholder="" />
+                        </div>
+                      </div>
+                      <div class="w-75 mx-2 me-0">
+                        <div class="w-100">
+                          <label class="my-2 d-block">
+                            Ort
+                          </label>
+                          <input type="text"
+                                 class="bg-light p-1 w-100 border border-secondary" value="Hamburg"
+                                 placeholder="" />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="mx-2 w-100">
+                      <div class="w-100">
+                        <label class="my-2 d-block">
+                          Land
+                        </label>
+                        <select class="form-select" aria-label="Default select example">
+                          <option value="">- Bitte wählen -</option>
+                          <option value="deu" selected="selected">Deutschland</option>
+                          <option value="bel">Belgien</option>
+                          <option value="bgr">Bulgarien</option>
+                          <option value="dnk">Dänemark</option>
+                          <option value="est">Estland</option>
+                          <option value="fin">Finnland</option>
+                          <option value="fra">Frankreich</option>
+                          <option value="geo">Georgien</option>
+                          <option value="grc">Griechenland</option>
+                          <option value="gbr">Großbritannien</option>
+                          <option value="irl">Irland</option>
+                          <option value="ita">Italien</option>
+                          <option value="hrv">Kroatien</option>
+                          <option value="lva">Lettland</option>
+                          <option value="lie">Liechtenstein</option>
+                          <option value="ltu">Litauen</option>
+                          <option value="lux">Luxemburg</option>
+                          <option value="mlt">Malta</option>
+                          <option value="mda">Moldawien</option>
+                          <option value="mco">Monaco</option>
+                          <option value="mne">Montenegro</option>
+                          <option value="nld">Niederlande</option>
+                          <option value="nor">Norwegen</option>
+                          <option value="aut">Österreich</option>
+                          <option value="pol">Polen</option>
+                          <option value="prt">Portugal</option>
+                          <option value="rou">Rumänien</option>
+                          <option value="rus">Russland</option>
+                          <option value="smr">San Marino</option>
+                          <option value="swe">Schweden</option>
+                          <option value="che">Schweiz</option>
+                          <option value="srb">Serbien</option>
+                          <option value="scg">Serbien und Montenegro</option>
+                          <option value="svk">Slowakische Republik</option>
+                          <option value="svn">Slowenien</option>
+                          <option value="esp">Spanien</option>
+                          <option value="cze">Tschechische Republik</option>
+                          <option value="tur">Türkei</option>
+                          <option value="ukr">Ukraine</option>
+                          <option value="hun">Ungarn</option>
+                          <option value="usa">USA</option>
+                          <option value="blr">Weißrussland</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="mt-3"> <label class="mx-2 d-block">
+                      1. Telefon-Nr.
+                    </label>
+                      <div class="d-flex">
+                        <div class="w-25 mx-2">
+                          <input type="text"
+                                 class="bg-light p-1 w-100 border border-secondary" value="+49"
+                                 placeholder="" />
+                        </div>
+                        <div class="w-25 mx-2">
+                          <input type="text"
+                                 class="bg-light p-1 w-100 border border-secondary" value="40"
+                                 placeholder="" />
+                        </div>
+                        <div class="w-50 mx-2 me-0">
+                          <input type="text"
+                                 class="bg-light p-1 w-100 border border-secondary" value="78876837"
+                                 placeholder="" />
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="mt-3">
+                      <label class="mx-2 d-block">
+                        2. Telefon-Nr.
+                      </label>
+                      <div class="d-flex">
+                        <div class="w-25 mx-2">
+                          <input type="text"
+                                 class="bg-light p-1 w-100 border border-secondary" value=""
+                                 placeholder="" />
+                        </div>
+                        <div class="w-25 mx-2">
+                          <input type="text"
+                                 class="bg-light p-1 w-100 border border-secondary" value=""
+                                 placeholder="" />
+                        </div>
+                        <div class="w-50 mx-2 me-0">
+                          <input type="text"
+                                 class="bg-light p-1 w-100 border border-secondary" value=""
+                                 placeholder="" />
+                        </div>
+                      </div>
+                    </div>
+
+
+
+                    <div class="mt-3"> <label class="mx-2 d-block">
+                      Fax-Nr.
+                    </label>
+                      <div class="d-flex">
+                        <div class="w-25 mx-2">
+                          <input type="text"
+                                 class="bg-light p-1 w-100 border border-secondary" value="+49"
+                                 placeholder="" />
+                        </div>
+                        <div class="w-25 mx-2">
+                          <input type="text"
+                                 class="bg-light p-1 w-100 border border-secondary" value="40"
+                                 placeholder="" />
+                        </div>
+                        <div class="w-50 mx-2 me-0">
+                          <input type="text"
+                                 class="bg-light p-1 w-100 border border-secondary" value="78876891"
+                                 placeholder="" />
+                        </div>
+                      </div>
+                    </div>
+
+
+
+
+                    <div class="mx-2 w-100">
+                      <label class="my-2 d-block">
+                        E-Mail-Adresse
+
+                      </label>
+                      <input type="text" class="bg-light p-1 w-100 border border-secondary"
+                             value="popal@mobile.de" placeholder="" />
+                    </div>
+                    <div class="mx-2 w-100">
+                      <label class="my-2 d-block">
+                        Ihre Firmen-Homepage
+
+                      </label>
+                      <input type="text" class="bg-light p-1 w-100 border border-secondary"
+                             value="" placeholder="" />
+                    </div>
+
+
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6 col-md-12 col-sm-12">
+                <div class="" id="">
+                  <div class="">
+                    <div class="d-flex">
+                      <div class="w-50 mx-2">
+                        <div class="w-100">
+                          <label class="my-2 d-block">
+                            Handelsregister
+
+                          </label>
+                          <input type="text"
+                                 class="bg-light p-1 w-100 border border-secondary" value=""
+                                 placeholder="" />
+                        </div>
+                      </div>
+                      <div class="w-50 mx-2 me-0">
+                        <div class="w-100">
+                          <label class="my-2 d-block">
+                            Handelsregisternr.
+
+                          </label>
+                          <input type="text"
+                                 class="bg-light p-1 w-100 border border-secondary" value=""
+                                 placeholder="" />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="d-flex">
+                      <div class="w-50 mx-2">
+                        <div class="w-100">
+                          <label class="my-2 d-block">
+                            USt.-IdNr.
+
+                          </label>
+                          <input type="text"
+                                 class="bg-light p-1 w-100 border border-secondary" value="DE263671039"
+                                 placeholder="" />
+                        </div>
+                      </div>
+                      <div class="w-50 mx-2 me-0">
+                        <div class="w-100">
+                          <label class="my-2 d-block">
+                            Steuernummer
+                          </label>
+                          <input type="text"
+                                 class="bg-light p-1 w-100 border border-secondary" value=""
+                                 placeholder="" />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="mx-2 w-100">
+                      <label class="my-2 d-block">
+                        Unternehmensform
+                      </label>
+                      <input type="text" class="bg-light p-1 w-100 border border-secondary"
+                             value="" placeholder="" />
+                    </div>
+                    <div class="mx-2 w-100">
+                      <label class="my-2 d-block">
+                        Kommanditist
+                      </label>
+                      <input type="text" class="bg-light p-1 w-100 border border-secondary"
+                             value="" placeholder="" />
+                    </div>
+                    <div class="mx-2 w-100">
+                      <label class="my-2 d-block">
+                        Kontonummer
+
+                      </label>
+                      <input type="text" class="bg-light p-1 w-100 border border-secondary"
+                             value="" placeholder="" />
+                    </div>
+                    <div class="mx-2 w-100">
+                      <label class="my-2 d-block">
+                        Bankleitzahl
+                      </label>
+                      <input type="text" class="bg-light p-1 w-100 border border-secondary"
+                             value="" placeholder="" />
+                    </div>
+                    <div class="mx-2 w-100">
+                      <label class="my-2 d-block">
+                        Bank
+                      </label>
+                      <input type="text" class="bg-light p-1 w-100 border border-secondary"
+                             value="" placeholder="" />
+                    </div>
+                    <div class="mx-2 w-100">
+                      <label class="my-2 d-block">
+                        IBAN
+                      </label>
+                      <input type="text" class="bg-light p-1 w-100 border border-secondary"
+                             value="" placeholder="" />
+                    </div>
+                    <div class="mx-2 w-100">
+                      <label class="my-2 d-block">
+                        SWIFT
+                      </label>
+                      <input type="text" class="bg-light p-1 w-100 border border-secondary"
+                             value="" placeholder="" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-12">
+            <div class="accordion auswahlen-accordion">
+              <div class="accordion-box">
+                <button class="headding" data-toggle="collapse" data-target="#collapse"
+                        aria-expanded="true" aria-controls="collapse">
+                  <span class="icon"></span> DOKUMENTE
+                </button>
+                <div class="card-text collapse show" id="collapse">
+                  <div class="row">
+                    <div class="col-md-12 col-sm-12">
+                      <div class="p-3">
+
+                        <ul class="list-group">
+                          <li class="list-group-item border-0 p-0 mb-1">
+
+                            <a href="#" class="text-decoration-none color-primary"><i
+                              class="fa fa-angle-double-right"
+                              aria-hidden="true"></i>
+                              Preisliste
+                            </a>
+                          </li>
+                          <li class="list-group-item border-0 p-0 mb-1">
+                            <a href="#" class="text-decoration-none color-primary"><i
+                              class="fa fa-angle-double-right"
+                              aria-hidden="true"></i> AGB
+                              FleeMa
+                            </a>
+                          </li>
+                          <li class="list-group-item border-0 p-0 mb-1">
+                            <a href="#" class="text-decoration-none color-primary"><i
+                              class="fa fa-angle-double-right"
+                              aria-hidden="true"></i>
+                              Hinweise zum Datenschutz </a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button type="button" class="orange-btn pull-right">Speichern</button>
+        <div style="clear: both;"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--<div id="footer"></div>-->
+
+<a href="#top" id="scrollUp" class="orange-color">
+  <i class="fa fa-angle-up"></i>
+</a>
+<div id="carmodelpopup"></div>
+<div id="carmodelpopup_two"></div>
+
+<%= javascript_include_tag "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js",
+                           integrity: "", crossorigin: "anonymous" %>
+<%= javascript_include_tag "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js",
+                           integrity: "", crossorigin: "anonymous" %>
+<%= javascript_include_tag "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js",
+                           integrity: "", crossorigin: "anonymous" %>
+<%= javascript_include_tag "https://getbootstrap.com/docs/5.0/dist/js/bootstrap.bundle.min.js",
+                           integrity: "", crossorigin: "anonymous" %>
+<%= javascript_include_tag "js.js" %>
+</body>
+
+</html>

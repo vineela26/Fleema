@@ -1,0 +1,2 @@
+class ZugangsdatenController < ApplicationController
+end

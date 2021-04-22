@@ -1,0 +1,2 @@
+class UbersichtController < ApplicationController
+end

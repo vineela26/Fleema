@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>AutoAct // Fahrzeuge // Bearbeiten</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <%= stylesheet_link_tag "bootstrap.min.css", media: "all" %>
+<!--  <link rel='stylesheet' type='text/css' media='screen' href='assets/css/bootstrap.min.css'>-->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,600;0,800;1,200;1,400&display=swap"
+    rel="stylesheet">
+  <%= stylesheet_link_tag "style", media: "all" %>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body id="">
+<!--<div class="header" id="top">-->
+<!--  <nav class="navbar navbar-expand-lg bg-white px-3 shadow-sm mb-3" aria-label="Fourth navbar example">-->
+<!--    <div class="container">-->
+<!--      <a class="navbar-brand py-0" href="#">-->
+        <%#= image_tag "logo-new.png" %>
+<!--      </a>-->
+<!--      <button class="navbar-toggler border-0 bg-transparent" type="button" data-bs-toggle="collapse"-->
+<!--              data-bs-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false"-->
+<!--              aria-label="Toggle navigation">-->
+<!--        <i class="fa fa-bars"></i>-->
+<!--      </button>-->
+<!--      <div class="collapse navbar-collapse" id="navbarsExample04">-->
+<!--        <ul class="navbar-nav">-->
+<!--          <li class="nav-item"><a class="nav-link" href="#">Fahrzeuge</a>-->
+<!--            <div class="subdropdonw">-->
+<!--              <div class="menucontent">-->
+<!--                <ul class="m-0 p-0">-->
+<!--                  <li class="">-->
+<!--                    <a href="#">Bestand</a>-->
+<!--                    <p>Bearbeiten, inserieren oder löschen Sie bestehende Fahrzeuge.-->
+
+<!--                      Pflegen Sie neue Fahrzeuge ein.-->
+<!--                    </p>-->
+<!--                  </li>-->
+<!--                  <li class="">-->
+
+<!--                    <a href="#">Marktüberblick</a>-->
+<!--                    <p>Welche Fahrzeuge befinden sich auf dem mobile.de Marktplatz? Was macht-->
+<!--                      der Wettbewerb?</p>-->
+
+<!--                  </li>-->
+<!--                  <li>-->
+<!--                    <button type="button" class="orange-btn my-3 w-100">-->
+<!--                      Neues Fahrzeug hinzufügen</button>-->
+<!--                  </li>-->
+<!--                </ul>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </li>-->
+<!--          <li class="nav-item"><a class="nav-link" href="#">Inserieren</a>-->
+<!--            <div class="subdropdonw">-->
+<!--              <div class="menucontent">-->
+<!--                <ul class="m-0 p-0">-->
+<!--                  <li class="">-->
+<!--                    <a href="#">Übersicht</a>-->
+<!--                    <p>Welche Fahrzeuge sind auf welchen Börsen inseriert? <br>Rufen Sie den-->
+<!--                      Status Ihrer Inserate auf.</p>-->
+<!--                  </li>-->
+<!--                  <li class="">-->
+<!--                    <a href="#">Zugangsdaten</a>-->
+<!--                    <p>Tragen Sie hier die Zugangsdaten für die Börsen ein, auf denen Ihre-->
+<!--                      Inserate erscheinen sollen.</p>-->
+<!--                  </li>-->
+<!--                </ul>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </li>-->
+<!--          <li class="nav-item"><a class="nav-link" href="#">Kunden</a>-->
+<!--            <div class="subdropdonw">-->
+<!--              <div class="menucontent">-->
+<!--                <ul class="m-0 p-0">-->
+<!--                  <li class="">-->
+<!--                    <a href="#">Kundenliste</a>-->
+<!--                    <p>Bearbeiten oder löschen Sie bestehende Kunden. Pflegen Sie neue Kunden-->
+<!--                      ein.</p>-->
+<!--                  </li>-->
+<!--                </ul>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </li>-->
+<!--          <li class="nav-item"><a class="nav-link" href="#">Dokumente</a>-->
+<!--            <div class="subdropdonw">-->
+<!--              <div class="menucontent">-->
+<!--                <ul class="m-0 p-0">-->
+<!--                  <li class="">-->
+<!--                    <a href="#">Übersicht</a>-->
+<!--                    <p>Alle Dokumente auf einem Blick.</p>-->
+
+<!--                  </li>-->
+<!--                  <li class="">-->
+<!--                    <a href="#">Dokumentenliste</a>-->
+<!--                    <p>Finden Sie mit wenigen Klicks Ihre hinterlegten Dokumente</p>-->
+
+<!--                  </li>-->
+<!--                </ul>-->
+
+<!--                <ul class="m-0 p-0 d-lg-flex flex-lg-wrap">-->
+
+<!--                  <li class="w-50 ">-->
+
+<!--                    <a href="#">Kundenliste</a>-->
+
+<!--                  </li>-->
+<!--                  <li class="w-50">-->
+
+
+<!--                    <a href="#">Bestandsliste</a>-->
+
+<!--                  </li>-->
+<!--                  <li class="w-50">-->
+
+
+<!--                    <a href="#">Probefahrt</a>-->
+
+<!--                  </li>-->
+<!--                  <li class="w-50">-->
+
+
+<!--                    <a href="#">Angebot</a>-->
+
+<!--                  </li>-->
+<!--                  <li class="w-50">-->
+
+
+<!--                    <a href="#">Kaufvertrag</a>-->
+
+<!--                  </li>-->
+<!--                  <li class="w-50">-->
+
+
+<!--                    <a href="#">Rechnung</a>-->
+
+<!--                  </li>-->
+<!--                  <li class="w-50">-->
+
+
+<!--                    <a href="#">Lieferschein</a>-->
+
+<!--                  </li>-->
+<!--                  <li class="w-50">-->
+
+
+<!--                    <a href="#">Preisschild</a>-->
+
+<!--                  </li>-->
+<!--                  <li class="w-50">-->
+
+<!--                    <a href="#">Handzettel</a>-->
+
+<!--                  </li>-->
+<!--                  <li class="w-50">-->
+
+
+<!--                    <a href="#">Ankaufvertrag</a>-->
+
+<!--                  </li>-->
+<!--                </ul>-->
+
+<!--              </div>-->
+<!--            </div>-->
+<!--          </li>-->
+<!--          <li class="nav-item"><a class="nav-link" href="#">Anruf-Analyst</a></li>-->
+<!--          <li class="nav-item"><a class="nav-link" href="#">Einstellungen</a>-->
+
+<!--            <div class="subdropdonw">-->
+<!--              <div class="menucontent">-->
+<!--                <ul class="m-0 p-0">-->
+<!--                  <li>-->
+
+<!--                    <a href="#">Meine Daten</a>-->
+<!--                    <p>Bearbeiten oder ergänzen Sie Ihre Firmendaten, welche auf den Dokumenten-->
+<!--                      erscheinen.</p>-->
+
+<!--                  </li>-->
+<!--                  <li>-->
+
+<!--                    <a href="#">Persönliche Einstellungen</a>-->
+<!--                    <p>Definieren Sie Standardtexte und Standardeinstellungen.</p>-->
+
+<!--                  </li>-->
+<!--                  <li>-->
+<!--                    <button type="button" class="orange-btn my-3 w-100">-->
+<!--                      Import von mobile.de</button>-->
+
+
+<!--                  </li>-->
+<!--                </ul>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </li>-->
+<!--        </ul>-->
+<!--        <div class="dropdown d-none d-lg-block">-->
+<!--          <div class="user-profile-icon border-0" id="dropdownMenuButton" data-toggle="dropdown">-->
+<!--            AA-->
+<!--          </div>-->
+<!--          <div class="dropdown-menu shadow-sm" aria-labelledby="dropdownMenuButton">-->
+<!--            <a class="dropdown-item" href="#">Kundennr.: 512463</a>-->
+<!--            <a class="dropdown-item" href="#">Logout</a>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--         This line needs to be commented <div class="user-profile-icon">AA</div> -->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </nav>-->
+<!--</div>-->
+<div class="container">
+  <div class="row ">
+    <div class="col-md-12 col-sm-12">
+      <div class="content p-3">
+        <h1>ANGEBOT</h1>
+        <div class="">
+          <div class="tabs-view">
+            <!-- Lined tabs-->
+            <ul id="myTab2" role="tablist"
+                class="nav nav-tabs nav-pills with-arrow lined flex-column flex-sm-row text-center">
+              <li class="nav-item flex-sm-fill">
+                <a id="home2-tab" data-toggle="tab" href="#tab1" class="nav-link active">Suchen</a>
+              </li>
+              <li class="nav-item flex-sm-fill">
+                <a id="profile2-tab" data-toggle="tab" href="#tab2" class="nav-link">Berechnen</a>
+              </li>
+              <li class="nav-item flex-sm-fill">
+                <a id="contact2-tab" data-toggle="tab" href="#tab3" class="nav-link">Vorschau</a>
+              </li>
+              <li class="nav-item flex-sm-fill">
+                <a id="contact2-tab" data-toggle="tab" href="#tab4" class="nav-link">Speichern</a>
+              </li>
+            </ul>
+            <div id="myTab2Content" class="tab-content">
+              <div id="tab1" role="tabpanel" aria-labelledby="home-tab"
+                   class="tab-pane fade px-4 py-5 show active">
+                <div class="d-flex justify-content-end">
+                  <div class="w-75">
+                    <label class="my-2 d-block">
+                      NACH FAHRZEUG SUCHEN
+                    </label>
+                    <input type="text" class="bg-light p-1 w-100 border border-secondary"
+                           value="" placeholder="" />
+                  </div>
+                  <div class="w-100 text-end">
+                    <div class="w-50 mx-auto mt-3 text-center">
+                      <a href="#" class="link-reset">
+                        <p class="m-0 fs-3"><i class="fa fa-times-circle"
+                                               aria-hidden="true"></i>
+                        </p>
+                        <p class="m-0">Suche zurücksetzen</p>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="my-3">
+                  <div class="table-responsive">
+                    <table class="table my_table w-100">
+                      <tr>
+                        <th>Marke, Modell, Modellvariante
+                        </th>
+                        <th>Interne Nr.
+                        </th>
+                        <th>Kilometerstand
+                        </th>
+                        <th>Preis</th>
+                      </tr>
+                      <tr>
+                        <td>Marke, Modell, Modellvariante
+                        </td>
+                        <td>Interne Nr.
+                        </td>
+                        <td>Kilometerstand
+                        </td>
+                        <td>Preis</td>
+                      </tr>
+                      <tr>
+                        <td>Marke, Modell, Modellvariante
+                        </td>
+                        <td>Interne Nr.
+                        </td>
+                        <td>Kilometerstand
+                        </td>
+                        <td>Preis</td>
+                      </tr>
+                      <tr>
+                        <td>Marke, Modell, Modellvariante
+                        </td>
+                        <td>Interne Nr.
+                        </td>
+                        <td>Kilometerstand
+                        </td>
+                        <td>Preis</td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+                <div class="d-flex justify-content-end">
+                  <div class="w-75">
+                    <label class="my-2 d-block">
+                      NACH FAHRZEUG SUCHEN
+                    </label>
+                    <input type="text" class="bg-light p-1 w-100 border border-secondary"
+                           value="" placeholder="" />
+                  </div>
+                  <div class="w-100 text-end d-flex ms-5">
+                    <div class="w-25 mt-3 text-center">
+                      <a href="#" class="link-reset">
+                        <p class="m-0 fs-3"><i class="fa fa-times-circle"
+                                               aria-hidden="true"></i>
+                        </p>
+                        <p class="m-0">Suche zurücksetzen</p>
+                      </a>
+                    </div>
+                    <div class="w-25 mt-3 text-center">
+                      <a href="#" class="link-reset">
+                        <p class="m-0 fs-3"> <i class="fa fa-plus-circle"
+                                                aria-hidden="true"></i>
+                        </p>
+                        <p class="m-0">Hinzufügen</p>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="my-3 d-flex">
+                  <div class="w-75">
+                    <div class="table-responsive">
+
+                      <table class="table my_table w-100">
+                        <tr>
+                          <th>Marke, Modell, Modellvariante
+                          </th>
+                          <th>Interne Nr.
+                          </th>
+                          <th>Kilometerstand
+                          </th>
+                          <th>Preis</th>
+                        </tr>
+                        <tr>
+                          <td>Marke, Modell, Modellvariante
+                          </td>
+                          <td>Interne Nr.
+                          </td>
+                          <td>Kilometerstand
+                          </td>
+                          <td>Preis</td>
+                        </tr>
+                      </table>
+                    </div>
+                  </div>
+                  <div class="w-25 text-center">
+                    <a href="#" class="link-reset">
+                      <p class="m-0 fs-3">
+                        <i class="fa fa-user" aria-hidden="true"></i>
+                      </p>
+                      <p class="m-0">Bearbeiten</p>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div id="tab2" role="tabpanel" aria-labelledby="profile-tab"
+                   class="tab-pane fade px-4 py-5">
+                <h5 class="color-primary mb-3">BERECHNUNG</h5>
+                <div class="card-text" id="">
+                  <div class="mb-3">
+                    <div class="row">
+                      <div class="col-md-4 col-sm-12">
+                        <div class="form-check mb-2">
+                          <input class="form-check-input" type="radio"
+                                 name="flexRadioDefault" id="Brutto">
+                          <label class="form-check-label" for="Brutto">
+                            Brutto
+                          </label>
+                        </div>
+                        <div class="form-check mb-2">
+                          <input class="form-check-input" type="radio"
+                                 name="flexRadioDefault" id="Netto">
+                          <label class="form-check-label" for="Netto">
+                            Netto (gemäß §6 UStG)
+                          </label>
+                        </div>
+                        <div class="form-check mb-2">
+                          <input class="form-check-input" type="radio"
+                                 name="flexRadioDefault" id="Nettos">
+                          <label class="form-check-label" for="Nettos">
+                            Netto (gemäß §6a UStG)
+                          </label>
+                        </div>
+                        <div class="mb-3">
+                          <label>MwSt.-Satz</label>
+                          <select class="form-select bg-light"
+                                  aria-label="Default select example">
+                            <option value="" selected="selected">MwSt. nicht
+                              ausweisbar</option>
+                            <option value="7">7 %</option>
+                            <option value="7,6">7,6 %</option>
+                            <option value="8">8 %</option>
+                            <option value="9">9 %</option>
+                            <option value="10,7">10,7 %</option>
+                            <option value="15">15 %</option>
+                            <option value="16">16 %</option>
+                            <option value="17">17 %</option>
+                            <option value="17,5">17,5 %</option>
+                            <option value="18">18 %</option>
+                            <option value="19">19 %</option>
+                            <option value="19,6">19,6 %</option>
+                            <option value="20">20 %</option>
+                            <option value="21">21 %</option>
+                            <option value="22">22 %</option>
+                            <option value="23">23 %</option>
+                            <option value="24">24 %</option>
+                            <option value="25">25 %</option>
+                          </select>
+                        </div>
+                        <div class="mb-3">
+                          <label class="d-block">
+                            Preisangaben
+                          </label>
+                          <select class="form-select bg-light"
+                                  aria-label="Default select example">
+                            <option value="gross" selected="selected">Brutto
+                            </option>
+                            <option value="net">Netto</option>
+                            <option value="onRequest">Preis auf Anfrage</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col-md-4 col-sm-12">
+                        <div class="w-100 mb-3">
+                          <label class="d-block">
+                            Preis Inkl. MwSt.
+                          </label>
+                          <input type="text"
+                                 class="bg-light p-1 w-100 border border-secondary" value=""
+                                 placeholder=" Preis Inkl. MwSt." />
+                        </div>
+                        <div class="w-100 mb-3">
+                          <label class="d-block">
+                            Netto
+                          </label>
+                          <input type="text"
+                                 class="bg-light p-1 w-100 border border-secondary" value=""
+                                 placeholder="Netto " />
+                        </div>
+                        <div class="w-100 mb-3">
+                          <label class="d-block">
+                            MwSt.
+                          </label>
+                          <input type="text"
+                                 class="bg-light p-1 w-100 border border-secondary" value=""
+                                 placeholder="MwSt. " />
+                        </div>
+                        <div class="w-100 mb-3">
+                          <label class="d-block">
+                            Brutto</label>
+                          <input type="text"
+                                 class="bg-light p-1 w-100 border border-secondary" value=""
+                                 placeholder="Brutto " />
+                        </div>
+                      </div>
+                      <div class="col-md-4 col-sm-12">
+                        <div class="w-100 mb-3">
+                          <label class="d-block">
+                            Sonstige Vereinbarungen</label>
+                          <div class="form-floating">
+                                                            <textarea
+                                                              class="bg-light  form-control border border-secondary"
+                                                              placeholder="Leave a comment here"
+                                                              id="floatingTextarea2" style="height: 150px"></textarea>
+                            <label for="floatingTextarea2">Comments</label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="tab3" role="tabpanel" aria-labelledby="contact-tab"
+                   class="tab-pane fade px-4 py-5">
+                <div class="row">
+                  <div class="col-md-6 col-sm-12">
+                    <div class="h-100">
+                      <iframe src="<%= asset_path 'pdf.pdf' %>" frameborder="0"
+                              class="w-100 h-100"></iframe>
+                    </div>
+
+                  </div>
+                  <div class="col-md-6 col-sm-12">
+                    <div class="w-100 mb-3">
+                      <label class="d-block">
+                        Modellvariante
+                      </label>
+                      <input type="text" class="bg-light p-1 w-100 border border-secondary"
+                             value="" placeholder="Modellvariante" />
+                    </div>
+                    <div class="w-100 mb-3">
+                      <label class="d-block">
+                        Schriftgröße
+                      </label>
+                      <select class="form-select bg-light w-50"
+                              aria-label="Default select example">
+
+                        <option value="60">60 %</option>
+                        <option value="80">80 %</option>
+                        <option value="90">90 %</option>
+                        <option value="100" selected="selected">100 %</option>
+                        <option value="110">110 %</option>
+                        <option value="120">120 %</option>
+                        <option value="130">130 %</option>
+                        <option value="140">140 %</option>
+                        <option value="160">160 %</option>
+                        <option value="180">180 %</option>
+                        <option value="200">200 %</option>
+                      </select>
+                    </div>
+                    <div class="mb-3">
+                      <input class="form-check-input" type="checkbox" value=""
+                             id="flexCheckDefault">
+                      <label class="form-check-label" for="">
+                        Ausstattung anzeigen</label>
+                      <textarea class="bg-light mt-2 w-100 border border-secondary"
+                                placeholder="Leave a comment here" id="floatingTextarea2"
+                                style="height: 100px"></textarea>
+
+                    </div>
+                    <div class="mb-3">
+                      <input class="form-check-input" type="checkbox" value=""
+                             id="flexCheckDefault">
+                      <label class="form-check-label" for="">
+                        Beschreibungsstext anzeigen</label>
+                      <textarea class="bg-light mt-2 w-100 border border-secondary"
+                                placeholder="Leave a comment here" id="floatingTextarea2"
+                                style="height: 100px"></textarea>
+
+                    </div>
+                    <p class="text-end">
+                      <a href="#" class="link-reset">Vorschau aktualisieren</a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div id="tab4" role="tabpanel" aria-labelledby="contact-tab"
+                   class="tab-pane fade px-4 py-5">
+                <div class="d-flex">
+
+                  <div>
+                    <%= image_tag "checklist-icon.png" %>
+                  </div>
+                  <div class="mt-1 ms-2"><a id="" class="link-reset fw-bold"
+                                            href="#">Angebot.pdf</a>
+                  </div>
+                </div>
+                <div class="mt-4">
+                  <a href="#" class="link-reset fw-bold d-block my-2">
+                    Weiteres Angebot erstellen
+                  </a>
+
+                  <a href="#" class="link-reset fw-bold d-block my-2">
+                    Liste der Dokumente
+                  </a>
+                </div>
+
+
+
+              </div>
+            </div>
+            <!-- End lined tabs -->
+          </div>
+        </div>
+
+        <div class="p-2 text-end">
+          <div id="navigationBtns">
+            <a href="#" class="link-reset">Abbrechen</a>
+            <input type="button" id="" value="Zurück" title="" class="orange-btn">
+            <input type="button" id="" value="Nächste" title="Nächste" class="orange-btn">
+            <input type="button" id="" value="Speichern" title="Speichern" class="orange-btn">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--<footer class="footer mt-auto py-1">-->
+<!--  <div class="container">-->
+<!--    <a href="#">Powered by:<%#= image_tag "mobile.svg" %></a>-->
+<!--    <a href="#">Kontakt</a>-->
+<!--    <a href="#">Impressum</a>-->
+<!--    <a href="#">AGB/Preislisten</a>-->
+<!--    <a href="#">Datenschutz</a>-->
+<!--  </div>-->
+<!--  </div>-->
+<!--</footer>-->
+<a href="#top" id="scrollUp" class="orange-color" style="display: block;">
+  <i class="fa fa-angle-up"></i>
+</a>
+<%= javascript_include_tag "jquery-3.3.1.slim.min.js" %>
+<%= javascript_include_tag "popper.min.js" %>
+<%= javascript_include_tag "bootstrap.min.js" %>
+<%= javascript_include_tag "bootstrap.bundle.min.js" %>
+<%= javascript_include_tag "js.js" %>
+</body>
+
+</html>

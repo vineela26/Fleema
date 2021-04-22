@@ -1,0 +1,2 @@
+class DokumentenlisteController < ApplicationController
+end

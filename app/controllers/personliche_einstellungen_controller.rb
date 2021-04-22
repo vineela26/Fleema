@@ -1,0 +1,2 @@
+class PersonlicheEinstellungenController < ApplicationController
+end

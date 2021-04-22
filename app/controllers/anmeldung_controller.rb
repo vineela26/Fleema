@@ -1,0 +1,2 @@
+class AnmeldungController < ApplicationController
+end

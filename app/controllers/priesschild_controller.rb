@@ -1,0 +1,2 @@
+class PriesschildController < ApplicationController
+end

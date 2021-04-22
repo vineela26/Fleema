@@ -1,0 +1,2 @@
+module KaufvertragHelper
+end

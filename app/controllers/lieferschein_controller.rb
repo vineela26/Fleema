@@ -1,0 +1,2 @@
+class LieferscheinController < ApplicationController
+end

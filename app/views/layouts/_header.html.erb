@@ -1,0 +1,160 @@
+<div class="header" id="top">
+  <nav class="navbar navbar-expand-lg bg-white px-3 shadow-sm mb-3" aria-label="Fourth navbar example">
+    <div class="container">
+      <a class="navbar-brand py-0" href="anmeldung">
+        <%= image_tag "logo-new.png", alt: "" %>
+      </a>
+      <button class="navbar-toggler border-0 bg-transparent" type="button" data-bs-toggle="collapse"
+              data-bs-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false"
+              aria-label="Toggle navigation">
+        <i class="fa fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarsExample04">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="/bestand">Fahrzeuge</a>
+            <div class="subdropdonw">
+              <div class="menucontent">
+                <ul class="m-0 p-0">
+                  <li class="">
+                    <a href="/bestand">Bestand</a>
+                    <p>Bearbeiten, inserieren oder löschen Sie bestehende Fahrzeuge.
+                      Pflegen Sie neue Fahrzeuge ein.
+                    </p>
+                  </li>
+                  <li class="">
+                    <a href="/markt_uberblick">Marktüberblick</a>
+                    <p>Welche Fahrzeuge befinden sich auf dem mobile.de Marktplatz? Was macht
+                      der Wettbewerb?</p>
+                  </li>
+                  <li>
+                    <%#= link_to 'Neues Fahrzeug hinzufügen', carmodel_popup_path,  {:remote => true, class: 'orange-btn my-3 w-100'}  %>
+                    <%= button_to 'Neues Fahrzeug hinzufügen', carmodel_popup_path,  :remote => true, class: 'orange-btn my-3 w-100', method: :get  %>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="/ubersicht">Inserieren</a>
+            <div class="subdropdonw">
+              <div class="menucontent">
+                <ul class="m-0 p-0">
+                  <li class="">
+                    <a href="/ubersicht">Übersicht</a>
+                    <p>Welche Fahrzeuge sind auf welchen Börsen inseriert? <br>Rufen Sie den
+                      Status Ihrer Inserate auf.</p>
+                  </li>
+                  <li class="">
+                    <a href="/zugangsdaten">Zugangsdaten</a>
+                    <p>Tragen Sie hier die Zugangsdaten für die Börsen ein, auf denen Ihre
+                      Inserate erscheinen sollen.</p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="kundenliste">Kunden</a>
+            <div class="subdropdonw">
+              <div class="menucontent">
+                <ul class="m-0 p-0">
+                  <li class="">
+                    <a href="/kundenliste">Kundenliste</a>
+                    <p>Bearbeiten oder löschen Sie bestehende Kunden. Pflegen Sie neue Kunden
+                      ein.</p>
+                  </li>
+                  <li>
+                    <button type="button" class="orange-btn my-3 w-100"
+                            onclick="location.href='/hinzufugen';">
+                      Neuen Kunden hinzufügen</button>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <li class=" nav-item"><a class="nav-link" href="#">Dokumente</a>
+            <div class="subdropdonw">
+              <div class="menucontent">
+                <ul class="m-0 p-0">
+                  <li class="">
+                    <a href="/auswahlen">Übersicht</a>
+                    <p>Alle Dokumente auf einem Blick.</p>
+                  </li>
+                  <li class="">
+                    <a href="/dokumentenliste">Dokumentenliste</a>
+                    <p>Finden Sie mit wenigen Klicks Ihre hinterlegten Dokumente
+                    </p>
+                  </li>
+                </ul>
+                <ul class="m-0 p-0 d-lg-flex flex-lg-wrap">
+                  <li class="w-50 ">
+                    <a href="/kundenliste">Kundenliste</a>
+                  </li>
+                  <li class="w-50">
+                    <a href="/bestand">Bestandsliste</a>
+                  </li>
+                  <li class="w-50">
+                    <a href="probefahrt">Probefahrt</a>
+                  </li>
+                  <li class="w-50">
+                    <a href="/angebot">Angebot</a>
+                  </li>
+                  <li class="w-50">
+                    <a href="/kaufvertrag">Kaufvertrag</a>
+                  </li>
+                  <li class="w-50">
+                    <a href="/rechnung">Rechnung</a>
+                  </li>
+                  <li class="w-50">
+                    <a href="/lieferschein">Lieferschein</a>
+                  </li>
+                  <li class="w-50">
+                    <a href="/priesschild">Preisschild</a>
+                  </li>
+                  <li class="w-50">
+                    <a href="/handzettel">Handzettel</a>
+                  </li>
+                  <li class="w-50">
+                    <a href="<%= asset_path 'BVfK-Fahrzeugankauf-05-2013.pdf' %>">Ankaufvertrag</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="#">Anruf-Analyst</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Einstellungen</a>
+            <div class="subdropdonw">
+              <div class="menucontent">
+                <ul class="m-0 p-0">
+                  <li>
+                    <a href="/meinedaten">Meine Daten</a>
+                    <p>Bearbeiten oder ergänzen Sie Ihre Firmendaten, welche auf den
+                      Dokumenten
+                      erscheinen.</p>
+                  </li>
+                  <li>
+                    <a href="/personliche_einstellungen ">Persönliche
+                      Einstellungen</a>
+                    <p>Definieren Sie Standardtexte und Standardeinstellungen.</p>
+                  </li>
+                  <li>
+                    <button type="button" class="orange-btn my-3 w-100">
+                      Import von mobile.de</button>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <div class="dropdown d-none d-lg-block">
+          <div class="user-profile-icon border-0" id="dropdownMenuButton" data-toggle="dropdown">
+            AA
+          </div>
+          <div class="dropdown-menu shadow-sm" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item">Kundennr.: 512463</a>
+            <a class="dropdown-item">Logout</a>
+          </div>
+        </div>
+        <!-- <div class="user-profile-icon">AA</div> -->
+      </div>
+    </div>
+  </nav>
+</div>

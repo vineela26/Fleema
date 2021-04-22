@@ -1,0 +1,240 @@
+<div class="modal fade hinzufugen-modal" id="cardetails" data-bs-backdrop="static" data-bs-keyboard="false"
+     tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h6 class="modal-title" id="staticBackdropLabel">FAHRZEUG HINZUFUGEN</h6>
+        <i class="fa fa-times btn-close" data-bs-dismiss="modal" aria-label="Close" aria-hidden="true"></i>
+      </div>
+      <div class="modal-body">
+        <div class="row mb-5 first-row">
+          <div class="col-lg-4 col-md-12 col-sm-12 border-end border-1">
+            <div class="d-block d-lg-flex">
+              <a href="#" class="d-block text-decoration-none w-50  pt-2">
+                <i class="fa fa-car icon-bg ms-4" aria-hidden="true"></i>
+                <h6 class="color-primary  ms-1 mt-2">Gebraucht</h6>
+              </a>
+              <div class="w-100 ms-3">
+                <select class="form-select bg-light mt-4" aria-label="Default select example">
+                  <option value="USED" selected="selected">Gebraucht</option>
+                  <option value="ONE_DAY_REGISTRATION">Tageszulassung</option>
+                  <option value="ONE_YEAR_REGISTRATION">Jahreswagen</option>
+                  <option value="DEMONSTRATION">Vorführfahrzeug</option>
+                  <option value="OLDTIMER">Oldtimer</option>
+                </select>
+              </div>
+            </div>
+            <div class="d-block d-lg-flex">
+              <a href="#" class="d-block text-decoration-none w-50  pt-2">
+                <i class="fa fa-car icon-bg ms-4" aria-hidden="true"></i>
+                <h6 class="color-primary  ms-1 mt-2">Neu</h6>
+              </a>
+              <div class="ms-3">
+                <label class="d-block">
+                  Erstzulassung *
+                </label>
+                <input type="date" class="bg-light p-1 border border-secondary" value="" />
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-12 col-sm-12 border-end border-1">
+            <div class="w-100 mb-3">
+              <label class="d-block">
+                FIN
+              </label>
+              <input type="text" class="bg-light p-1 w-100 border border-secondary" value=""
+                     placeholder=" " />
+            </div>
+            <i class="fa fa-arrow-right d-block text-center color-primary font-size-18"
+               aria-hidden="true"></i>
+          </div>
+          <div class="col-lg-3 col-md-12 col-sm-12 border-end border-1">
+            <div class="">
+              <label class="d-block">
+                Marke *
+              </label>
+              <select class="form-select bg-light" aria-label="Default select example">
+                <option value="">Marke auswählen</option>
+                <option value="ABARTH">Abarth</option><option value="AC">AC</option><option value="ACURA">Acura</option><option value="AIXAM">Aixam</option><option value="ALFA ROMEO">Alfa Romeo</option><option value="ALPINA">ALPINA</option><option value="ARTEGA">Artega</option><option value="ASIA MOTORS">Asia Motors</option><option value="ASTON MARTIN">Aston Martin</option><option value="AUDI">Audi</option><option value="AUSTIN">Austin</option><option value="AUSTIN HEALEY">Austin Healey</option><option value="BAIC">BAIC</option><option value="BENTLEY">Bentley</option><option value="BMW">BMW</option><option value="BORGWARD">Borgward</option><option value="BRILLIANCE">Brilliance</option><option value="BUGATTI">Bugatti</option><option value="BUICK">Buick</option><option value="CADILLAC">Cadillac</option><option value="CASALINI">Casalini</option><option value="CATERHAM">Caterham</option><option value="CHATENET">Chatenet</option><option value="CHEVROLET">Chevrolet</option><option value="CHRYSLER">Chrysler</option><option value="CITROEN">Citroën</option><option value="COBRA">Cobra</option><option value="CORVETTE">Corvette</option><option value="CUPRA">Cupra</option><option value="DACIA">Dacia</option><option value="DAEWOO">Daewoo</option><option value="DAIHATSU">Daihatsu</option><option value="DETOMASO">DeTomaso</option><option value="DFSK">DFSK</option><option value="DODGE">Dodge</option><option value="DONKERVOORT">Donkervoort</option><option value="DS">DS Automobiles</option><option value="FERRARI">Ferrari</option><option value="FIAT">Fiat</option><option value="FISKER">Fisker</option><option value="FORD">Ford</option><option value="GAC GONOW">GAC Gonow</option><option value="GEMBALLA">Gemballa</option><option value="GMC">GMC</option><option value="GRECAV">Grecav</option><option value="HAMANN">Hamann</option><option value="HOLDEN">Holden</option><option value="HONDA">Honda</option><option value="HUMMER">Hummer</option><option value="HYUNDAI">Hyundai</option><option value="INFINITI">Infiniti</option><option value="ISUZU">Isuzu</option><option value="IVECO">Iveco</option><option value="JAGUAR">Jaguar</option><option value="JEEP">Jeep</option><option value="KIA">Kia</option><option value="KOENIGSEGG">Koenigsegg</option><option value="KTM">KTM</option><option value="LADA">Lada</option><option value="LAMBORGHINI">Lamborghini</option><option value="LANCIA">Lancia</option><option value="LAND ROVER">Land Rover</option><option value="LANDWIND">Landwind</option><option value="LEXUS">Lexus</option><option value="LIGIER">Ligier</option><option value="LINCOLN">Lincoln</option><option value="LOTUS">Lotus</option><option value="MAHINDRA">Mahindra</option><option value="MASERATI">Maserati</option><option value="MAYBACH">Maybach</option><option value="MAZDA">Mazda</option><option value="MCLAREN">McLaren</option><option value="MERCEDES-BENZ">Mercedes-Benz</option><option value="MG">MG</option><option value="MICROCAR">Microcar</option><option value="MINI">MINI</option><option value="MITSUBISHI">Mitsubishi</option><option value="MORGAN">Morgan</option><option value="NISSAN">Nissan</option><option value="NSU">NSU</option><option value="OLDSMOBILE">Oldsmobile</option><option value="OPEL">Opel</option><option value="PAGANI">Pagani</option><option value="PEUGEOT">Peugeot</option><option value="PIAGGIO">Piaggio</option><option value="PLYMOUTH">Plymouth</option><option value="POLESTAR">Polestar</option><option value="PONTIAC">Pontiac</option><option value="PORSCHE">Porsche</option><option value="PROTON">Proton</option><option value="RENAULT">Renault</option><option value="ROLLS ROYCE">Rolls-Royce</option><option value="ROVER">Rover</option><option value="RUF">Ruf</option><option value="SAAB">Saab</option><option value="SANTANA">Santana</option><option value="SEAT">Seat</option><option value="SKODA">Skoda</option><option value="SMART">Smart</option><option value="SPEEDART">speedART</option><option value="SPYKER">Spyker</option><option value="SSANGYONG">Ssangyong</option><option value="SUBARU">Subaru</option><option value="SUZUKI">Suzuki</option><option value="TALBOT">Talbot</option><option value="TATA">Tata</option><option value="TECHART">TECHART</option><option value="TESLA">Tesla</option><option value="TOYOTA">Toyota</option><option value="TRABANT">Trabant</option><option value="TRIUMPH">Triumph</option><option value="TVR">TVR</option><option value="VW">Volkswagen</option><option value="VOLVO">Volvo</option><option value="WARTBURG">Wartburg</option><option value="WESTFIELD">Westfield</option><option value="WIESMANN">Wiesmann</option><option value="ANDERE">Andere</option>
+              </select>
+            </div>
+            <div class="mt-3">
+              <label class="d-block">
+                Model *
+              </label>
+              <select id="model-select" class="form-select bg-light" aria-label="Default select example">
+                <option value="">Modell auswählen</option><option value="100">100</option><option value="200">200</option><option value="80">80</option><option value="90">90</option><option value="A1">A1</option><option value="A2">A2</option><option value="A3">A3</option><option value="A4">A4</option><option value="A4 Allroad">A4 Allroad</option><option value="A5">A5</option><option value="A6">A6</option><option value="A6 Allroad">A6 Allroad</option><option value="A7">A7</option><option value="A8">A8</option><option value="Cabriolet">Cabriolet</option><option value="Coupé">Coupé</option><option value="e-tron">e-tron</option><option value="Q1">Q1</option><option value="Q2">Q2</option><option value="Q3">Q3</option><option value="Q5">Q5</option><option value="Q7">Q7</option><option value="Q8">Q8</option><option value="QUATTRO">quattro</option><option value="R8">R8</option><option value="RS2">RS2</option><option value="RS3">RS3</option><option value="RS4">RS4</option><option value="RS5">RS5</option><option value="RS6">RS6</option><option value="RS7">RS7</option><option value="RSQ3">RSQ3</option><option value="RSQ8">RSQ8</option><option value="S1">S1</option><option value="S2">S2</option><option value="S3">S3</option><option value="S4">S4</option><option value="S5">S5</option><option value="S6">S6</option><option value="S7">S7</option><option value="S8">S8</option><option value="SQ2">SQ2</option><option value="SQ5">SQ5</option><option value="SQ7">SQ7</option><option value="SQ8">SQ8</option><option value="TT">TT</option><option value="TT RS">TT RS</option><option value="TTS">TTS</option><option value="V8">V8</option><option value="ANDERE">Andere</option>n>
+              </select>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-12 col-sm-12">
+            <div class="w-100 mb-3">
+              <label class="d-block">
+                HSN
+              </label>
+              <input type="text" class="bg-light p-1 w-100 border border-secondary" value=""
+                     placeholder=" " />
+            </div>
+            <div class="w-100 mb-3">
+              <label class="d-block">
+                TSN
+              </label>
+              <input type="text" class="bg-light p-1 w-100 border border-secondary" value=""
+                     placeholder=" " />
+            </div>
+          </div>
+        </div>
+        <!-- <div class="row mb-3">
+            <div class="col-lg-4 col-md-12 col-sm-12">
+                <div class="me-3">
+                    <label class="d-block">
+                        Kategorie
+                    </label>
+                    <select class="form-select bg-light" aria-label="Default select example">
+                        <option value="" selected="selected"> Kategorie auswahlen</option>
+                        <option value="Kategorie auswahlen">Kategorie auswahlen</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-12 col-sm-12">
+                <div class="me-3">
+                    <label class="d-block">
+                        Motoract
+                    </label>
+                    <select class="form-select bg-light" aria-label="Default select example">
+                        <option value="" selected="selected"> Motoract auswahlen</option>
+                        <option value="Motoract auswahlen">Motoract auswahlen</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-12 col-sm-12">
+                <div class="me-3">
+                    <label class="d-block">
+                        Kraftstoffart
+                    </label>
+                    <select class="form-select bg-light" aria-label="Default select example">
+                        <option value="" selected="selected"> Kraftstoffart auswahlen</option>
+                        <option value="Kraftstoffart auswahlen">Kraftstoffart auswahlen</option>
+                    </select>
+                </div>
+            </div>
+        </div> -->
+        <p class="mb-0">Wählen Sie ein Modell aus dem Katalog aus, um die passende Modellvarlante zu finden
+        </p>
+        <div class="table-responsive">
+          <table class="table my_table w-100">
+            <tr>
+              <th>Modell</th>
+              <th>Produktlonseltraum</th>
+            </tr>
+            <CAPTION> Es gibt keine Modelle, die Ihren Suchkriterien entsprechen </CAPTION>
+            <tr class="car-1" style="display: none">
+              <td>A8 3.0 TDI DPF quattro</td>
+              <td>2005-2007</td>
+            </tr>
+            <tr class="car-1" style="display: none">
+              <td>A8 3.2 FSI</td>
+              <td>2005-2007</td>
+            </tr>
+            <tr class="car-1" style="display: none">
+              <td>A8 3.7 quattro</td>
+              <td>2005-2006</td>
+            </tr>
+            <tr class="car-1" style="display: none">
+              <td>A8 4.0 TDI quattro</td>
+              <td>2005-2005</td>
+            </tr>
+            <tr class="car-1" style="display: none">
+              <td>A8 4.2 FSI quattro</td>
+              <td>2006-2007</td>
+            </tr>
+            <tr class="car-1" style="display: none">
+              <td>A8 4.2 quattro Langversion</td>
+              <td>2005-2006</td>
+            </tr>
+          </table>
+        </div>
+        <p class="mb-0">
+          Wahlen Sle elne Modellvarlante
+        </p>
+        <div class="table-responsive">
+          <table class="table my_table w-100">
+            <tr>
+              <th>Modellvarlante</th>
+              <th>Brutto Neuprels</th>
+              <th>Produktlonszeltraum</th>
+            </tr>
+            <CAPTION> Es gibt keine Modelle, die Ihren Suchkriterien entsprechen
+            </CAPTION>
+            <tr class="car-1" style="display: none">
+              <td>A8 3.0 TDI DPF quattro 4 Türen (233 PS/171 kW)
+              </td>
+              <td>65.650</td>
+              <td>3/2005-8/2007-</td>
+            </tr>
+            <tr class="car-1" style="display: none">
+              <td>A8 3.2 FSI 4 Türen (260 PS/191 kW)
+              </td>
+              <td>145.800</td>
+              <td>1/2014-</td>
+            </tr>
+            <tr class="car-1" style="display: none">
+              <td>A8 3.7 quattro 4 Türen (280 PS/206 kW)
+              </td>
+              <td>69.300</td>
+              <td>3/2005-4/2006</td>
+            </tr>
+            <tr class="car-1" style="display: none">
+              <td>A8 4.0 TDI quattro 4 Türen (275 PS/202 kW)
+              </td>
+              <td>78.200</td>
+              <td>3/2005-6/2005</td>
+            </tr>
+            <tr class="car-1" style="display: none">
+              <td>A8 4.2 FSI quattro 4 Türen (350 PS/257 kW)
+              </td>
+              <td>78.700</td>
+              <td>4/2006-8/2007</td>
+            </tr>
+            <tr class="car-1" style="display: none">
+              <td>A8 4.2 quattro Langversion 4 Türen (334 PS/246 kW)
+              </td>
+              <td>81.700</td>
+              <td>3/2005-4/2006</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><i class="fa fa-pencil d-block"
+                                                                                   aria-hidden="true"></i>
+          Manuelle Eingabe</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><i
+          class="fa fa-arrow-left d-block" aria-hidden="true"></i>
+          Zurück</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><i
+          class="fa fa-times-circle-o d-block" aria-hidden="true"></i>
+          Abbrechen</button>
+        <a href="bearbeiten" class="btn btn-secondary"><i class="fa fa-arrow-right d-block"
+                                                                         aria-hidden="true"></i>
+          OK</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+    $("#model-select").change(function() {
+        console.log("Yes");
+        $('.car-1').show();
+    });
+
+    $( "#model-select" )
+        .change(function () {
+            var str = "";
+            $( "#model-select option:selected" ).each(function() {
+                str += $( this ).text() + " ";
+            });
+            alert( str );
+        });
+</script>

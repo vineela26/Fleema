@@ -1,0 +1,2 @@
+class MarktUberblickController < ApplicationController
+end

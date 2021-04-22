@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>FleeMa // Fahrzeuge // Bearbeiten</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <%= stylesheet_link_tag "bootstrap.min.css", media: "screen" %>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,600;0,800;1,200;1,400&display=swap"
+    rel="stylesheet">
+  <%= stylesheet_link_tag "style", media: "screen" %>
+  <%= stylesheet_link_tag href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" %>
+</head>
+
+<body id="">
+<!--<div id="header"></div>-->
+<div class="container">
+  <div class="row ">
+    <div class="col-md-12 col-sm-12">
+      <div class="content p-3">
+        <h1>PROBEFAHRT</h1>
+        <div class="">
+          <div class="tabs-view">
+            <!-- Lined tabs-->
+            <ul id="myTab2" role="tablist"
+                class="nav nav-tabs nav-pills with-arrow lined flex-column flex-sm-row text-center">
+              <li class="nav-item flex-sm-fill">
+                <a id="home2-tab" data-toggle="tab" href="#tab1" class="nav-link active">Suchen</a>
+              </li>
+              <li class="nav-item flex-sm-fill">
+                <a id="profile2-tab" data-toggle="tab" href="#tab2" class="nav-link">Information</a>
+              </li>
+              <li class="nav-item flex-sm-fill">
+                <a id="contact2-tab" data-toggle="tab" href="#tab3" class="nav-link">Vorschau</a>
+              </li>
+              <li class="nav-item flex-sm-fill">
+                <a id="contact2-tab" data-toggle="tab" href="#tab4" class="nav-link">Speichern</a>
+              </li>
+            </ul>
+            <div id="myTab2Content" class="tab-content">
+              <div id="tab1" role="tabpanel" aria-labelledby="home-tab"
+                   class="tab-pane fade px-4 py-5 show active">
+                <div class="d-block d-md-flex justify-content-between">
+                  <div class="w-50">
+                    <label class="my-2 d-block">
+                      NACH FAHRZEUG SUCHEN
+                    </label>
+                    <input type="text" class="bg-light p-1 w-100 mt-3 border border-secondary"
+                           value="" placeholder="" />
+                  </div>
+                  <div class="text-end d-flex ms-5 mt-5">
+                    <div class="mx-3 text-center">
+                      <a href="#" class="link-reset">
+                        <p class="m-0 fs-3"><i class="fa fa-times-circle"
+                                               aria-hidden="true"></i>
+                        </p>
+                        <p class="m-0">Suche zurücksetzen</p>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="my-3">
+                  <h5 class="mt-4">FAHRZEUG</h5>
+                  <div class="table-responsive">
+                    <table class="table my_table w-100">
+                      <tr>
+                        <th>Marke, Modell, Modellvariante
+                        </th>
+                        <th>Interne Nr.
+                        </th>
+                        <th>Kilometerstand
+                        </th>
+                        <th>Preis</th>
+                      </tr>
+                      <tr>
+                        <td>A8 4.2 quattro Langversion 4 Türen (334 PS/246 kW)
+                        </td>
+                        <td>1
+                        </td>
+                        <td>-
+                        </td>
+                        <td>-</td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+                <div class="d-block d-md-flex justify-content-between">
+                  <div class="w-50">
+                    <label class="my-2 d-block">
+                      NACH KUNDEN SUCHEN
+                    </label>
+                    <input type="text" class="bg-light p-1 w-100 mt-3 border border-secondary"
+                           value="" placeholder="" />
+                  </div>
+                  <div class="text-end d-flex ms-5 mt-5">
+                    <div class="mx-3 text-center">
+                      <a href="#" class="link-reset">
+                        <p class="m-0 fs-3"><i class="fa fa-times-circle"
+                                               aria-hidden="true"></i>
+                        </p>
+                        <p class="m-0">Suche zurücksetzen</p>
+                      </a>
+                    </div>
+                    <div class="mx-3 text-center">
+                      <a href="#" class="link-reset">
+                        <p class="m-0 fs-3"> <i class="fa fa-plus-circle"
+                                                aria-hidden="true"></i>
+                        </p>
+                        <p class="m-0">Hinzufügen</p>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <h5 class="mt-5">KUNDEN</h5>
+                <div class="mb-3 d-block d-md-flex">
+                  <div class="w-75">
+                    <div class="table-responsive">
+                      <table class="table my_table w-100">
+                        <tr>
+                          <th>Persönliche Daten</th>
+                          <th>Telefon</th>
+                          <th>Fahrzeug </th>
+                        </tr>
+                        <tr>
+                          <td>Patrick Bartels</td>
+                          <td>+49 171 883 1117</td>
+                          <td></td>
+                        </tr>
+                      </table>
+                    </div>
+                  </div>
+                  <div class="w-25 text-center">
+                    <a href="#" class="link-reset">
+                      <p class="m-0 fs-3">
+                        <i class="fa fa-user" aria-hidden="true"></i>
+                      </p>
+                      <p class="m-0">Bearbeiten</p>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div id="tab2" role="tabpanel" aria-labelledby="profile-tab"
+                   class="tab-pane fade px-4 py-5">
+                <div class="card-text" id="">
+                  <div class="mb-3">
+                    <div class="row">
+                      <div class="col-lg-4 col-md-6 col-sm-12">
+                        <h5 class="color-primary"> ÜBER DEN FAHRER</h5>
+                        <div class="w-100 mb-3">
+                          <label class="d-block">
+                            Führerschein-Nr.
+                          </label>
+                          <input type="text"
+                                 class="bg-light p-1 w-100 border border-secondary" value=""
+                                 placeholder="" />
+                        </div>
+                        <div class="w-100 mb-3">
+                          <label class="d-block">
+                            Ausgestellt am
+                          </label>
+                          <input type="date"
+                                 class="bg-light p-1 w-100 border border-secondary" value=""
+                                 placeholder="" />
+                        </div>
+                        <div class="w-100 mb-3">
+                          <label class="d-block">
+                            Ausweis
+                          </label>
+                          <input type="text"
+                                 class="bg-light p-1 w-100 border border-secondary" value=""
+                                 placeholder="" />
+                        </div>
+                        <div class="w-100 mb-3">
+                          <label class="d-block">
+                            Geburtsdatum
+                          </label>
+                          <input type="date"
+                                 class="bg-light p-1 w-100 border border-secondary" value=""
+                                 placeholder="" />
+                        </div>
+                      </div>
+                      <div class="col-lg-4 col-md-6 col-sm-12">
+                        <h5 class="color-primary">ÜBER DAS FAHRZEUG
+                        </h5>
+                        <div class="w-100 mb-3">
+                          <label class="d-block">
+                            Amtl. Kennzeichen
+                          </label>
+                          <input type="text"
+                                 class="bg-light p-1 w-100 border border-secondary" value=""
+                                 placeholder="" />
+                        </div>
+                        <div class="w-100 mb-3">
+                          <label class="d-block">
+                            Kilometerstand bei Übergabe
+                          </label>
+                          <input type="text"
+                                 class="bg-light p-1 w-100 border border-secondary" value=""
+                                 placeholder="" />
+                        </div>
+                        <div class="d-flex mb-3">
+                          <div class="d-flex me-3">
+                            <div class="rounded-circle bg-color-primary icon-30 me-2"><i
+                              class="fa fa-car" aria-hidden="true"></i>
+                            </div>
+                            <div class="mt-1">Nein</div>
+                          </div>
+                          <div class="d-flex me-3">
+                            <div class="rounded-circle bg-color-primary icon-30 me-2"><i
+                              class="fa fa-car" aria-hidden="true"></i>
+                            </div>
+                            <div class="mt-1">Ja</div>
+                          </div>
+                          <div class="d-flex me-3">
+                            <div class="rounded-circle bg-color-primary icon-30 me-2"><i
+                              class="fa fa-car" aria-hidden="true"></i>
+                            </div>
+                            <div class="mt-1">Repariert</div>
+                          </div>
+                        </div>
+                        <div class="w-100 mb-3">
+                          <div class="form-floating">
+                                                            <textarea
+                                                              class="bg-light  form-control border border-secondary"
+                                                              placeholder=""
+                                                              id="floatingTextarea2" style="height: 150px"></textarea>
+                            <label for="floatingTextarea2"></label>
+                          </div>
+                        </div>
+                        <div class="w-100 mb-3">
+                          <label class="d-block">
+                            Sonstige Vereinbarungen</label>
+                          <div class="form-floating">
+                                                            <textarea
+                                                              class="bg-light  form-control border border-secondary"
+                                                              placeholder=""
+                                                              id="floatingTextarea2" style="height: 150px"></textarea>
+                            <label for="floatingTextarea2"></label>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-4 col-md-6 col-sm-12">
+                        <h5 class="color-primary"> ÜBER DIE PROBEFAHRT</h5>
+
+
+                        <div class="w-100 mb-3">
+                          <label class="d-block">
+                            Datum und Zeit
+
+                          </label>
+                          <div class="d-block d-md-flex">
+                            <input type="date"
+                                   class="bg-light p-1 w-100 border border-secondary me-2"
+                                   value="" placeholder="" />
+                            <input type="time"
+                                   class="bg-light p-1 w-100 border border-secondary"
+                                   value="" placeholder="" />
+
+                          </div>
+                        </div>
+
+
+                        <div class="form-check mb-2 me-3">
+                          <input class="form-check-input" type="checkbox"
+                                 name="flexRadioDefault" id="Vollkaskoversicherung">
+                          <label class="form-check-label" for="Vollkaskoversicherung">
+                            Vollkaskoversicherung
+                          </label>
+                        </div>
+
+                        <div class="w-100 mb-3">
+                          <label class="d-block">
+                            Selbstbeteiligung
+
+                          </label>
+                          <input type="text"
+                                 class="bg-light p-1 w-100 border border-secondary" value=""
+                                 placeholder="" />
+                        </div>
+                        <div class="w-100 mb-3">
+                          <label class="d-block">
+                            Max. km pro Probefahrt
+
+
+                          </label>
+                          <input type="text"
+                                 class="bg-light p-1 w-100 border border-secondary" value=""
+                                 placeholder="" />
+                        </div>
+
+                        <div class="w-100 mb-3">
+                          <label class="d-block">
+                            Max. Stunden pro Probefahrt</label>
+                          <input type="text"
+                                 class="bg-light p-1 w-100 border border-secondary" value=""
+                                 placeholder="" />
+                        </div>
+                        <div class="w-100 mb-3">
+                          <label class="d-block">
+                            Preis pro überschrittenem km
+                          </label>
+                          <input type="text"
+                                 class="bg-light p-1 w-100 border border-secondary" value=""
+                                 placeholder="" />
+                        </div>
+                        <label class="form-check-label">Tankinhalt bei Rückgabe:
+                        </label>
+                        <div class="d-block d-md-flex">
+
+                          <div class="form-check mb-2 me-3">
+                            <input class="form-check-input" type="checkbox"
+                                   name="flexRadioDefault" id="100">
+                            <label class="form-check-label" for="100">
+                              100%
+                            </label>
+                          </div>
+                          <div class="form-check mb-2 me-3">
+                            <input class="form-check-input" type="checkbox"
+                                   name="flexRadioDefault" id="75">
+                            <label class="form-check-label" for="75">
+                              75%
+                            </label>
+                          </div>
+                          <div class="form-check mb-2 me-3">
+                            <input class="form-check-input" type="checkbox"
+                                   name="flexRadioDefault" id="50">
+                            <label class="form-check-label" for="50">
+                              50%
+                            </label>
+                          </div>
+                          <div class="form-check mb-2 me-3">
+                            <input class="form-check-input" type="checkbox"
+                                   name="flexRadioDefault" id="25">
+                            <label class="form-check-label" for="25">
+                              25%
+                            </label>
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="tab3" role="tabpanel" aria-labelledby="contact-tab"
+                   class="tab-pane fade px-4 py-5">
+                <div class="row">
+                  <div class="col-md-12 col-sm-12">
+                    <div class="" style="height:500px;">
+                      <iframe src="<%= asset_path 'probefahrt.pdf' %>#toolbar=0" frameborder="0"
+                              class="w-100 h-100"></iframe>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+              <div id="tab4" role="tabpanel" aria-labelledby="contact-tab"
+                   class="tab-pane fade px-4 py-5">
+                <div class="d-flex">
+                  <div>
+                    <%= image_tag "checklist-icon.png", alt: "" %>
+                  </div>
+                  <div class="mt-1 ms-2"><a id="" class="link-reset fw-bold"
+                                            href="<%= asset_path 'probefahrt.pdf' %>">Probefahrt.pdf</a>
+                  </div>
+                </div>
+                <div class="mt-4">
+                  <a href="#" class="link-reset fw-bold d-block my-2">
+                    Neues Probefahrtdokument erstellen
+                  </a>
+                  <a href="#" class="link-reset fw-bold d-block my-2">
+                    Liste der Dokumente
+                  </a>
+                </div>
+              </div>
+            </div>
+            <!-- End lined tabs -->
+          </div>
+        </div>
+        <div class="p-2 text-end">
+          <div id="navigationBtns">
+            <a href="#" class="link-reset">Abbrechen</a>
+            <input type="button" id="" value="Zurück" title="" class="orange-btn btnPrevious">
+            <input type="button" id="" value="Nächste" title="Nächste" class="orange-btn btnNext">
+            <input type="button" id="" value="Speichern" title="Speichern" class="orange-btn">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!--<div id="footer"></div>-->
+
+
+<a href="#top" id="scrollUp" class="orange-color">
+  <i class="fa fa-angle-up"></i>
+</a>
+<div id="carmodelpopup"></div>
+<div id="carmodelpopup_two"></div>
+
+<%= javascript_include_tag "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js",
+                           integrity: "", crossorigin: "anonymous" %>
+<%= javascript_include_tag "popper.min.js", integrity: "", crossorigin: "anonymous" %>
+<%= javascript_include_tag "bootstrap.min.js", integrity: "", crossorigin: "anonymous" %>
+<%= javascript_include_tag "bootstrap.bundle.min.js", integrity: "", crossorigin: "anonymous" %>
+<%= javascript_include_tag "js.js"%>
+</body>
+
+</html>

@@ -1,0 +1,2 @@
+class RechnungController < ApplicationController
+end
