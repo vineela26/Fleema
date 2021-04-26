@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get "/angebot", to: "angebot#index"
   get "/anmeldung", to: "anmeldung#index"
   get "/auswahlen", to: "auswahlen#index"
-  get "/bearbeitent", to: "bearbeitent#index"
+  get "/bearbeiten", to: "bearbeiten#index"
   get "/bestand", to: "bestand#index"
   get "/dokumentenliste", to: "dokumentenliste#index"
   get "/handzettel", to: "handzettel#index"
@@ -23,6 +23,5 @@ Rails.application.routes.draw do
 
   get "/carmodelpopup" => 'popup#carmodelpopup', :as => :carmodel_popup
   get "/carmodelpopup_two" => 'popup#carmodelpopup_two', :as => :carmodel_popup_two
-
 
 end
