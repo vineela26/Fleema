@@ -9,6 +9,11 @@ Things you may want to cover:
 
 * Rails Version: 6.1.3
 
+* DB: Postgres
+while installing the gems if you faced native extension error for pg gem 
+run the below command:
 
+sudo apt-get install libpq-dev
+sudo apt-get install postgresql-9.3 postgresql-server-dev-9.3
 * ...
 
