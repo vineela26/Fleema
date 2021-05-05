@@ -17,6 +17,9 @@
 
 <body id="">
 <!--<div id="header"></div>-->
+
+
+
 <div class="container">
   <div class="row ">
     <div class="col-md-12 col-sm-12">
@@ -26,6 +29,7 @@
             <h1 class="m-0">kunde hinzufugen</h1>
             </p>
           </div>
+
           <!-- <div class="text-end d-flex ms-5 mt-3 me-5">
               <a href="#" class="link-reset mx-3">
                   <p class="m-0 fs-3"><i class="fa fa-signal" aria-hidden="true"></i>
@@ -37,6 +41,14 @@
               </a>
           </div> -->
         </div>
+        <%= form_with model: @customer, local: true  do |form| %>
+          <%# if flash[:new_solution_errors] && flash[:new_solution_errors].any? %>
+<!--            <ul>-->
+              <%# flash[:new_solution_errors].each do |err| %>
+<!--                <li><%#= err %></li>-->
+              <%# end %>
+<!--            </ul>-->
+          <%# end %>
         <div class="row">
           <div class="col-lg-9 col-md-12 col-sm-12">
             <div class="tabs-view">
@@ -159,31 +171,30 @@
                               </div>
                             </div>
                           </div>
-
-
-                          <div class="d-flex">
-                            <div class="mx-2 me-0">
-                              <div class="w-100">
-                                <label class="my-2 d-block">
-                                  Vorname
-                                </label>
-                                <input type="text"
-                                       class="bg-light p-1 w-100 border border-secondary"
-                                       value="" placeholder="Vorname">
+                            <div class="d-flex">
+                              <div class="mx-2 me-0">
+                                <div class="w-100">
+                                  <label class="my-2 d-block">
+                                    Vorname
+                                  </label>
+                                  <%= form.text_field :Vorname, class: "bg-light p-1 w-100 border border-secondary", placeholder: "Vorname" %>
+                                  <% if flash[:new_solution_errors] %>
+                                    <p class='error'><%= flash[:new_solution_errors]["first_name"][0] %></p>
+                                  <% end %>
+                                </div>
+                              </div>
+                              <div class="mx-2">
+                                <div class="w-100">
+                                  <label class="my-2 d-block">
+                                    Nachname
+                                  </label>
+                                  <%= form.text_field :Nachname, class: "bg-light p-1 w-100 border border-secondary", placeholder: "Nachname" %>
+                                  <% if flash[:new_solution_errors] %>
+                                    <p class='error'><%= flash[:new_solution_errors]["last_name"][0] %></p>
+                                  <% end %>
+                                </div>
                               </div>
                             </div>
-                            <div class="mx-2">
-                              <div class="w-100">
-                                <label class="my-2 d-block">
-                                  Nachname
-                                </label>
-                                <input type="text"
-                                       class="bg-light p-1 w-100 border border-secondary"
-                                       value="" placeholder="Nachname">
-                              </div>
-                            </div>
-                          </div>
-
 
                           <div class="mx-2 me-0">
                             <div class="w-100">
@@ -230,9 +241,7 @@
                                 <label class="my-2 d-block">
                                   Plz
                                 </label>
-                                <input type="text"
-                                       class="bg-light p-1 w-100 border border-secondary"
-                                       value="" placeholder="PLZ">
+                                <%= form.text_field :Plz, class: "bg-light p-1 w-100 border border-secondary", placeholder: "PLZ" %>
                               </div>
                             </div>
                             <div class="w-75 mx-2 me-0">
@@ -240,9 +249,7 @@
                                 <label class="my-2 d-block">
                                   Ort
                                 </label>
-                                <input type="text"
-                                       class="bg-light p-1 w-100 border border-secondary"
-                                       value="" placeholder="Hamburg">
+                                <%= form.text_field :Ort, class: "bg-light p-1 w-100 border border-secondary", placeholder: "Hamburg" %>
                               </div>
                             </div>
                           </div>
@@ -281,16 +288,12 @@
                             <label class="my-2 d-block">
                               E-Mail-Adresse
                             </label>
-                            <input type="text"
-                                   class="bg-light p-1 w-100 border border-secondary"
-                                   value="" placeholder="E-Mail-Adresse">
+                            <%= form.text_field :e_mail, class: "bg-light p-1 w-100 border border-secondary", placeholder: "E-Mail-Adresse", prompt:true %>
+                            <% if flash[:new_solution_errors] %>
+                              <p id="email_err" class='error'><%= flash[:new_solution_errors]["email"][0] %></p>
+                            <% end %>
+
                           </div>
-
-
-
-
-
-
 
                           <div class="mt-3"> <label class="mx-2 d-block">
                             1. Telefon-Nr.
@@ -509,9 +512,10 @@
               <button type="button" class="orange-btn my-3">
                 <i class="fa fa-trash" aria-hidden="true"></i>
                 Löschen</button>
-              <button type="button" class="orange-btn my-3">
+              <%= button_tag( :class => "orange-btn my-3") do %>
                 <i class="fa fa-folder-open" aria-hidden="true"></i>
-                SPEICHERN</button>
+                SPEICHERN
+              <% end %>
             </div>
           </div>
           <div class="col-lg-3 col-md-12 col-sm-12">
@@ -546,10 +550,17 @@
             </div>
           </div>
         </div>
-      </div>
+
+
+        <% end %>
+
+
+                          </div>
     </div>
   </div>
 </div>
+
+
 <!--<div id="footer"></div>-->
 
 <a href="#top" id="scrollUp" class="orange-color">
@@ -567,3 +578,9 @@
 </body>
 
 </html>
+
+<script>
+    $(".e_mail").focus(function() {
+        $(this).siblings("#email_err").hide()
+    });
+</script>

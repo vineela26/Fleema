@@ -10,11 +10,11 @@
   <%= stylesheet_link_tag "https://getbootstrap.com/docs/5.0/dist/css/bootstrap.min.css", media: "screen" %>
   <%= stylesheet_link_tag "style", media: "screen" %>
   <%= stylesheet_link_tag "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" %>
-</head>
 
 <body>
-<!--<div id="header"></div>-->
-<div class="container">
+<div id="header"></div>
+<%= form_with model: @car do |form| %>
+  <div class="container">
   <div class="row ">
     <div class="col-md-12 col-sm-12">
       <div class="content p-3">
@@ -227,63 +227,12 @@
                                 <div class="w-100">
                                   <label class="my-2 d-block">
                                     Modell</label>
-                                  <select class="form-select w-100"
-                                          aria-label="Default select example">
-                                    <option value="100">100</option>
-                                    <option value="200">200</option>
-                                    <option value="80">80</option>
-                                    <option value="90">90</option>
-                                    <option value="A1">A1</option>
-                                    <option value="A2">A2</option>
-                                    <option value="A3">A3</option>
-                                    <option value="A4">A4</option>
-                                    <option value="A4 Allroad">A4 Allroad
-                                    </option>
-                                    <option value="A5">A5</option>
-                                    <option value="A6">A6</option>
-                                    <option value="A6 Allroad">A6 Allroad
-                                    </option>
-                                    <option value="A7">A7</option>
-                                    <option value="A8" selected="selected">A8
-                                    </option>
-                                    <option value="Cabriolet">Cabriolet</option>
-                                    <option value="Coupé">Coupé</option>
-                                    <option value="e-tron">e-tron</option>
-                                    <option value="Q1">Q1</option>
-                                    <option value="Q2">Q2</option>
-                                    <option value="Q3">Q3</option>
-                                    <option value="Q5">Q5</option>
-                                    <option value="Q7">Q7</option>
-                                    <option value="Q8">Q8</option>
-                                    <option value="QUATTRO">quattro</option>
-                                    <option value="R8">R8</option>
-                                    <option value="RS2">RS2</option>
-                                    <option value="RS3">RS3</option>
-                                    <option value="RS4">RS4</option>
-                                    <option value="RS5">RS5</option>
-                                    <option value="RS6">RS6</option>
-                                    <option value="RS7">RS7</option>
-                                    <option value="RSQ3">RSQ3</option>
-                                    <option value="RSQ8">RSQ8</option>
-                                    <option value="S1">S1</option>
-                                    <option value="S2">S2</option>
-                                    <option value="S3">S3</option>
-                                    <option value="S4">S4</option>
-                                    <option value="S5">S5</option>
-                                    <option value="S6">S6</option>
-                                    <option value="S7">S7</option>
-                                    <option value="S8">S8</option>
-                                    <option value="SQ2">SQ2</option>
-                                    <option value="SQ5">SQ5</option>
-                                  </select>
+                                  <%= form.select :Modell, ['100', '200'],{}, { class: "form-select w-100", aria: {label: "Default select example"}}%>
                                 </div>
                                 <div class="w-100">
                                   <label class="my-2 d-block">
                                     Modellvariante </label>
-                                  <input type="text"
-                                         class="bg-light p-1 w-100 border border-secondary"
-                                         value=""
-                                         placeholder="A8 4.2 quattro" />
+                                  <%= form.text_field :Modellvariante, class: "bg-light p-1 w-100 border border-secondary", placeholder: "A8 4.2 quattro" %>
                                 </div>
                                 <div class="w-100">
                                   <label class="my-2 d-block">
@@ -351,10 +300,7 @@
                                 <div class="w-100">
                                   <label class="my-2 d-block">
                                     Erstzulassung * </label>
-                                  <input type="date"
-                                         class="bg-light p-1 w-100 border border-secondary"
-                                         value=""
-                                         placeholder="16.03.2006" />
+                                  <%= form.date_field :Erstzulassung, class:"bg-light p-1 w-100 border border-secondary",placeholder: "16.03.2006"%>
                                 </div>
                                 <div class="w-100">
                                   <label class="my-2 d-block">
@@ -3915,7 +3861,8 @@
     </div>
   </div>
 </div>
-<!--<div id="footer"></div>-->
+<% end %>
+<div id="footer"></div>
 
 <div id="carmodelpopup"></div>
 <div id="carmodelpopup_two"></div>
@@ -3939,4 +3886,3 @@
 </script>
 </body>
 
-</html>

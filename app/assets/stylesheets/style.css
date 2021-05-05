@@ -886,5 +886,14 @@ table {
 }
 .sub-table tr:hover,
 .sub-table tr:nth-child(even) {
-    background: none;
+    background: red ;
+}
+
+
+.tr-active {
+    background-color:yellowgreen !important;
+}
+
+.error {
+    color: red;
 }

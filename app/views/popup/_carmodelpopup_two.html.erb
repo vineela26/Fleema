@@ -1,3 +1,4 @@
+<%= form_with model: @car do |form| %>
 <div class="modal fade hinzufugen-modal" id="cardetails" data-bs-backdrop="static" data-bs-keyboard="false"
      tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
@@ -33,7 +34,7 @@
                 <label class="d-block">
                   Erstzulassung *
                 </label>
-                <input type="date" class="bg-light p-1 border border-secondary" value="" />
+                <%= form.date_field :Erstzulassung, class:"bg-light p-1 border border-secondary",value: ""%>
               </div>
             </div>
           </div>
@@ -45,26 +46,22 @@
               <input type="text" class="bg-light p-1 w-100 border border-secondary" value=""
                      placeholder=" " />
             </div>
-            <i class="fa fa-arrow-right d-block text-center color-primary font-size-18"
-               aria-hidden="true"></i>
+           <option value="">
           </div>
           <div class="col-lg-3 col-md-12 col-sm-12 border-end border-1">
             <div class="">
               <label class="d-block">
                 Marke *
               </label>
-              <select class="form-select bg-light" aria-label="Default select example">
-                <option value="">Marke auswählen</option>
-                <option value="ABARTH">Abarth</option><option value="AC">AC</option><option value="ACURA">Acura</option><option value="AIXAM">Aixam</option><option value="ALFA ROMEO">Alfa Romeo</option><option value="ALPINA">ALPINA</option><option value="ARTEGA">Artega</option><option value="ASIA MOTORS">Asia Motors</option><option value="ASTON MARTIN">Aston Martin</option><option value="AUDI">Audi</option><option value="AUSTIN">Austin</option><option value="AUSTIN HEALEY">Austin Healey</option><option value="BAIC">BAIC</option><option value="BENTLEY">Bentley</option><option value="BMW">BMW</option><option value="BORGWARD">Borgward</option><option value="BRILLIANCE">Brilliance</option><option value="BUGATTI">Bugatti</option><option value="BUICK">Buick</option><option value="CADILLAC">Cadillac</option><option value="CASALINI">Casalini</option><option value="CATERHAM">Caterham</option><option value="CHATENET">Chatenet</option><option value="CHEVROLET">Chevrolet</option><option value="CHRYSLER">Chrysler</option><option value="CITROEN">Citroën</option><option value="COBRA">Cobra</option><option value="CORVETTE">Corvette</option><option value="CUPRA">Cupra</option><option value="DACIA">Dacia</option><option value="DAEWOO">Daewoo</option><option value="DAIHATSU">Daihatsu</option><option value="DETOMASO">DeTomaso</option><option value="DFSK">DFSK</option><option value="DODGE">Dodge</option><option value="DONKERVOORT">Donkervoort</option><option value="DS">DS Automobiles</option><option value="FERRARI">Ferrari</option><option value="FIAT">Fiat</option><option value="FISKER">Fisker</option><option value="FORD">Ford</option><option value="GAC GONOW">GAC Gonow</option><option value="GEMBALLA">Gemballa</option><option value="GMC">GMC</option><option value="GRECAV">Grecav</option><option value="HAMANN">Hamann</option><option value="HOLDEN">Holden</option><option value="HONDA">Honda</option><option value="HUMMER">Hummer</option><option value="HYUNDAI">Hyundai</option><option value="INFINITI">Infiniti</option><option value="ISUZU">Isuzu</option><option value="IVECO">Iveco</option><option value="JAGUAR">Jaguar</option><option value="JEEP">Jeep</option><option value="KIA">Kia</option><option value="KOENIGSEGG">Koenigsegg</option><option value="KTM">KTM</option><option value="LADA">Lada</option><option value="LAMBORGHINI">Lamborghini</option><option value="LANCIA">Lancia</option><option value="LAND ROVER">Land Rover</option><option value="LANDWIND">Landwind</option><option value="LEXUS">Lexus</option><option value="LIGIER">Ligier</option><option value="LINCOLN">Lincoln</option><option value="LOTUS">Lotus</option><option value="MAHINDRA">Mahindra</option><option value="MASERATI">Maserati</option><option value="MAYBACH">Maybach</option><option value="MAZDA">Mazda</option><option value="MCLAREN">McLaren</option><option value="MERCEDES-BENZ">Mercedes-Benz</option><option value="MG">MG</option><option value="MICROCAR">Microcar</option><option value="MINI">MINI</option><option value="MITSUBISHI">Mitsubishi</option><option value="MORGAN">Morgan</option><option value="NISSAN">Nissan</option><option value="NSU">NSU</option><option value="OLDSMOBILE">Oldsmobile</option><option value="OPEL">Opel</option><option value="PAGANI">Pagani</option><option value="PEUGEOT">Peugeot</option><option value="PIAGGIO">Piaggio</option><option value="PLYMOUTH">Plymouth</option><option value="POLESTAR">Polestar</option><option value="PONTIAC">Pontiac</option><option value="PORSCHE">Porsche</option><option value="PROTON">Proton</option><option value="RENAULT">Renault</option><option value="ROLLS ROYCE">Rolls-Royce</option><option value="ROVER">Rover</option><option value="RUF">Ruf</option><option value="SAAB">Saab</option><option value="SANTANA">Santana</option><option value="SEAT">Seat</option><option value="SKODA">Skoda</option><option value="SMART">Smart</option><option value="SPEEDART">speedART</option><option value="SPYKER">Spyker</option><option value="SSANGYONG">Ssangyong</option><option value="SUBARU">Subaru</option><option value="SUZUKI">Suzuki</option><option value="TALBOT">Talbot</option><option value="TATA">Tata</option><option value="TECHART">TECHART</option><option value="TESLA">Tesla</option><option value="TOYOTA">Toyota</option><option value="TRABANT">Trabant</option><option value="TRIUMPH">Triumph</option><option value="TVR">TVR</option><option value="VW">Volkswagen</option><option value="VOLVO">Volvo</option><option value="WARTBURG">Wartburg</option><option value="WESTFIELD">Westfield</option><option value="WIESMANN">Wiesmann</option><option value="ANDERE">Andere</option>
-              </select>
+              <%= form.select :marke, ["Marke auswählen", "Abarth", "AC", "Acura", "Aixam", "Alfa Romeo", "ALPINA", "Artega", "Asia Motors", "Aston Martin", "Audi", "Austin", "Austin Healey", "BAIC", "Bentley", "BMW", "Borgward", "Brilliance", "Bugatti", "Buick", "Cadillac", "Casalini", "Caterham", "Chatenet", "Chevrolet", "Chrysler", "Citroën", "Cobra", "Corvette", "Cupra", "Dacia", "Daewoo", "Daihatsu", "DeTomaso", "DFSK", "Dodge", "Donkervoort", "DS Automobiles", "Ferrari", "Fiat", "Fisker", "Ford", "GAC Gonow", "Gemballa", "GMC", "Grecav", "Hamann", "Holden", "Honda", "Hummer", "Hyundai", "Infiniti", "Isuzu", "Iveco", "Jaguar", "Jeep", "Kia", "Koenigsegg", "KTM", "Lada", "Lamborghini", "Lancia", "Land Rover", "Landwind", "Lexus", "Ligier", "Lincoln", "Lotus", "Mahindra", "Maserati", "Maybach", "Mazda", "McLaren", "Mercedes-Benz", "MG", "Microcar", "MINI", "Mitsubishi", "Morgan", "Nissan", "NSU", "Oldsmobile", "Opel", "Pagani", "Peugeot", "Piaggio", "Plymouth", "Polestar", "Pontiac", "Porsche", "Proton", "Renault", "Rolls-Royce", "Rover", "Ruf", "Saab", "Santana", "Seat", "Skoda", "Smart", "speedART", "Spyker", "Ssangyong", "Subaru", "Suzuki", "Talbot", "Tata", "TECHART", "Tesla", "Toyota", "Trabant", "Triumph", "TVR", "Volkswagen", "Volvo", "Wartburg", "Westfield", "Wiesmann", "Andere"],
+                              {}, { class: "form-select bg-light", aria: {label: "Default select example"}}%>
             </div>
             <div class="mt-3">
               <label class="d-block">
                 Model *
               </label>
-              <select id="model-select" class="form-select bg-light" aria-label="Default select example">
-                <option value="">Modell auswählen</option><option value="100">100</option><option value="200">200</option><option value="80">80</option><option value="90">90</option><option value="A1">A1</option><option value="A2">A2</option><option value="A3">A3</option><option value="A4">A4</option><option value="A4 Allroad">A4 Allroad</option><option value="A5">A5</option><option value="A6">A6</option><option value="A6 Allroad">A6 Allroad</option><option value="A7">A7</option><option value="A8">A8</option><option value="Cabriolet">Cabriolet</option><option value="Coupé">Coupé</option><option value="e-tron">e-tron</option><option value="Q1">Q1</option><option value="Q2">Q2</option><option value="Q3">Q3</option><option value="Q5">Q5</option><option value="Q7">Q7</option><option value="Q8">Q8</option><option value="QUATTRO">quattro</option><option value="R8">R8</option><option value="RS2">RS2</option><option value="RS3">RS3</option><option value="RS4">RS4</option><option value="RS5">RS5</option><option value="RS6">RS6</option><option value="RS7">RS7</option><option value="RSQ3">RSQ3</option><option value="RSQ8">RSQ8</option><option value="S1">S1</option><option value="S2">S2</option><option value="S3">S3</option><option value="S4">S4</option><option value="S5">S5</option><option value="S6">S6</option><option value="S7">S7</option><option value="S8">S8</option><option value="SQ2">SQ2</option><option value="SQ5">SQ5</option><option value="SQ7">SQ7</option><option value="SQ8">SQ8</option><option value="TT">TT</option><option value="TT RS">TT RS</option><option value="TTS">TTS</option><option value="V8">V8</option><option value="ANDERE">Andere</option>n>
-              </select>
+              <%= form.select :Model, ["Modell auswählen", "100", "200", "80", "90", "A1", "A2", "A3", "A4", "A4 Allroad", "A5", "A6", "A6 Allroad", "A7", "A8", "Cabriolet", "Coupé", "e-tron", "Q1", "Q2", "Q3", "Q5", "Q7", "Q8", "quattro", "R8", "RS2", "RS3", "RS4", "RS5", "RS6", "RS7", "RSQ3", "RSQ8", "S1", "S2", "S3", "S4", "S5", "S6", "S7", "S8", "SQ2", "SQ5", "SQ7", "SQ8", "TT", "TT RS", "TTS", "V8", "Andere"],
+                              {}, {id:"model-select", class: "form-select bg-light", aria: {label: "Default select example"}}%>
             </div>
           </div>
           <div class="col-lg-3 col-md-12 col-sm-12">
@@ -215,13 +212,18 @@
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><i
           class="fa fa-times-circle-o d-block" aria-hidden="true"></i>
           Abbrechen</button>
-        <a href="bearbeiten" class="btn btn-secondary"><i class="fa fa-arrow-right d-block"
-                                                                         aria-hidden="true"></i>
-          OK</a>
+        <%= button_tag( :class => "btn btn-secondary") do %>
+          <i class="fa fa-arrow-right d-bloc" aria-hidden="true"></i>
+          OK
+        <% end %>
+<!--        <a href="bearbeiten" class="btn btn-secondary"><i class="fa fa-arrow-right d-block"-->
+<!--                                                                         aria-hidden="true"></i>-->
+<!--          OK</a>-->
       </div>
     </div>
   </div>
 </div>
+  <% end %>
 
 <script type="text/javascript">
     $("#model-select").change(function() {

@@ -65,8 +65,9 @@
                 <div class="my-3">
                   <h5 class="mt-4">FAHRZEUG</h5>
                   <div class="table-responsive">
-                    <table class="table my_table w-100">
+                    <table class="table my_table w-100" id= "cars_table">
                       <tr>
+                        <th style="display:none;">Id</th>
                         <th>Marke, Modell, Modellvariante
                         </th>
                         <th>Interne Nr.
@@ -75,15 +76,16 @@
                         </th>
                         <th>Preis</th>
                       </tr>
-                      <tr>
-                        <td>A8 4.2 quattro Langversion 4 Türen (334 PS/246 kW)
-                        </td>
-                        <td>1
-                        </td>
-                        <td>-
-                        </td>
-                        <td>-</td>
-                      </tr>
+
+                      <% Car.all.each do |car| %>
+                        <tr>
+                          <td style="display:none;"><%=car[:id] %></td>
+                          <td><%=car[:name] %></td>
+                          <td><%=car[:model] %></td>
+                          <td><%=car[:bhp] %></td>
+                          <td><%=car[:category] %></td>
+                        </tr>
+                      <%  end  %>
                     </table>
                   </div>
                 </div>
@@ -118,17 +120,21 @@
                 <div class="mb-3 d-block d-md-flex">
                   <div class="w-75">
                     <div class="table-responsive">
-                      <table class="table my_table w-100">
+                      <table class="table my_table w-100" id="cust_table">
                         <tr>
+                          <th style="display:none;">Id</th>
                           <th>Persönliche Daten</th>
                           <th>Telefon</th>
                           <th>Fahrzeug </th>
                         </tr>
-                        <tr>
-                          <td>Patrick Bartels</td>
-                          <td>+49 171 883 1117</td>
-                          <td></td>
-                        </tr>
+                        <% Hinzufugen.all.each do |cust| %>
+                          <tr>
+                            <td style="display:none;"><%=cust[:id] %></td>
+                            <td><%=cust[:first_name] %><%=cust[:last_name] %></td>
+                            <td><%=cust[:email] %></td>
+                            <td></td>
+                          </tr>
+                        <%  end  %>
                       </table>
                     </div>
                   </div>
@@ -385,7 +391,8 @@
             <a href="#" class="link-reset">Abbrechen</a>
             <input type="button" id="" value="Zurück" title="" class="orange-btn btnPrevious">
             <input type="button" id="" value="Nächste" title="Nächste" class="orange-btn btnNext">
-            <input type="button" id="" value="Speichern" title="Speichern" class="orange-btn">
+<!--            <a href="/generate_pdf" class="orange-btn">Speichern</a>-->
+            <input type="button" id="to_redirect" value="Speichern" title="Speichern" class="orange-btn">
           </div>
         </div>
       </div>
@@ -412,3 +419,31 @@
 </body>
 
 </html>
+
+<script type="text/javascript">
+  var selected_val = {}
+    $("#cars_table tr").click(function(){
+        $(this).addClass('tr-active').siblings().removeClass('tr-active');
+        var value=$(this).find('td:first').html();
+        selected_val["car_id"] = value;
+    });
+
+    $("#cust_table tr").click(function(){
+        $(this).addClass('tr-active').siblings().removeClass('tr-active');
+        var value=$(this).find('td:first').html();
+        selected_val["cust_id"] = value;
+    });
+
+    $('#to_redirect').on('click', function(e){
+        $.ajax({
+            url: "/generate_pdf",
+            type: "POST",
+            data: {values: selected_val},
+            beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
+            success: function (data) {
+                // append data to your page
+                // $("page_element").html(data);
+            }
+        });
+    });
+</script>
