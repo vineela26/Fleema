@@ -390,9 +390,9 @@
           <div id="navigationBtns">
             <a href="#" class="link-reset">Abbrechen</a>
             <input type="button" id="" value="Zurück" title="" class="orange-btn btnPrevious">
-            <input type="button" id="" value="Nächste" title="Nächste" class="orange-btn btnNext">
+            <input type="button" id="" value="Nächste" title="Nächste" class="orange-btn btnNext to_redirect">
 <!--            <a href="/generate_pdf" class="orange-btn">Speichern</a>-->
-            <input type="button" id="to_redirect" value="Speichern" title="Speichern" class="orange-btn">
+            <input type="button" id="" value="Speichern" title="Speichern" class="orange-btn to_redirect">
           </div>
         </div>
       </div>
@@ -434,7 +434,8 @@
         selected_val["cust_id"] = value;
     });
 
-    $('#to_redirect').on('click', function(e){
+    $('.to_redirect').on('click', function(e){
+        selected_val["calling_button"] = this.title;
         $.ajax({
             url: "/generate_pdf",
             type: "POST",
@@ -446,4 +447,5 @@
             }
         });
     });
+
 </script>

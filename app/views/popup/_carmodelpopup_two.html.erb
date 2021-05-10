@@ -54,10 +54,10 @@
                 Marke *
               </label>
               <%= form.select :marke, ["Marke auswählen", "Abarth", "AC", "Acura", "Aixam", "Alfa Romeo", "ALPINA", "Artega", "Asia Motors", "Aston Martin", "Audi", "Austin", "Austin Healey", "BAIC", "Bentley", "BMW", "Borgward", "Brilliance", "Bugatti", "Buick", "Cadillac", "Casalini", "Caterham", "Chatenet", "Chevrolet", "Chrysler", "Citroën", "Cobra", "Corvette", "Cupra", "Dacia", "Daewoo", "Daihatsu", "DeTomaso", "DFSK", "Dodge", "Donkervoort", "DS Automobiles", "Ferrari", "Fiat", "Fisker", "Ford", "GAC Gonow", "Gemballa", "GMC", "Grecav", "Hamann", "Holden", "Honda", "Hummer", "Hyundai", "Infiniti", "Isuzu", "Iveco", "Jaguar", "Jeep", "Kia", "Koenigsegg", "KTM", "Lada", "Lamborghini", "Lancia", "Land Rover", "Landwind", "Lexus", "Ligier", "Lincoln", "Lotus", "Mahindra", "Maserati", "Maybach", "Mazda", "McLaren", "Mercedes-Benz", "MG", "Microcar", "MINI", "Mitsubishi", "Morgan", "Nissan", "NSU", "Oldsmobile", "Opel", "Pagani", "Peugeot", "Piaggio", "Plymouth", "Polestar", "Pontiac", "Porsche", "Proton", "Renault", "Rolls-Royce", "Rover", "Ruf", "Saab", "Santana", "Seat", "Skoda", "Smart", "speedART", "Spyker", "Ssangyong", "Subaru", "Suzuki", "Talbot", "Tata", "TECHART", "Tesla", "Toyota", "Trabant", "Triumph", "TVR", "Volkswagen", "Volvo", "Wartburg", "Westfield", "Wiesmann", "Andere"],
-                              {}, { class: "form-select bg-light", aria: {label: "Default select example"}}%>
+                              {}, { id:"marke-select", class: "form-select bg-light", aria: {label: "Default select example"}}%>
             </div>
             <div class="mt-3">
-              <label class="d-block">
+              <label class="d-block" >
                 Model *
               </label>
               <%= form.select :Model, ["Modell auswählen", "100", "200", "80", "90", "A1", "A2", "A3", "A4", "A4 Allroad", "A5", "A6", "A6 Allroad", "A7", "A8", "Cabriolet", "Coupé", "e-tron", "Q1", "Q2", "Q3", "Q5", "Q7", "Q8", "quattro", "R8", "RS2", "RS3", "RS4", "RS5", "RS6", "RS7", "RSQ3", "RSQ8", "S1", "S2", "S3", "S4", "S5", "S6", "S7", "S8", "SQ2", "SQ5", "SQ7", "SQ8", "TT", "TT RS", "TTS", "V8", "Andere"],
@@ -238,5 +238,23 @@
                 str += $( this ).text() + " ";
             });
             alert( str );
+        });
+        $(document).ready(function() {
+            $("#marke-select").on('change', function(){
+                $.ajax({
+                    url: "/fetch_models",
+                    type: "GET",
+                    data: {state: $(this).val()},
+                    success: function(data) {
+                        $("#model-select").children().remove();
+                        // Create options and append to the list
+                        var listitems = [];
+                        $.each(data,function(key, value) {
+                            listitems += '<option value="' + key+ '">' + value + '</option>';    });
+                        $("#model-select").append(listitems);
+                        console.log(listitems);
+                    }
+                })
+            });
         });
 </script>

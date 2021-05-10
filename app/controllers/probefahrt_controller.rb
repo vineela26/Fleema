@@ -2,17 +2,10 @@ class ProbefahrtController < ApplicationController
   def generate_pdf
     car = Car.first
     cust = Hinzufugen.first
-    file = File.open("/home/vineela/Work/Fleema/app/assets/docs/probefahrt.pdf")
-    file.each do |line|
-      debugger
-    end
-    # template_filename = '/home/vineela/Work/Fleema/app/assets/docs/probefahrt.pdf'
-    # prawn_filename = 'temp.pdf'
-    # output_filename = 'output.pdf'
-    # Prawn::Document.generate(prawn_filename) do
-    #   # Generate whatever you want here.
-    #   text_box "This is some new text!", :at => [100, 300]
-    # end
-    # PDF::Toolkit.pdftk(prawn_filename, "background", template_filename, "output", output_filename)
+    pdftest = Car.probefahrt_pdf_html(car,cust)
+    kit = PDFKit.new(pdftest, page_size: 'A4')
+    pdf_test = kit.to_pdf
+    kit.to_file("#{Rails.root}/public/tmp_files/probefahrt.pdf")
+    # send_data pdf_test, filename: 'Report.pdf', type: "application/pdf", disposition: "inline"
   end
 end

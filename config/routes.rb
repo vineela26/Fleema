@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  root to: "angebot#index"
   get "/angebot", to: "angebot#index"
   get "/anmeldung", to: "anmeldung#index"
   get "/auswahlen", to: "auswahlen#index"
@@ -35,5 +36,6 @@ Rails.application.routes.draw do
   get "/carmodelpopup" => 'popup#carmodelpopup', :as => :carmodel_popup
   get "/carmodelpopup_two" => 'popup#carmodelpopup_two', :as => :carmodel_popup_two
   post "/carmodelpopup_two", to: "popup#create"
+  get "/fetch_models", to: "popup#fetch_models"
 
 end
