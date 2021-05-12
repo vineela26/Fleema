@@ -239,22 +239,22 @@
             });
             alert( str );
         });
-        $(document).ready(function() {
-            $("#marke-select").on('change', function(){
-                $.ajax({
-                    url: "/fetch_models",
-                    type: "GET",
-                    data: {state: $(this).val()},
-                    success: function(data) {
-                        $("#model-select").children().remove();
-                        // Create options and append to the list
-                        var listitems = [];
-                        $.each(data,function(key, value) {
-                            listitems += '<option value="' + key+ '">' + value + '</option>';    });
-                        $("#model-select").append(listitems);
-                        console.log(listitems);
-                    }
-                })
-            });
-        });
+        // $(document).ready(function() {
+        //     $("#marke-select").on('change', function(){
+        //         $.ajax({
+        //             url: "/fetch_models",
+        //             type: "GET",
+        //             data: {state: $(this).val()},
+        //             success: function(data) {
+        //                 $("#model-select").children().remove();
+        //                 // Create options and append to the list
+        //                 var listitems = [];
+        //                 $.each(data,function(key, value) {
+        //                     listitems += '<option value="' + key+ '">' + value + '</option>';    });
+        //                 $("#model-select").append(listitems);
+        //                 console.log(listitems);
+        //             }
+        //         })
+        //     });
+        // });
 </script>

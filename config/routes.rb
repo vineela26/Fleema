@@ -26,7 +26,7 @@ Rails.application.routes.draw do
   get "/priesschild", to: "priesschild#index"
 
   get "/probefahrt", to: "probefahrt#index"
-  post "/generate_pdf", to: "probefahrt#generate_pdf"
+  get "/generate_pdf", to: "probefahrt#generate_pdf"
 
   get "/rechnung", to: "rechnung#index"
   get "/rechnung", to: "rechnung#index"

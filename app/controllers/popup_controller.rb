@@ -1,7 +1,10 @@
 class PopupController < ApplicationController
 
   def carmodelpopup
-
+    # respond_to do |format|
+    #   format.js { render json: @pdf_path.to_json }
+    #   format.html
+    # end
   end
 
   def carmodelpopup_two
@@ -31,7 +34,6 @@ class PopupController < ApplicationController
     request['Cookie'] = 'uuid230=3c7d0c18-99c0-4a65-a50c-8317098639e9; via=classistatic; deviceRegistrationToken="17857673,7f1d6f62c5bd86d6c41d656d3b14ae2aa98f70b4"; a2SID=9a7f0facd2cb4f02868d88d191f28a0c048604b0dd31bac395945e7fe0dc180b00000178ca5d0a25; SESSION=41dc889c-dbf9-4228-a8bd-a0afc6ba4271;'
     request['Pragma'] = 'no-cache'
     request['Cache-Control'] = 'no-cache'
-    debugger
     response = https.request(request)
   end
 

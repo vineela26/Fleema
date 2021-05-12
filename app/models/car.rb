@@ -114,12 +114,12 @@ Fax: +49 (0)40 78876891 </span></td>
                         <table width="100%" border="0" cellspacing="0" cellpadding="5">
                            <tr>
                               <td width="30%" align="left" valign="top">Marke:</td>
-                              <td width="62%" align="left" valign="top">Audi</td>
+                              <td width="62%" align="left" valign="top">'+"#{car.name}"+'</td>
                               <td width="8%" align="left" valign="top">&nbsp;</td>
                            </tr>
                            <tr>
                               <td width="30%" align="left" valign="top">Modell:</td>
-                              <td width="62%" align="left" valign="top">A8 4.2 quattro Langversion</td>
+                              <td width="62%" align="left" valign="top">'+"#{car.model}"+'</td>
                               <td width="8%" align="left" valign="top">&nbsp;</td>
                            </tr>
                            <tr>
@@ -129,12 +129,12 @@ Fax: +49 (0)40 78876891 </span></td>
                            </tr>
                            <tr>
                               <td width="30%" align="left" valign="top">Erstzulassung:</td>
-                              <td width="62%" align="left" valign="top">16.03.06</td>
+                              <td width="62%" align="left" valign="top">'+"#{car.first_registration}"+'</td>
                               <td width="8%" align="left" valign="top">&nbsp;</td>
                            </tr>
                            <tr>
                               <td width="30%" align="left" valign="top">Leistung:</td>
-                              <td width="62%" align="left" valign="top">246 kW</td>
+                              <td width="62%" align="left" valign="top">'+"#{car.bhp}"+' kW</td>
                               <td width="8%" align="left" valign="top">&nbsp;</td>
                            </tr>
                            <tr>

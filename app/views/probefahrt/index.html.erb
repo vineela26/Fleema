@@ -80,10 +80,10 @@
                       <% Car.all.each do |car| %>
                         <tr>
                           <td style="display:none;"><%=car[:id] %></td>
-                          <td><%=car[:name] %></td>
-                          <td><%=car[:model] %></td>
+                          <td><%="#{car[:name]} #{car[:model]}" %></td>
+                          <td><%=car[:id] %></td>
                           <td><%=car[:bhp] %></td>
-                          <td><%=car[:category] %></td>
+                          <td></td>
                         </tr>
                       <%  end  %>
                     </table>
@@ -124,13 +124,13 @@
                         <tr>
                           <th style="display:none;">Id</th>
                           <th>Persönliche Daten</th>
-                          <th>Telefon</th>
+                          <th>E-Mail-Adress</th>
                           <th>Fahrzeug </th>
                         </tr>
                         <% Hinzufugen.all.each do |cust| %>
                           <tr>
                             <td style="display:none;"><%=cust[:id] %></td>
-                            <td><%=cust[:first_name] %><%=cust[:last_name] %></td>
+                            <td><%="#{cust[:first_name]} #{cust[:last_name]}" %></td>
                             <td><%=cust[:email] %></td>
                             <td></td>
                           </tr>
@@ -355,8 +355,8 @@
                    class="tab-pane fade px-4 py-5">
                 <div class="row">
                   <div class="col-md-12 col-sm-12">
-                    <div class="" style="height:500px;">
-                      <iframe src="<%= asset_path 'probefahrt.pdf' %>#toolbar=0" frameborder="0"
+                    <div class="" style="height:500px;" >
+                      <iframe id="probefahrt_pdf_display" src="<%= generate_pdf_path %>" frameborder="0"
                               class="w-100 h-100"></iframe>
                     </div>
                   </div>
@@ -369,8 +369,9 @@
                   <div>
                     <%= image_tag "checklist-icon.png", alt: "" %>
                   </div>
-                  <div class="mt-1 ms-2"><a id="" class="link-reset fw-bold"
-                                            href="<%= asset_path 'probefahrt.pdf' %>">Probefahrt.pdf</a>
+                  <div class="mt-1 ms-2">
+<!--                    <a id="probefahrt_pdf_dwnld" class="link-reset fw-bold" href="/probefahrt.pdf">Probefahrt.pdf</a>-->
+                    <%= link_to "Probefahrt.pdf", generate_pdf_path, id: "probefahrt_pdf_dwnld", class: "link-reset fw-bold" %>
                   </div>
                 </div>
                 <div class="mt-4">
@@ -390,9 +391,9 @@
           <div id="navigationBtns">
             <a href="#" class="link-reset">Abbrechen</a>
             <input type="button" id="" value="Zurück" title="" class="orange-btn btnPrevious">
-            <input type="button" id="" value="Nächste" title="Nächste" class="orange-btn btnNext to_redirect">
+            <input type="button" id="" value="Nächste" title="Nächste" class="orange-btn btnNext">
 <!--            <a href="/generate_pdf" class="orange-btn">Speichern</a>-->
-            <input type="button" id="" value="Speichern" title="Speichern" class="orange-btn to_redirect">
+            <input type="button" id="" value="Speichern" title="Speichern" class="orange-btn">
           </div>
         </div>
       </div>
@@ -421,31 +422,50 @@
 </html>
 
 <script type="text/javascript">
+  var link_url = $('#probefahrt_pdf_dwnld')[0].pathname
   var selected_val = {}
     $("#cars_table tr").click(function(){
         $(this).addClass('tr-active').siblings().removeClass('tr-active');
         var value=$(this).find('td:first').html();
         selected_val["car_id"] = value;
+        link_url = link_url + "?car_id=" + value;
+        console.log(link_url);
     });
 
     $("#cust_table tr").click(function(){
         $(this).addClass('tr-active').siblings().removeClass('tr-active');
         var value=$(this).find('td:first').html();
         selected_val["cust_id"] = value;
+        link_url = link_url + "&cust_id=" + value;
+        $('#probefahrt_pdf_dwnld').attr('href', link_url);
+        $('#probefahrt_pdf_display').attr('src', link_url);
+        console.log(link_url);
     });
 
-    $('.to_redirect').on('click', function(e){
-        selected_val["calling_button"] = this.title;
-        $.ajax({
-            url: "/generate_pdf",
-            type: "POST",
-            data: {values: selected_val},
-            beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
-            success: function (data) {
-                // append data to your page
-                // $("page_element").html(data);
-            }
-        });
-    });
+    // $('.to_redirect').on('click', function(e){
+    //     selected_val["calling_button"] = this.title;
+    //     $.ajax({
+    //         url: "/generate_pdf",
+    //         type: "GET",
+    //         data: {values: selected_val},
+    //         beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
+    //         success: function (data) {
+    //             // append data to your page
+    //             // console.log(data);
+    //             // var blob=new Blob([data], { type: response.headers['content-type'] } );
+    //             // var link=document.createElement('a');
+    //             // link.href=window.URL.createObjectURL(blob);
+    //             // link.click();
+    //
+    //
+    //
+    //             // var win = window.open('', '_blank');
+    //             // win.location.href = data;
+    //             // $('#probefahrt_pdf_dwnld').attr("href", data);
+    //             // $('#probefahrt_pdf_display').attr("src", data);
+    //         }
+    //     });
+    // });
+
 
 </script>
