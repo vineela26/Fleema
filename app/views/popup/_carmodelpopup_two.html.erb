@@ -155,7 +155,7 @@
           Wahlen Sle elne Modellvarlante
         </p>
         <div class="table-responsive">
-          <table class="table my_table w-100">
+          <table class="table my_table w-100" id="car_models">
             <tr>
               <th>Modellvarlante</th>
               <th>Brutto Neuprels</th>
@@ -200,6 +200,7 @@
               <td>3/2005-4/2006</td>
             </tr>
           </table>
+          <%= form.hidden_field :car_model_value, value: ''  %>
         </div>
       </div>
       <div class="modal-footer">
@@ -239,7 +240,14 @@
             });
             alert( str );
         });
-        // $(document).ready(function() {
+
+    $("#car_models tr").click(function(){
+        $(this).addClass('tr-active').siblings().removeClass('tr-active');
+        var value=$(this).find('td:first').html();
+        document.getElementById('car_model_value').value = value;
+    });
+
+    // $(document).ready(function() {
         //     $("#marke-select").on('change', function(){
         //         $.ajax({
         //             url: "/fetch_models",
@@ -258,3 +266,4 @@
         //     });
         // });
 </script>
+
