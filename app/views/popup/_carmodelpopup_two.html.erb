@@ -531,18 +531,38 @@
 <script type="text/javascript">
   $(document).ready(function() {
     $("#marke-select").on('change', function(){
+      var selectedMark = this.value;
+
       $.ajax({
-        url: "https://api.car2db.com/api/auto/v1/make.getAll.csv.de?id_type=1&api_key=Patrick.Bartels@gmail.com07826d8551ba1146a91ef240875fdd02",
+        url: "https://api.car2db.com/api/auto/v1/model.getAll.csv.de?id_type=1&api_key=Patrick.Bartels@gmail.com07826d8551ba1146a91ef240875fdd02",
         type: "GET",
         data: {state: $(this).val()},
         success: function(data) {
           $("#model-select").children().remove();
           // Create options and append to the list
           var listitems = [];
-          $.each(data,function(key, value) {
-              listitems += '<option value="' + key+ '">' + value + '</option>';    });
+          // $.each(data,function(key, value) {
+              // listitems += '<option value="' + key+ '">' + value + '</option>';    });
+          // $("#model-select").append(listitems);
+          var allRows = data.split(/\r?\n|\r/);
+          for (var singleRow = 0; singleRow < allRows.length; singleRow++) {
+            if (singleRow === 0) { continue; }
+            var rowCells = allRows[singleRow].split(',');
+
+            // for (var rowCell = 0; rowCell < rowCells.length; rowCell++) {
+            //   console.log(rowCells[rowCell]);
+            // }
+
+            if (rowCells[1] != "'"+selectedMark+"'") {
+              continue;
+            } else {
+              var key = rowCells[0].replace(/'/g, "");
+              var value = rowCells[2].replace(/'/g, "");
+              listitems += '<option value="' + key + '">' + value + '</option>';
+            }
+          }
           $("#model-select").append(listitems);
-          console.log(listitems);
+          console.log(selectedMark);
         }
       })
     });
