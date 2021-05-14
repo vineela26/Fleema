@@ -178,7 +178,7 @@
                                     Vorname
                                   </label>
                                   <%= form.text_field :Vorname, class: "bg-light p-1 w-100 border border-secondary", placeholder: "Vorname" %>
-                                  <% if flash[:new_solution_errors] %>
+                                  <% if flash[:new_solution_errors] && flash[:new_solution_errors]["first_name"] %>
                                     <p class='error'><%= flash[:new_solution_errors]["first_name"][0] %></p>
                                   <% end %>
                                 </div>
@@ -189,7 +189,7 @@
                                     Nachname
                                   </label>
                                   <%= form.text_field :Nachname, class: "bg-light p-1 w-100 border border-secondary", placeholder: "Nachname" %>
-                                  <% if flash[:new_solution_errors] %>
+                                  <% if flash[:new_solution_errors] && flash[:new_solution_errors]["last_name"] %>
                                     <p class='error'><%= flash[:new_solution_errors]["last_name"][0] %></p>
                                   <% end %>
                                 </div>
@@ -289,7 +289,7 @@
                               E-Mail-Adresse
                             </label>
                             <%= form.text_field :e_mail, class: "bg-light p-1 w-100 border border-secondary", placeholder: "E-Mail-Adresse", prompt:true %>
-                            <% if flash[:new_solution_errors] %>
+                            <% if flash[:new_solution_errors] && flash[:new_solution_errors]["email"] %>
                               <p id="email_err" class='error'><%= flash[:new_solution_errors]["email"][0] %></p>
                             <% end %>
 
