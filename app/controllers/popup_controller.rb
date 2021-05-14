@@ -13,7 +13,6 @@ class PopupController < ApplicationController
 
   def create
     car = Car.find_or_create_by(name: params["marke"], model: params["Model"], first_registration: params["Erstzulassung"], car_model_name: params["car_model_value"])
-    debugger
     redirect_to "/bearbeiten/#{car.id}/edit"
   end
 
