@@ -421,37 +421,14 @@
         <p class="mb-0">Wählen Sie ein Modell aus dem Katalog aus, um die passende Modellvarlante zu finden
         </p>
         <div class="table-responsive">
-          <table class="table my_table w-100">
+          <table class="table my_table w-100" id="cars1">
             <tr>
               <th>Modell</th>
               <th>Produktlonseltraum</th>
             </tr>
             <CAPTION> Es gibt keine Modelle, die Ihren Suchkriterien entsprechen </CAPTION>
-            <tr class="car-1" style="display: none">
-              <td>A8 3.0 TDI DPF quattro</td>
-              <td>2005-2007</td>
-            </tr>
-            <tr class="car-1" style="display: none">
-              <td>A8 3.2 FSI</td>
-              <td>2005-2007</td>
-            </tr>
-            <tr class="car-1" style="display: none">
-              <td>A8 3.7 quattro</td>
-              <td>2005-2006</td>
-            </tr>
-            <tr class="car-1" style="display: none">
-              <td>A8 4.0 TDI quattro</td>
-              <td>2005-2005</td>
-            </tr>
-            <tr class="car-1" style="display: none">
-              <td>A8 4.2 FSI quattro</td>
-              <td>2006-2007</td>
-            </tr>
-            <tr class="car-1" style="display: none">
-              <td>A8 4.2 quattro Langversion</td>
-              <td>2005-2006</td>
-            </tr>
           </table>
+          <%= form.hidden_field :car_generation_value, value: ''  %>
         </div>
         <p class="mb-0">
           Wahlen Sle elne Modellvarlante
@@ -465,41 +442,11 @@
             </tr>
             <CAPTION> Es gibt keine Modelle, die Ihren Suchkriterien entsprechen
             </CAPTION>
-            <tr class="car-1" style="display: none">
+            <tr style="display: none">
               <td>A8 3.0 TDI DPF quattro 4 Türen (233 PS/171 kW)
               </td>
               <td>65.650</td>
               <td>3/2005-8/2007-</td>
-            </tr>
-            <tr class="car-1" style="display: none">
-              <td>A8 3.2 FSI 4 Türen (260 PS/191 kW)
-              </td>
-              <td>145.800</td>
-              <td>1/2014-</td>
-            </tr>
-            <tr class="car-1" style="display: none">
-              <td>A8 3.7 quattro 4 Türen (280 PS/206 kW)
-              </td>
-              <td>69.300</td>
-              <td>3/2005-4/2006</td>
-            </tr>
-            <tr class="car-1" style="display: none">
-              <td>A8 4.0 TDI quattro 4 Türen (275 PS/202 kW)
-              </td>
-              <td>78.200</td>
-              <td>3/2005-6/2005</td>
-            </tr>
-            <tr class="car-1" style="display: none">
-              <td>A8 4.2 FSI quattro 4 Türen (350 PS/257 kW)
-              </td>
-              <td>78.700</td>
-              <td>4/2006-8/2007</td>
-            </tr>
-            <tr class="car-1" style="display: none">
-              <td>A8 4.2 quattro Langversion 4 Türen (334 PS/246 kW)
-              </td>
-              <td>81.700</td>
-              <td>3/2005-4/2006</td>
             </tr>
           </table>
           <%= form.hidden_field :car_model_value, value: ''  %>
@@ -530,6 +477,125 @@
 
 <script type="text/javascript">
   $(document).ready(function() {
+    // $("#model-select").change(function() {
+    //   var selectedModel = this.value;
+    //   var selectedMark = $( "#marke-select option:selected" ).val();
+    //   console.log(selectedModel);
+    //   console.log(selectedMark);
+
+    //   $.ajax({
+    //     url: "https://api.car2db.com/api/auto/v1/trim.getAll.csv.de?id_type=1&api_key=Patrick.Bartels@gmail.com07826d8551ba1146a91ef240875fdd02",
+    //     type: "GET",
+    //     data: {state: $(this).val()},
+    //     success: function(data) {
+    //       var listitems = [];
+    //       var allRows = data.split(/\r?\n|\r/);
+    //       for (var singleRow = 0; singleRow < allRows.length; singleRow++) {
+    //         if (singleRow === 0) { continue; }
+    //         var rowCells = allRows[singleRow].split(',');
+
+    //         if (rowCells[2] != "'"+selectedModel+"'") {
+    //           continue;
+    //         } else {
+    //           var trim = rowCells[3].replace(/'/g, "");
+    //           var year_start = rowCells[4].replace(/'/g, "");
+    //           var year_end = rowCells[5].replace(/'/g, "");
+    //           listitems += "<tr><td>" + trim + "</td><td>" + year_start + " - " + year_end + "</td></tr>";
+    //         }
+    //       }
+    //       $("#cars1").append(listitems);
+    //       console.log(selectedMark);
+    //     }
+    //   })
+
+    //   $('.car-1').show();
+    // });
+
+
+    $("#model-select").change(function() {
+      var selectedModel = this.value;
+      var selectedMark = $( "#marke-select option:selected" ).val();
+      var selectedGeneration = 0;
+      // console.log(selectedModel);
+      // console.log(selectedMark);
+
+      $.ajax({
+        url: "https://api.car2db.com/api/auto/v1/generation.getAll.csv.de?id_type=1&api_key=Patrick.Bartels@gmail.com07826d8551ba1146a91ef240875fdd02",
+        type: "GET",
+        data: {state: $(this).val()},
+        success: function(data) {
+          var listitems = [];
+          var allRows = data.split(/\r?\n|\r/);
+          for (var singleRow = 0; singleRow < allRows.length; singleRow++) {
+            if (singleRow === 0) { continue; }
+            var rowCells = allRows[singleRow].split(',');
+
+            if (rowCells[1] != "'"+selectedModel+"'") {
+              continue;
+            } else {
+              var key = rowCells[0].replace(/'/g, "");
+              var name = rowCells[2].replace(/'/g, "");
+              var year_start = rowCells[3].replace(/'/g, "");
+              var year_end = rowCells[4].replace(/'/g, "");
+              listitems += "<tr data-key=\"" + key + "\"><td>" + name + "</td><td>" + year_start + " - " + year_end + "</td></tr>";
+            }
+          }
+          $("#cars1").append(listitems);
+
+          $("#cars1 tr").click(function(){
+            $(this).addClass('tr-active').siblings().removeClass('tr-active');
+            selectedGeneration = $(this).data("key");
+            document.getElementById('car_generation_value').value = selectedGeneration;
+            console.log(selectedGeneration);
+
+
+
+
+            $.ajax({
+              url: "https://api.car2db.com/api/auto/v1/trim.getAll.csv.de?id_type=1&api_key=Patrick.Bartels@gmail.com07826d8551ba1146a91ef240875fdd02",
+              type: "GET",
+              data: {state: $(this).val()},
+              success: function(data) {
+                var listitems = [];
+                var allRows = data.split(/\r?\n|\r/);
+                for (var singleRow = 0; singleRow < allRows.length; singleRow++) {
+                  if (singleRow === 0) { continue; }
+                  var rowCells = allRows[singleRow].split(',');
+
+                  if (rowCells[2] != "'"+selectedModel+"'") {
+                    continue;
+                  } else {
+                    var key = rowCells[0].replace(/'/g, "");
+                    var name = rowCells[3].replace(/'/g, "");
+                    var year_start = rowCells[4].replace(/'/g, "");
+                    var year_end = rowCells[5].replace(/'/g, "");
+                    listitems += "<tr data-key=\"" + key + "\"><td>" + name + "</td><td></td><td>" + year_start + " - " + year_end + "</td></tr>";
+                  }
+                }
+                $("#car_models").append(listitems);
+
+                $("#car_models tr").click(function(){
+                  $(this).addClass('tr-active').siblings().removeClass('tr-active');
+                  var value=$(this).data("key");
+                  document.getElementById('car_model_value').value = value;
+                  console.log(value);
+                });
+
+                // console.log(selectedMark);
+              }
+            });
+
+
+
+          });
+
+          // console.log(selectedMark);
+        }
+      });
+    });
+
+
+
     $("#marke-select").on('change', function(){
       var selectedMark = this.value;
 
@@ -539,19 +605,11 @@
         data: {state: $(this).val()},
         success: function(data) {
           $("#model-select").children().remove();
-          // Create options and append to the list
           var listitems = [];
-          // $.each(data,function(key, value) {
-              // listitems += '<option value="' + key+ '">' + value + '</option>';    });
-          // $("#model-select").append(listitems);
           var allRows = data.split(/\r?\n|\r/);
           for (var singleRow = 0; singleRow < allRows.length; singleRow++) {
             if (singleRow === 0) { continue; }
             var rowCells = allRows[singleRow].split(',');
-
-            // for (var rowCell = 0; rowCell < rowCells.length; rowCell++) {
-            //   console.log(rowCells[rowCell]);
-            // }
 
             if (rowCells[1] != "'"+selectedMark+"'") {
               continue;
@@ -562,9 +620,9 @@
             }
           }
           $("#model-select").append(listitems);
-          console.log(selectedMark);
+          // console.log(selectedMark);
         }
-      })
+      });
     });
   });
 </script>
