@@ -31,7 +31,9 @@ Rails.application.routes.draw do
   get "/markt_uberblick", to: "markt_uberblick#index"
   get "/meinedaten", to: "meinedaten#index"
   get "/personliche_einstellungen", to: "personliche_einstellungen#index"
-  get "/priesschild", to: "priesschild#index"
+  
+  get "/preisschild", to: "priesschild#index"
+  get "/generate_preisschild", to: "priesschild#generate_pdf"
 
   get "/probefahrt", to: "probefahrt#index"
   get "/generate_pdf", to: "probefahrt#generate_pdf"
