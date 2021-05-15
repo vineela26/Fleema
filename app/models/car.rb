@@ -288,4 +288,8 @@ Fax: +49 (0)40 78876891 </span></td>
    </html'
     return probefahrt_html
   end
+
+  def full_name
+    "#{name} #{model} - #{car_model_name}"
+  end
 end

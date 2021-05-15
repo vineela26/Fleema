@@ -18,7 +18,7 @@
     <div class="row ">
       <div class="col-md-12 col-sm-12">
         <div class="content p-3">
-          <h1 class="mb-0"><%=@car.car_model_name.empty? ?  "A8 4.2 quattro Langversion 4 Türen" : @car.car_model_name.split("(").first%></h1>
+          <h1 class="mb-0"><%=@car.full_name %></h1>
           <p class="color-primary font-size-14 mt-1">PKW - LIMOUSINE - GEBRAUCHT</p>
           <div class="row">
             <div class="col-lg-9 col-md-12 col-sm-12">
@@ -3885,4 +3885,3 @@
     });
 </script>
 </body>
-
