@@ -428,6 +428,10 @@
         $(this).addClass('tr-active').siblings().removeClass('tr-active');
         var value=$(this).find('td:first').html();
         selected_val["car_id"] = value;
+        console.log(link_url);
+        if (link_url.indexOf("?car_id")){
+           link_url = link_url.split("?")[0]
+        }
         link_url = link_url + "?car_id=" + value;
     });
 
@@ -435,6 +439,9 @@
         $(this).addClass('tr-active').siblings().removeClass('tr-active');
         var value=$(this).find('td:first').html();
         selected_val["cust_id"] = value;
+        if (link_url.indexOf("&cust_id")){
+            link_url = link_url.split("&")[0]
+        }
         link_url = link_url + "&cust_id=" + value;
         $('#probefahrt_pdf_dwnld').attr('href', link_url);
         $('#probefahrt_pdf_display').attr('src', link_url);
