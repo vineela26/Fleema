@@ -3,7 +3,9 @@ prawn_document(filename: "probefahrt.pdf", disposition: "inline", type: "applica
   pdf.draw_text @car.car_model_name,      :at => [140, 403], :size => 8
   pdf.draw_text @car.model,               :at => [140, 393], :size => 8
 
-  pdf.draw_text '15.05.2021 - 13:41',     :at => [170, 228], :size => 8
+  current_date = DateTime.now
+  pdf.draw_text current_date.strftime("%d.%m.%Y - %H:%M"),
+                                          :at => [170, 228], :size => 8
 
 
   pdf.draw_text "#{@customer.first_name} #{@customer.last_name}",

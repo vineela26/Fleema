@@ -429,7 +429,6 @@
         var value=$(this).find('td:first').html();
         selected_val["car_id"] = value;
         link_url = link_url + "?car_id=" + value;
-        // console.log(link_url);
     });
 
     $("#cust_table tr").click(function(){
@@ -439,33 +438,5 @@
         link_url = link_url + "&cust_id=" + value;
         $('#probefahrt_pdf_dwnld').attr('href', link_url);
         $('#probefahrt_pdf_display').attr('src', link_url);
-        // console.log(link_url);
     });
-
-    // $('.to_redirect').on('click', function(e){
-    //     selected_val["calling_button"] = this.title;
-    //     $.ajax({
-    //         url: "/generate_pdf",
-    //         type: "GET",
-    //         data: {values: selected_val},
-    //         beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
-    //         success: function (data) {
-    //             // append data to your page
-    //             // console.log(data);
-    //             // var blob=new Blob([data], { type: response.headers['content-type'] } );
-    //             // var link=document.createElement('a');
-    //             // link.href=window.URL.createObjectURL(blob);
-    //             // link.click();
-    //
-    //
-    //
-    //             // var win = window.open('', '_blank');
-    //             // win.location.href = data;
-    //             // $('#probefahrt_pdf_dwnld').attr("href", data);
-    //             // $('#probefahrt_pdf_display').attr("src", data);
-    //         }
-    //     });
-    // });
-
-
 </script>

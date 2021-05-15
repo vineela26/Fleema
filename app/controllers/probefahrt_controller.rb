@@ -1,6 +1,5 @@
 class ProbefahrtController < ApplicationController
   def generate_pdf
-    @car = Car.find(params[:car_id])
-    @customer = Hinzufugen.find(params[:cust_id])
+    set_car_and_cust
   end
 end
