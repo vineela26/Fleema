@@ -20,6 +20,8 @@ Rails.application.routes.draw do
   post "/hinzufugen", to: "hinzufugen#create"
 
   get "/kaufvertrag", to: "kaufvertrag#index"
+  get "/generate_kaufvertrag", to: "kaufvertrag#generate_pdf"
+
   get "/kundenliste", to: "kundenliste#index"
   get "/lieferschein", to: "lieferschein#index"
   get "/login", to: "login#index"
