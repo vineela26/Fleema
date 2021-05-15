@@ -31,7 +31,8 @@ gem 'jquery-rails'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 
-gem "prawn"
+gem 'prawn-rails', '~> 1.4.0'
+gem 'prawn-templates', '~> 0.1.2'
 
 gem 'pdfkit'
 gem 'wkhtmltopdf-binary'
