@@ -14,7 +14,9 @@ Rails.application.routes.draw do
 
   get "/bestand", to: "bestand#index"
   get "/dokumentenliste", to: "dokumentenliste#index"
+
   get "/handzettel", to: "handzettel#index"
+  get "/generate_handzettel", to: "handzettel#generate_pdf"
 
   get "/hinzufugen", to: "hinzufugen#index"
   post "/hinzufugen", to: "hinzufugen#create"
