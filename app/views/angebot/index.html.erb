@@ -65,7 +65,7 @@
                 </div>
                 <div class="my-3">
                   <div class="table-responsive">
-                    <table class="table my_table w-100">
+                    <table class="table my_table w-100" id= "cars_table">
                       <tr>
                         <th>Marke, Modell, Modellvariante
                         </th>
@@ -75,15 +75,15 @@
                         </th>
                         <th>Preis</th>
                       </tr>
-                      <tr>
-                        <td>A8 4.2 quattro Langversion 4 Türen (334 PS/246 kW)
-                        </td>
-                        <td>1
-                        </td>
-                        <td>-
-                        </td>
-                        <td>-</td>
-                      </tr>
+                      <% Car.all.each do |car| %>
+                        <tr>
+                          <td style="display:none;"><%=car[:id] %></td>
+                          <td><%="#{car[:name]} #{car[:model]}" %></td>
+                          <td><%=car[:id] %></td>
+                          <td><%=car[:bhp] %></td>
+                          <td></td>
+                        </tr>
+                      <%  end  %>
                     </table>
                   </div>
                 </div>
@@ -118,17 +118,20 @@
                   <div class="w-75">
                     <div class="table-responsive">
 
-                      <table class="table my_table w-100">
+                      <table class="table my_table w-100" id="cust_table">
                         <tr>
                           <th>Persönliche Daten</th>
-                          <th>Telefon</th>
+                          <th>E-Mail</th>
                           <th>Fahrzeug </th>
                         </tr>
-                        <tr>
-                          <td>Patrick Bartels</td>
-                          <td>+49 171 883 1117</td>
-                          <td></td>
-                        </tr>
+                        <% Hinzufugen.all.each do |cust| %>
+                          <tr>
+                            <td style="display:none;"><%=cust[:id] %></td>
+                            <td><%="#{cust[:first_name]} #{cust[:last_name]}" %></td>
+                            <td><%=cust[:email] %></td>
+                            <td></td>
+                          </tr>
+                        <%  end  %>
                       </table>
                     </div>
                   </div>
@@ -263,8 +266,8 @@
                 <div class="row">
                   <div class="col-md-6 col-sm-12">
                     <div class="h-100">
-                      <iframe src="<%= asset_path 'pdf.pdf' %>#toolbar=0" frameborder="0"
-                              class="w-100 h-100"></iframe>
+                      <iframe src="<%= generate_angebot_path(format: :pdf) %>" frameborder="0"
+                              class="w-100 h-100" id="probefahrt_pdf_display"></iframe>
 
 
 
@@ -333,8 +336,8 @@
                     <%= image_tag "checklist-icon.png", alt: "" %>
                     <%= image_tag "" %>
                   </div>
-                  <div class="mt-1 ms-2"><a id="" class="link-reset fw-bold"
-                                            href="<%= asset_path 'pdf.pdf' %>">Angebot.pdf</a>
+                  <div class="mt-1 ms-2"><%= link_to "Angebot.pdf", generate_angebot_path(format: :pdf), id: "probefahrt_pdf_dwnld", class: "link-reset fw-bold" %>
+
                   </div>
                 </div>
                 <div class="mt-4">
@@ -387,3 +390,23 @@
 </body>
 
 </html>
+
+<script type="text/javascript">
+  var link_url = $('#probefahrt_pdf_dwnld')[0].pathname
+  var selected_val = {}
+    $("#cars_table tr").click(function(){
+        $(this).addClass('tr-active').siblings().removeClass('tr-active');
+        var value=$(this).find('td:first').html();
+        selected_val["car_id"] = value;
+        link_url = link_url + "?car_id=" + value;
+    });
+
+    $("#cust_table tr").click(function(){
+        $(this).addClass('tr-active').siblings().removeClass('tr-active');
+        var value=$(this).find('td:first').html();
+        selected_val["cust_id"] = value;
+        link_url = link_url + "&cust_id=" + value;
+        $('#probefahrt_pdf_dwnld').attr('href', link_url);
+        $('#probefahrt_pdf_display').attr('src', link_url);
+    });
+</script>

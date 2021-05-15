@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root to: "anmeldung#index"
+  
   get "/angebot", to: "angebot#index"
+  get "/generate_angebot", to: "angebot#generate_angebot"
+
   get "/anmeldung", to: "anmeldung#index"
   get "/auswahlen", to: "auswahlen#index"
 
