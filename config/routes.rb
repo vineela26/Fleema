@@ -23,7 +23,10 @@ Rails.application.routes.draw do
   get "/generate_kaufvertrag", to: "kaufvertrag#generate_pdf"
 
   get "/kundenliste", to: "kundenliste#index"
+  
   get "/lieferschein", to: "lieferschein#index"
+  get "/generate_lieferschein", to: "lieferschein#generate_pdf"
+  
   get "/login", to: "login#index"
   get "/markt_uberblick", to: "markt_uberblick#index"
   get "/meinedaten", to: "meinedaten#index"
@@ -35,7 +38,7 @@ Rails.application.routes.draw do
 
   get "/rechnung", to: "rechnung#index"
   get "/generate_rechnung", to: "rechnung#generate_pdf"
-  
+
   get "/ubersicht", to: "ubersicht#index"
   get "/zugangsdaten", to: "zugangsdaten#index"
 

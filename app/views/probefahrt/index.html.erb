@@ -428,7 +428,6 @@
         $(this).addClass('tr-active').siblings().removeClass('tr-active');
         var value=$(this).find('td:first').html();
         selected_val["car_id"] = value;
-        console.log(link_url);
         if (link_url.indexOf("?car_id")){
            link_url = link_url.split("?")[0]
         }
