@@ -34,7 +34,8 @@ Rails.application.routes.draw do
   get "/generate_pdf", to: "probefahrt#generate_pdf"
 
   get "/rechnung", to: "rechnung#index"
-  get "/rechnung", to: "rechnung#index"
+  get "/generate_rechnung", to: "rechnung#generate_pdf"
+  
   get "/ubersicht", to: "ubersicht#index"
   get "/zugangsdaten", to: "zugangsdaten#index"
 
