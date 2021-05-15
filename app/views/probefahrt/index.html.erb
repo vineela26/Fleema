@@ -356,7 +356,7 @@
                 <div class="row">
                   <div class="col-md-12 col-sm-12">
                     <div class="" style="height:500px;" >
-                      <iframe id="probefahrt_pdf_display" src="<%= generate_pdf_path %>" frameborder="0"
+                      <iframe id="probefahrt_pdf_display" src="<%= generate_pdf_path(format: :pdf) %>" frameborder="0"
                               class="w-100 h-100"></iframe>
                     </div>
                   </div>
@@ -371,7 +371,7 @@
                   </div>
                   <div class="mt-1 ms-2">
 <!--                    <a id="probefahrt_pdf_dwnld" class="link-reset fw-bold" href="/probefahrt.pdf">Probefahrt.pdf</a>-->
-                    <%= link_to "Probefahrt.pdf", generate_pdf_path, id: "probefahrt_pdf_dwnld", class: "link-reset fw-bold" %>
+                    <%= link_to "Probefahrt.pdf", generate_pdf_path(format: :pdf), id: "probefahrt_pdf_dwnld", class: "link-reset fw-bold" %>
                   </div>
                 </div>
                 <div class="mt-4">
