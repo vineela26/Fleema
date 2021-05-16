@@ -33,22 +33,17 @@
                     <th>Preis</th>
                     <th>Datum</th>
                   </tr>
-                  <tr id="show_car_1" style="display: none">
-                    <td align="left" valign="top" class="w-auto">
-                      <%= image_tag "car-img.png", alt: "", class: "shadow-sm",
-                          style: "width:100px;" %>
-                    </td>
-                    <td align="left" valign="top">
-                      <%= link_to "<b>A8 4.2 quattro Langversion 4 Türen</b>", "bearbeiten" %><br />
-                      Pkw- Limousine - Gebraucht<br />
-                      EZ: 16.03.06, Benzin
-                    </td>
-                    <td align="left" valign="top">
-                      <i class="fa fa-pencil" aria-hidden="true"></i>
-                    </td>
-                    <td align="left" valign="top">
-                      13.04.21</td>
-                  </tr>
+                  <% Car.all.each do |car| %>
+                    <tr>
+                      <td align="left" valign="top" class="w-auto">
+                        <%= image_tag "car-img.png", alt: "", class: "shadow-sm",
+                            style: "width:100px;" %>
+                      </td>
+                      <td><%= link_to car.full_name, "/bearbeiten/#{car.id}/edit" %></td>
+                      <td><%= car.id %></td>
+                      <td><%= car.created_at.strftime("%d.%m.%Y") %></td>
+                    </tr>
+                  <%  end  %>
                 </table>
               </div>
             </div>
@@ -335,19 +330,6 @@ x                      <a href="#" class="d-block text-decoration-none px-3">
 <%= javascript_include_tag "bootstrap.min.js", integrity: "", crossorigin: "anonymous" %>
 <%= javascript_include_tag "bootstrap.bundle.min.js", integrity: "", crossorigin: "anonymous" %>
 <%= javascript_include_tag "js.js"%>
-
-<script type="text/javascript">
-    // deleteCookie('show_cars');
-    // setCookie('show_cars', 0, 99);
-    // alert(getCookie('show_cars'));
-    var show_cars = parseInt(getCookie('show_cars'));
-    if (show_cars >= 1) {
-        $('#show_car_1').show();
-        $('#cars-counter').text('(1 - 1 VON 1 FAHRZEUGEN)');
-    } else {
-        // nothing...
-    };
-</script>
 </body>
 
 </html>
