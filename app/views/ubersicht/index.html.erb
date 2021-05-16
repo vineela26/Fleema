@@ -26,9 +26,9 @@
             <h1 class="m-0text-uppercase">Übersicht: Fahrzeugbörsen
             </h1>
             <p class="mt-3">
-              0 von 0 Fahrzeugen sind inseriert (Gesamtbestand: 0 Fahrzeuge)
+              0 von <%= Car.count %> Fahrzeugen sind inseriert (Gesamtbestand: <%= Car.count %> Fahrzeuge)
               <br />
-              Seit dem letzten Export haben Sie Änderungen an 0 Fahrzeug(en) vorgenommen
+              Seit dem letzten Export haben Sie Änderungen an <%= Car.count %> Fahrzeug(en) vorgenommen
             </p>
           </div>
 

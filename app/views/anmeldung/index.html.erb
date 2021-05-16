@@ -36,11 +36,11 @@
                 <div class="card-text collapse show" id="collapse">
                   <div class="row">
                     <div class="col-md-6">
-                      <p>Sie haben aktuell 0 Fahrzeuge im Bestand, 0 davon sind online inseriert.</p>
+                      <p>Sie haben aktuell <%= Car.count %> Fahrzeuge im Bestand, 0 davon sind online inseriert.</p>
                       <p>0 Fahrzeuge wurden in den letzten 30 Tagen verkauft</p>
                       <p>Ihr Lagervolumen beträgt aktuell 0 €</p>
                       <p>Sie haben bereits 0 Dokumente mit Hilfe von FleeMa erstellt.</p>
-                      <p>0 Kunden sind hinterlegt.</p>
+                      <p><%= Hinzufugen.count %> Kunden sind hinterlegt.</p>
                     </div>
                     <div class="col-md-6">
                       <%= image_tag "informatione.jpg", class: "img-fluid", alt: "" %>
