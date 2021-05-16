@@ -38,7 +38,7 @@
                     <div class="col-md-6">
                       <p>Sie haben aktuell <%= Car.count %> Fahrzeuge im Bestand, 0 davon sind online inseriert.</p>
                       <p>0 Fahrzeuge wurden in den letzten 30 Tagen verkauft</p>
-                      <p>Ihr Lagervolumen beträgt aktuell 0 €</p>
+                      <p>Ihr Lagervolumen beträgt aktuell <%= number_to_currency(Car.all.map(&:gross_price).compact.sum) %></p>
                       <p>Sie haben bereits 0 Dokumente mit Hilfe von FleeMa erstellt.</p>
                       <p><%= Hinzufugen.count %> Kunden sind hinterlegt.</p>
                     </div>

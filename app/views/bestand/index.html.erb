@@ -20,7 +20,7 @@
     <div class="col-md-12 col-sm-12">
       <div class="content p-3">
         <h1 class="mb-0"> BESTAND</h1>
-        <p class="color-primary" id="cars-counter">(0 - 0 VON 0 FAHRZEUGEN)
+        <p class="color-primary" id="cars-counter">(0 - <%= Car.count %> VON <%= Car.count %> FAHRZEUGEN)
         </p>
         <div class="row">
           <div class="col-lg-9 col-md-12 col-sm-12">
@@ -40,7 +40,7 @@
                             style: "width:100px;" %>
                       </td>
                       <td><%= link_to car.full_name, "/bearbeiten/#{car.id}/edit" %></td>
-                      <td><%= car.id %></td>
+                      <td><%= number_to_currency(car.gross_price) %></td>
                       <td><%= car.created_at.strftime("%d.%m.%Y") %></td>
                     </tr>
                   <%  end  %>

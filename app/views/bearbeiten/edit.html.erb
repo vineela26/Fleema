@@ -123,8 +123,12 @@
                               <a class="changeTab" href="#6">Bilder jetzt hinzufügen</a>
                               <br />
                               <div class="fw-bold">PREIS</div>
-                              Sie haben noch keinen Preis eingeben.
-                              <a class="changeTab" href="#6"> Preis jetzt eingeben</a>
+                              <% if @car.gross_price %>
+                                <%= number_to_currency @car.gross_price %>
+                              <% else %>
+                                Sie haben noch keinen Preis eingeben.
+                                <a class="changeTab" href="#6"> Preis jetzt eingeben</a>
+                              <% end %>
                             </div>
                             <div id="dbPriceSection" class="dbPrice hidePriceSection">
                             </div>
@@ -192,9 +196,9 @@
                           <label class="my-2 d-block">
                             Interne Nr. </label>
                           <input type="text"
-                                 class="bg-light p-1 w-100 border border-secondary" value=""
+                                 class="bg-light p-1 w-100 border border-secondary" value="<%= @car.id %>"
                                  placeholder="" />
-                          <p class="m-0">Nicht intern reserviert</p>
+                          <p class="m-0" style="display: none">Nicht intern reserviert</p>
                         </div>
                         <hr />
                         <div>
@@ -267,10 +271,11 @@
                                   <div class="w-100">
                                     <label class="my-2 d-block">
                                       km </label>
-                                    <input type="text"
-                                           class="bg-light p-1 w-100 border border-secondary"
-                                           value=""
-                                           placeholder="" />
+                                    
+
+                                    <%= form.text_field :mileage, class: "bg-light p-1 w-100 border border-secondary", placeholder: "" %>
+
+
                                   </div>
                                   <div class="w-100">
                                     <label class="my-2 d-block">
@@ -1022,9 +1027,7 @@
                                     <label class="d-block">
                                       Bruttopreis (EUR)
                                     </label>
-                                    <input type="text"
-                                           class="bg-light p-1 w-100 border border-secondary"
-                                           value="" placeholder="Bruttopreis " />
+                                    <%= form.text_field :gross_price, class: "bg-light p-1 w-100 border border-secondary", placeholder: "Bruttopreis" %>
                                   </div>
                                 </div>
 

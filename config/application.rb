@@ -16,7 +16,14 @@ module FleemaRor
     # These settings can be overridden in specific environments using the files
     # in config/environments, which are processed later.
     #
-    # config.time_zone = "Central Time (US & Canada)"
+    config.time_zone = "Berlin"
+    config.i18n.available_locales = [:de, :en]
+    config.i18n.locale = :de
+    config.i18n.default_locale = :de
     # config.eager_load_paths << Rails.root.join("extras")
   end
 end
+
+I18n.available_locales = [:de, :en]
+I18n.locale = :de
+I18n.default_locale = :de

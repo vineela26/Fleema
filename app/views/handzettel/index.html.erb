@@ -78,24 +78,20 @@
                     <div class="table-responsive">
 
                       <table class="table my_table w-100" id= "cars_table">
-
                         <tr>
                           <th>Marke, Modell, Modellvariante</th>
-                          <th>EZ</th>
+                          <th>Interne Nr.</th>
                           <th>Preis</th>
-                          <th>km</th>
-                          <th>Datum</th>
+                          <th>Kilometerstand</th>
                         </tr>
                         <% Car.all.each do |car| %>
                           <tr>
-                            <td style="display:none;"><%=car[:id] %></td>
-                            <td><%="#{car[:name]} #{car[:model]}" %></td>
-                            <td><%=car[:id] %></td>
-                            <td><%=car[:bhp] %></td>
-                            <td></td>
+                            <td><%= "#{car.name} #{car.model}" %></td>
+                            <td><%= car.id %></td>
+                            <td><%= number_to_currency(car.gross_price) %></td>
+                            <td><%= car.mileage %></td>
                           </tr>
-                        <%  end  %>
-
+                        <% end %>
                       </table>
                     </div>
                   </div>

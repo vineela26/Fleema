@@ -1,7 +1,14 @@
+extend ActionView::Helpers::NumberHelper
+
 prawn_document(filename: "kaufvertrag.pdf", disposition: "inline", type: "application/pdf", template: "#{Rails.root}/app/pdfs/Kaufvertrag.pdf") do |pdf|
   pdf.draw_text @car.name,                :at => [155, 492], :size => 8
   pdf.draw_text @car.car_model_name,      :at => [155, 479], :size => 8
   pdf.draw_text @car.model,               :at => [155, 466], :size => 8
+  pdf.draw_text number_with_delimiter(@car.mileage),
+                                          :at => [155, 440], :size => 8
+  pdf.draw_text number_to_currency(@car.gross_price),
+                                          :at => [380,  73], :size => 10, style: :bold
+
 
   current_date = DateTime.now
   pdf.draw_text current_date.strftime("%d.%m.%Y"),
