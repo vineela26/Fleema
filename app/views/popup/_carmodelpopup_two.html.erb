@@ -535,6 +535,10 @@
                     var year_start = parseInt(rowCells[4].replace(/'/g, ""));
                     var year_end = parseInt(rowCells[5].replace(/'/g, ""));
 
+                    if( !(selectedYearStart >= year_start) && !(selectedYearEnd >= year_end) ) {
+                      continue;
+                    }
+
                     listitems += "<tr data-key=\"" + key + "\" data-name=\"" + name + "\"><td>" + name + "</td><td></td><td>" + year_start + " - " + year_end + "</td></tr>";
                   }
                 }
