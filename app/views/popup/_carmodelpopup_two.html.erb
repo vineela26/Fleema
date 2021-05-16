@@ -4,7 +4,7 @@
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
-        <h6 class="modal-title" id="staticBackdropLabel">FAHRZEUG HINZUFUGEN</h6>
+        <h6 class="modal-title" id="staticBackdropLabel">Fahrzeug hinzufügen</h6>
         <i class="fa fa-times btn-close" data-bs-dismiss="modal" aria-label="Close" aria-hidden="true"></i>
       </div>
       <div class="modal-body">
@@ -425,7 +425,7 @@
           <table class="table my_table w-100" id="cars1">
             <tr>
               <th>Modell</th>
-              <th>Produktlonseltraum</th>
+              <th>Produktionszeitraum</th>
             </tr>
             <CAPTION> Es gibt keine Modelle, die Ihren Suchkriterien entsprechen </CAPTION>
           </table>
@@ -438,7 +438,7 @@
           <table class="table my_table w-100" id="car_models">
             <tr>
               <th>Modellvariante</th>
-              <th>Brutto Neuprels</th>
+              <th>Brutto Neupreis</th>
               <th>Produktionszeitraum</th>
             </tr>
             <CAPTION> Es gibt keine Modelle, die Ihren Suchkriterien entsprechen
@@ -503,7 +503,7 @@
               var name = rowCells[2].replace(/'/g, "");
               var year_start = rowCells[3].replace(/'/g, "");
               var year_end = rowCells[4].replace(/'/g, "");
-              listitems += "<tr data-key=\"" + key + "\" data-name=\"" + name + "\"><td>" + name + "</td><td>" + year_start + " - " + year_end + "</td></tr>";
+              listitems += "<tr data-key=\"" + key + "\" data-name=\"" + name + "\" data-year-start=\"" + year_start + "\" data-year-end=\"" + year_end + "\"><td>" + name + "</td><td>" + year_start + " - " + year_end + "</td></tr>";
             }
           }
           $("#cars1").append(listitems);
@@ -511,6 +511,8 @@
           $("#cars1 tr").click(function(){
             $(this).addClass('tr-active').siblings().removeClass('tr-active');
             selectedGeneration = $(this).data("name");
+            selectedYearStart = $(this).data("year-start");
+            selectedYearEnd = $(this).data("year-end");
             document.getElementById('car_generation_value').value = selectedGeneration;
             // console.log(selectedGeneration);
 
@@ -530,8 +532,9 @@
                   } else {
                     var key = rowCells[0].replace(/'/g, "");
                     var name = rowCells[3].replace(/'/g, "");
-                    var year_start = rowCells[4].replace(/'/g, "");
-                    var year_end = rowCells[5].replace(/'/g, "");
+                    var year_start = parseInt(rowCells[4].replace(/'/g, ""));
+                    var year_end = parseInt(rowCells[5].replace(/'/g, ""));
+
                     listitems += "<tr data-key=\"" + key + "\" data-name=\"" + name + "\"><td>" + name + "</td><td></td><td>" + year_start + " - " + year_end + "</td></tr>";
                   }
                 }
