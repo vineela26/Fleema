@@ -55,6 +55,7 @@
               </label>
               <%
               all_makes = [
+                [ 'Marke auswählen', '0' ],
                 [ 'AC', '1' ],
                 [ 'Acura', '2' ],
                 [ 'Alfa Romeo', '3' ],
@@ -358,12 +359,13 @@
               <%= form.select :marke, all_makes,
                               {}, { id:"marke-select", class: "form-select bg-light", aria: {label: "Default select example"}}%>
               <%= form.hidden_field :car_marke_value, value: ''  %>
+              <%= form.hidden_field :car_marke_key, value: ''  %>
             </div>
             <div class="mt-3">
               <label class="d-block" >
                 Model *
               </label>
-              <%= form.select :Model, ["Modell auswählen", "100", "200", "80", "90", "A1", "A2", "A3", "A4", "A4 Allroad", "A5", "A6", "A6 Allroad", "A7", "A8", "Cabriolet", "Coupé", "e-tron", "Q1", "Q2", "Q3", "Q5", "Q7", "Q8", "quattro", "R8", "RS2", "RS3", "RS4", "RS5", "RS6", "RS7", "RSQ3", "RSQ8", "S1", "S2", "S3", "S4", "S5", "S6", "S7", "S8", "SQ2", "SQ5", "SQ7", "SQ8", "TT", "TT RS", "TTS", "V8", "Andere"],
+              <%= form.select :Model, ["-"],
                               {}, {id:"model-select", class: "form-select bg-light", aria: {label: "Default select example"}}%>
             </div>
           </div>
@@ -391,8 +393,8 @@
                         Kategorie
                     </label>
                     <select class="form-select bg-light" aria-label="Default select example">
-                        <option value="" selected="selected"> Kategorie auswahlen</option>
-                        <option value="Kategorie auswahlen">Kategorie auswahlen</option>
+                        <option value="" selected="selected"> Kategorie auswählen</option>
+                        <option value="Kategorie auswahlen">Kategorie auswählen</option>
                     </select>
                 </div>
             </div>
@@ -402,8 +404,8 @@
                         Motoract
                     </label>
                     <select class="form-select bg-light" aria-label="Default select example">
-                        <option value="" selected="selected"> Motoract auswahlen</option>
-                        <option value="Motoract auswahlen">Motoract auswahlen</option>
+                        <option value="" selected="selected"> Motoract auswählen</option>
+                        <option value="Motoract auswahlen">Motoract auswählen</option>
                     </select>
                 </div>
             </div>
@@ -413,26 +415,27 @@
                         Kraftstoffart
                     </label>
                     <select class="form-select bg-light" aria-label="Default select example">
-                        <option value="" selected="selected"> Kraftstoffart auswahlen</option>
-                        <option value="Kraftstoffart auswahlen">Kraftstoffart auswahlen</option>
+                        <option value="" selected="selected"> Kraftstoffart auswählen</option>
+                        <option value="Kraftstoffart auswahlen">Kraftstoffart auswählen</option>
                     </select>
                 </div>
             </div>
         </div> -->
-        <p class="mb-0">Wählen Sie ein Modell aus dem Katalog aus, um die passende Modellvariante zu finden
+        <p class="mb-0">Wählen Sie eine Generation aus dem Katalog aus, um die passende Modellvariante zu finden
         </p>
         <div class="table-responsive">
           <table class="table my_table w-100" id="cars1">
             <tr>
-              <th>Modell</th>
+              <th>Generation</th>
               <th>Produktionszeitraum</th>
             </tr>
-            <CAPTION> Es gibt keine Modelle, die Ihren Suchkriterien entsprechen </CAPTION>
+            <CAPTION> Es gibt keine Generationen, die Ihren Suchkriterien entsprechen </CAPTION>
           </table>
           <%= form.hidden_field :car_generation_value, value: ''  %>
+          <%= form.hidden_field :car_generation_key, value: ''  %>
         </div>
         <p class="mb-0">
-          Wahlen Sle elne Modellvariante
+          Wählen Sle elne Modellvariante
         </p>
         <div class="table-responsive">
           <table class="table my_table w-100" id="car_models">
@@ -441,16 +444,12 @@
               <th>Brutto Neupreis</th>
               <th>Produktionszeitraum</th>
             </tr>
-            <CAPTION> Es gibt keine Modelle, die Ihren Suchkriterien entsprechen
-            </CAPTION>
-            <tr style="display: none">
-              <td>A8 3.0 TDI DPF quattro 4 Türen (233 PS/171 kW)
-              </td>
-              <td>65.650</td>
-              <td>3/2005-8/2007-</td>
-            </tr>
+            <CAPTION>Es gibt keine Modelle, die Ihren Suchkriterien entsprechen</CAPTION>
           </table>
           <%= form.hidden_field :car_model_value, value: ''  %>
+          <%= form.hidden_field :car_model_key, value: ''  %>
+          <%= form.hidden_field :car_trim_value, value: ''  %>
+          <%= form.hidden_field :car_trim_key, value: ''  %>
         </div>
       </div>
       <div class="modal-footer">
@@ -482,6 +481,9 @@
       var selectedModel = this.value;
       var selectedMark = $( "#marke-select option:selected" ).val();
       var selectedGeneration = 0;
+      document.getElementById('car_model_value').value = $( "#model-select option:selected" ).text();
+      document.getElementById('car_model_key').value = $( "#model-select option:selected" ).val();
+
       // console.log(selectedModel);
       // console.log(selectedMark);
 
@@ -503,9 +505,11 @@
               var name = rowCells[2].replace(/'/g, "");
               var year_start = rowCells[3].replace(/'/g, "");
               var year_end = rowCells[4].replace(/'/g, "");
-              listitems += "<tr data-key=\"" + key + "\" data-name=\"" + name + "\" data-year-start=\"" + year_start + "\" data-year-end=\"" + year_end + "\"><td>" + name + "</td><td>" + year_start + " - " + year_end + "</td></tr>";
+              listitems += "<tr class=\"cars1-children\" data-key=\"" + key + "\" data-name=\"" + name + "\" data-year-start=\"" + year_start + "\" data-year-end=\"" + year_end + "\"><td>" + name + "</td><td>" + year_start + " - " + year_end + "</td></tr>";
             }
           }
+          $("#cars1 CAPTION").hide();
+          $("#cars1 .cars1-children").remove();
           $("#cars1").append(listitems);
 
           $("#cars1 tr").click(function(){
@@ -514,6 +518,7 @@
             selectedYearStart = $(this).data("year-start");
             selectedYearEnd = $(this).data("year-end");
             document.getElementById('car_generation_value').value = selectedGeneration;
+            document.getElementById('car_generation_key').value = $(this).data("key");
             // console.log(selectedGeneration);
 
             $.ajax({
@@ -538,27 +543,24 @@
                     if( !(selectedYearStart >= year_start) && !(selectedYearEnd >= year_end) ) {
                       continue;
                     }
-
-                    listitems += "<tr data-key=\"" + key + "\" data-name=\"" + name + "\"><td>" + name + "</td><td></td><td>" + year_start + " - " + year_end + "</td></tr>";
+                    listitems += "<tr class=\"car_models-children\" data-key=\"" + key + "\" data-name=\"" + name + "\"><td>" + name + "</td><td></td><td>" + year_start + " - " + year_end + "</td></tr>";
                   }
                 }
+                $("#car_models .car_models-children").remove();
                 $("#car_models").append(listitems);
 
                 $("#car_models tr").click(function(){
                   $(this).addClass('tr-active').siblings().removeClass('tr-active');
-                  var value=$(this).data("name");
-                  document.getElementById('car_model_value').value = value;
-                  console.log(value);
+                  var value = $(this).data("name");
+                  var key = $(this).data("key");
+                  document.getElementById('car_trim_value').value = value;
+                  document.getElementById('car_trim_key').value = key;
+                  // console.log(value);
                 });
-
                 // console.log(selectedMark);
               }
             });
-
-
-
           });
-
           // console.log(selectedMark);
         }
       });
@@ -568,7 +570,8 @@
 
     $("#marke-select").on('change', function(){
       var selectedMark = this.value;
-      var selectedMarkName = $(this).find("option:selected").text();;
+      var selectedMarkName = $(this).find("option:selected").text();
+      var selectedMarkKey = $(this).find("option:selected").val();
 
       $.ajax({
         url: "https://api.car2db.com/api/auto/v1/model.getAll.csv.de?id_type=1&api_key=Patrick.Bartels@gmail.com07826d8551ba1146a91ef240875fdd02",
@@ -576,7 +579,7 @@
         data: {state: $(this).val()},
         success: function(data) {
           $("#model-select").children().remove();
-          var listitems = [];
+          var listitems = '<option value="0">Modell auswählen</option>';
           var allRows = data.split(/\r?\n|\r/);
           for (var singleRow = 0; singleRow < allRows.length; singleRow++) {
             if (singleRow === 0) { continue; }
@@ -592,6 +595,7 @@
           }
           $("#model-select").append(listitems);
           document.getElementById('car_marke_value').value = selectedMarkName;
+          document.getElementById('car_marke_key').value = selectedMarkKey;
           // console.log(selectedMark);
         }
       });

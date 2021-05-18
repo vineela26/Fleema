@@ -26,7 +26,7 @@
             <h1 class="m-0text-uppercase">Übersicht: Fahrzeugbörsen
             </h1>
             <p class="mt-3">
-              0 von <%= Car.count %> Fahrzeugen sind inseriert (Gesamtbestand: <%= Car.count %> Fahrzeuge)
+              <%= Car.count %> von <%= Car.count %> Fahrzeugen sind inseriert (Gesamtbestand: <%= Car.count %> Fahrzeuge)
               <br />
               Seit dem letzten Export haben Sie Änderungen an <%= Car.count %> Fahrzeug(en) vorgenommen
             </p>
@@ -154,10 +154,73 @@
                     </table>
                   </td>
                 </tr>
+
+                <% Car.all.each do |car| %>
+                  <tr class="bg-white">
+                    <td class="w-50 p-0" align="right">
+                      <span class="pe-2"><%= car.full_name %></span>
+                    </td>
+                    <td class="w-50 p-0">
+                      <table class="sub-table w-100  tablehover-none">
+                        <tr class="bg-white">
+                          <td valign="top" align="left" class="p-0">
+                            <table class="sub-table w-100">
+                              <tr class="bg-white">
+                                <td valign="top" align="center"
+                                    class="p-0 border-end border-2" style="width: 40px;">
+                                  <i class="fa fa-question secondary-primary"></i>
+                                </td>
+                                <td valign="top" align="center"
+                                    class="p-0 border-end border-2" style="width: 40px;">
+                                  <i class="fa fa-question secondary-primary"></i>
+                                </td>
+                                <td valign="top" align="center"
+                                    class="p-0 border-end border-2" style="width: 40px;">
+                                  <i class="fa fa-question secondary-primary"></i>
+                                </td>
+                                <td valign="top" align="center"
+                                    class="p-0 border-end border-2" style="width: 40px;">
+                                  <i class="fa fa-question secondary-primary"></i>
+                                </td>
+                                <td valign="top" align="center"
+                                    class="p-0 border-end border-2" style="width: 40px;">
+                                  <i class="fa fa-question secondary-primary"></i>
+                                </td>
+                                <td valign="top" align="center"
+                                    class="p-0 border-end border-2" style="width: 40px;">
+                                  <i class="fa fa-question secondary-primary"></i>
+                                </td>
+                                <td valign="top" align="center"
+                                    class="p-0 border-end border-2" style="width: 40px;">
+                                  <i class="fa fa-question secondary-primary"></i>
+                                </td>
+                                <td valign="top" align="center"
+                                    class="p-0 border-end border-2" style="width: 40px;">
+                                  <i class="fa fa-question secondary-primary"></i>
+                                </td>
+                                <td valign="top" align="center"
+                                    class="p-0 border-end border-2" style="width: 40px;">
+                                  <i class="fa fa-question secondary-primary"></i>
+                                </td>
+                                <td valign="top" align="center"
+                                    class="p-0 border-end border-2" style="width: 40px;">
+                                  <i class="fa fa-question secondary-primary"></i>
+                                </td>
+                                <td valign="top" align="center" class="p-0" style="width: 40px;">
+                                  <i class="fa fa-question secondary-primary"></i>
+                                </td>
+                              </tr>
+                            </table>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                <% end %>
               </table>
             </div>
-            <div class="bg-light p-2">
-              <b>In ihrer Bestandsllste befinden sich momentan keine Fahrzeuge, die zu ihren Suchkriterien
+            <div class="bg-light p-2" style="display: none">
+              <b>In ihrer Bestandsliste befinden sich momentan keine Fahrzeuge, die zu ihren Suchkriterien
                 passen.</b>
             </div>
             <p class="text-center p-2 mb-3">Bitte beachten Sie: Prüfen Sie die
@@ -176,8 +239,6 @@
                   <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Vorherige </a>
                 </li>
                 <li class="page-item"><a class="page-link" href="#">1</a></li>
-                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
                 <li class="page-item">
                   <a class="page-link" href="#">Nächste</a>
                 </li>
@@ -204,7 +265,7 @@
                       </div>
                       <div class="w-100">
                         <label class="my-2 d-block">
-                          Filtr </label>
+                          Filter </label>
                         <select class="form-select bg-light"
                                 aria-label="Default select example">
                           <option value="false" selected="selected">Alle</option>

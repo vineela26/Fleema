@@ -19,7 +19,7 @@
       <div class="col-md-12 col-sm-12">
         <div class="content p-3">
           <h1 class="mb-0"><%=@car.full_name %></h1>
-          <p class="color-primary font-size-14 mt-1">PKW - LIMOUSINE - GEBRAUCHT</p>
+          <p class="color-primary font-size-14 mt-1">PKW - <%= @car.serie.upcase %> - GEBRAUCHT</p>
           <div class="row">
             <div class="col-lg-9 col-md-12 col-sm-12">
               <div class="tabs-view bearbeiten-tabs-view">
@@ -62,8 +62,7 @@
                           <div class="w-50">
                             <h6 class="font-size-15 color-primary">FAHRZEUGDATEN</h6>
                             <div class="dbDetails usedVehicle">
-                              <h3>Fahrzeugdaten</h3>
-                              <p class="dataList">
+                              <p class="dataList" style="display: none">
                                 <a class="changeTab newToUsed hideIfUsed" href="">In
                                   Gebrauchtfahrzeug umwandeln</a>
                               </p>
@@ -76,38 +75,38 @@
                                   <label>&nbsp;</label><span>Plug-In-Hybrid</span>
                                 </li>
                                 <li><label>Getriebe:</label><span
-                                  id="dbGearType">Automatik</span></li>
+                                  id="dbGearType"><%= @car.transmission %></span></li>
                                 <li class="hideIfNew"><label>Erstzulassung:</label><span
-                                  id="dbFirstRegistrationDate">16.03.06</span>
+                                  id="dbFirstRegistrationDate">-</span>
                                 </li>
                                 <li><label>Leistung:</label><span
-                                  id="dbVehiclePower">246 kW</span></li>
+                                  id="dbVehiclePower"><%= @car.bhp %> PS</span></li>
                                 <li><label>Hubraum:</label><span
-                                  id="dbStrokeVolume">4.172 cm³</span></li>
+                                  id="dbStrokeVolume"><%= @car.displacement %> cm3</span></li>
                               </ul>
                               <div class="dbDetailsCar">
                                 <ul class="dataList">
                                   <li><label>Kraftstoffverbr. kombiniert:</label><span
-                                    id="dbFuelConsumptionCombined">11,0
-                                                                            l/100km</span></li>
+                                    id="dbFuelConsumptionCombined"><%= @car.fuel_combined %>
+                                                                            l/100 km</span></li>
                                   <li><label>Kraftstoffverbr. innerorts:</label><span
-                                    id="dbFuelConsumptionUrban">15,3
-                                                                            l/100km</span></li>
+                                    id="dbFuelConsumptionUrban"><%= @car.fuel_inside %>
+                                                                            l/100 km</span></li>
                                   <li><label>Kraftstoffverbr. außerorts:</label><span
-                                    id="dbFuelConsumptionExtraUrban">8,4
-                                                                            l/100km</span></li>
-                                  <li><label>CO2-Emissionen kombiniert:</label><span
-                                    id="dbSpecifyCo2Emission">254,0 g/km</span>
+                                    id="dbFuelConsumptionExtraUrban"><%= @car.fuel_outside %>
+                                                                            l/100 km</span></li>
+                                  <li><label>Anzahl Gänge:</label><span
+                                    id="dbSpecifyCo2Emission"><%= @car.gears %></span>
                                   </li>
                                 </ul>
                                 <ul class="dataList">
                                   <li><label>Anzahl Türen:</label><span
-                                    id="dbDoors">4</span></li>
-                                  <li><label>Schadstoffklasse:</label><span
-                                    id="dbEmissionClass">Euro 4</span></li>
+                                    id="dbDoors">-</span></li>
+                                  <li><label>Sitzplätze:</label><span
+                                    id="dbEmissionClass"><%= @car.seats %></span></li>
                                   <li>
                                     <label>Klimatisierung:</label><span
-                                    id="dbClimatisationValue">Klimaautomatik</span>
+                                    id="dbClimatisationValue">-</span>
                                   </li>
                                 </ul>
                               </div>
@@ -120,7 +119,7 @@
                             </div>
                             <div>
                               Sie haben noch keine Bilder hinzugefügt. <br>
-                              <a class="changeTab" href="#6">Bilder jetzt hinzufügen</a>
+                              <a class="changeTab" href="#tab7">Bilder jetzt hinzufügen</a>
                               <br />
                               <div class="fw-bold">PREIS</div>
                               <% if @car.gross_price %>
@@ -137,18 +136,7 @@
                         <div class="dbDescription">
                           <h3>Ausstattung</h3>
                           <div id="dbVehicleDescription" class="vehicleDescription">
-                            <strong>Innenausstattung:</strong><br>
-                            Servolenkung, Klimaautomatik, 5 Sitzplätze, Ledersitze
-                            <br>
-                            <strong>Außenausstattung:</strong><br>
-                            4 Türen, Zentralverriegelung, Aluminiumfelgen
-                            <br>
-                            <strong>Technologie:</strong><br>
-                            Navigationssystem, Einparksensoren,
-                            Tempomat<br>
-                            <strong>Sicherheit &amp;
-                              Umwelt:</strong>
-                            <br>El. Wegfahrsperre, ABS, ESP
+                            <%= @car.option %>
                           </div>
                         </div>
                         <h3 class="my-3">WIE VOLLSTÄNDIG SIND DIE FAHRZEUGANGABEN?</h3>
@@ -231,13 +219,12 @@
                                   <div class="w-100">
                                     <label class="my-2 d-block">
                                       Modell</label>
-                                    <%= form.select :model, ["100", "200", "80", "90", "A1", "A2", "A3", "A4", "A4 Allroad", "A5", "A6", "A6 Allroad", "A7", "A8", "Cabriolet", "Coupé", "e-tron", "Q1", "Q2", "Q3", "Q5", "Q7", "Q8", "quattro", "R8", "RS2", "RS3", "RS4", "RS5", "RS6", "RS7", "RSQ3", "RSQ8", "S1", "S2", "S3", "S4", "S5", "S6", "S7", "S8", "SQ2", "SQ5"],
-                                                    {}, { class: "form-select w-100", aria: {label: "Default select example"}}%>
+                                    <%= form.text_field :model, class: "bg-light p-1 w-100 border border-secondary", placeholder: "" %>
                                   </div>
                                   <div class="w-100">
                                     <label class="my-2 d-block">
                                       Modellvariante </label>
-                                    <%= form.text_field :name, class: "bg-light p-1 w-100 border border-secondary", placeholder: "A8 4.2 quattro" %>
+                                    <%= form.text_field :trim, class: "bg-light p-1 w-100 border border-secondary", placeholder: "" %>
                                   </div>
                                   <div class="w-100">
                                     <label class="my-2 d-block">
@@ -430,8 +417,8 @@
                                       Hubraum (in ccm) </label>
                                     <input type="text"
                                            class="bg-light p-1 w-100 border border-secondary"
-                                           value=""
-                                           placeholder="4.172">
+                                           value="<%= @car.displacement %>"
+                                           placeholder="">
                                   </div>
                                   <div class="w-100">
                                     <label class="my-2 d-block">
