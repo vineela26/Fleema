@@ -36,8 +36,12 @@
                   <% Car.all.each do |car| %>
                     <tr>
                       <td align="left" valign="top" class="w-auto">
-                        <%= image_tag "car-img.png", alt: "", class: "shadow-sm",
-                            style: "width:100px;" %>
+                        <% if car.photo.attached? %>
+                          <%= image_tag car.photo, style: "width: 100px" %>
+                        <% else %>
+                          <%= image_tag "car-img.png", alt: "", class: "shadow-sm",
+                              style: "width:100px;" %>
+                        <% end %>
                       </td>
                       <td><%= link_to car.full_name, "/bearbeiten/#{car.id}/edit" %></td>
                       <td><%= number_to_currency(car.gross_price) %></td>

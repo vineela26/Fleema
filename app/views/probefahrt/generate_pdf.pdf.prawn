@@ -1,7 +1,8 @@
 prawn_document(filename: "probefahrt.pdf", disposition: "inline", type: "application/pdf", template: "#{Rails.root}/app/pdfs/Probefahrt.pdf") do |pdf|
   pdf.draw_text @car.name,                :at => [140, 412], :size => 8
-  pdf.draw_text @car.car_model_name,      :at => [140, 403], :size => 8
-  pdf.draw_text @car.model,               :at => [140, 393], :size => 8
+  pdf.draw_text @car.model,               :at => [140, 403], :size => 8
+  pdf.draw_text @car.serie,               :at => [140, 393], :size => 8
+  pdf.draw_text @car.bhp,                 :at => [140, 373], :size => 8
 
   current_date = DateTime.now
   pdf.draw_text current_date.strftime("%d.%m.%Y - %H:%M"),
