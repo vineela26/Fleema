@@ -374,14 +374,14 @@
               <label class="d-block">
                 HSN
               </label>
-              <input type="text" class="bg-light p-1 w-100 border border-secondary" value=""
+              <input type="text" id="hsn" class="bg-light p-1 w-100 border border-secondary" value=""
                      placeholder=" " />
             </div>
             <div class="w-100 mb-3">
               <label class="d-block">
                 TSN
               </label>
-              <input type="text" class="bg-light p-1 w-100 border border-secondary" value=""
+              <input type="text" id="tsn" class="bg-light p-1 w-100 border border-secondary" value=""
                      placeholder=" " />
             </div>
           </div>
@@ -430,6 +430,7 @@
               <th>Produktionszeitraum</th>
             </tr>
             <CAPTION> Es gibt keine Generationen, die Ihren Suchkriterien entsprechen </CAPTION>
+            <tr class="cars1-children" id="skoda1" style="display: none" data-key="1849" data-name="2 generation [Facelift]" data-year-start="2008" data-year-end="2013"><td>2 generation [Facelift]</td><td>2008 - 2013</td></tr>
           </table>
           <%= form.hidden_field :car_generation_value, value: ''  %>
           <%= form.hidden_field :car_generation_key, value: ''  %>
@@ -445,6 +446,7 @@
               <th>Produktionszeitraum</th>
             </tr>
             <CAPTION>Es gibt keine Modelle, die Ihren Suchkriterien entsprechen</CAPTION>
+            <tr class="car_models-children" id="skoda2" style="display: none" data-key="56233" data-name="1.2 TSI DSG (105 ps)"><td>1.2 TSI DSG (105 ps)</td><td></td><td>2004 - 2008</td></tr>
           </table>
           <%= form.hidden_field :car_model_value, value: ''  %>
           <%= form.hidden_field :car_model_key, value: ''  %>
@@ -546,6 +548,7 @@
                     listitems += "<tr class=\"car_models-children\" data-key=\"" + key + "\" data-name=\"" + name + "\"><td>" + name + "</td><td></td><td>" + year_start + " - " + year_end + "</td></tr>";
                   }
                 }
+                $("#car_models CAPTION").hide();
                 $("#car_models .car_models-children").remove();
                 $("#car_models").append(listitems);
 
@@ -599,6 +602,24 @@
           // console.log(selectedMark);
         }
       });
+    });
+
+    $("#tsn").on('change', function(){
+        if(this.value === '00018') {
+            setTimeout(() => {
+                $('#skoda1').show();
+                $('#skoda2').show();
+                $("#cars1 CAPTION").hide();
+                $("#car_models CAPTION").hide();
+            }, 300);
+        } else {
+            setTimeout(() => {
+                $('#skoda1').hide();
+                $('#skoda2').hide();
+                $("#cars1 CAPTION").show();
+                $("#car_models CAPTION").show();
+            }, 300);
+        }
     });
   });
 </script>
