@@ -32,26 +32,28 @@
                 <tr>
                   <th>&nbsp; </th>
                   <th>Persönliche Daten </th>
-                  <th>Telefon-Nr.</th>
+                  <th>E-Mail-Adresse</th>
                   <th>Fahrzeug</th>
                   <th>Einstelldatum</th>
                 </tr>
                 </thead>
                 <tbody>
+                <% @customers.each do |customer| %>
                 <tr>
                   <td align="center" valign="top"><i
                     class="fa fa-user color-primary font-size-14"
                     aria-hidden="true"></i>
                   </td>
                   <td align="left" valign="top" class="position-relative">
-                    <span class="d-block"><b>Bartels, Patrick</b></span>
-                    <span> 23, 21079 Hamurg</span>
+                    <span class="d-block"><b><%= customer.first_name %></b></span>
+                    <span><%= customer.postcode %>, <%= customer.city %></span>
                     <i class="fa fa-envelope color-primary font-size-14 position-absolute top-0 end-0 me-3 mt-3"
                        aria-hidden="true"></i>
                   </td>
-                  <td align="left" valign="top">+4918831117.</td>
+                  <td align="left" valign="top"><%= customer.email %></td>
                   <td align="left" valign="top">&nbsp; </td>
-                  <td align="left" valign="top">24.10.13</td>
+                  <td align="left" valign="top"><%= customer.created_at%></td>
+                <% end %>
                 </tr>
                 </tbody>
               </table>

@@ -289,7 +289,7 @@ a.orange-btn:hover {
     padding: 10px;
     font-size: 13px;
     /* box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important; */
-    box-shadow: 0px 1px 40px 0px rgb(0 0 0 / 10%);
+    //box-shadow: 0px 1px 40px 0px rgb(0 0 0 / 10%);
 }
 .header .subdropdonw .menucontent li {
     margin-right: 0;
@@ -366,7 +366,7 @@ h1 {
     line-height: 36px;
     transition: all 0.3s ease;
     margin-left: 2px;
-    box-shadow: 0px 0px 2px rgb(0 0 0 / 40%);
+    //box-shadow: 0px 0px 2px rgb(0 0 0 / 40%);
 }
 #scrollUp.orange-color i:hover {
     background-color: #ed3600;
@@ -886,5 +886,15 @@ table {
 }
 .sub-table tr:hover,
 .sub-table tr:nth-child(even) {
-    background: none;
+    background: red ;
 }
+
+
+.tr-active {
+    background-color:yellowgreen !important;
+}
+
+.error {
+    color: red;
+}
+

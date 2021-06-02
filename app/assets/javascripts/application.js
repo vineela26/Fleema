@@ -1,4 +1,5 @@
-//= require jquery.js
-
+//= require jquery
 //= require jquery_ujs
+
+
 
